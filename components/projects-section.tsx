@@ -9,14 +9,12 @@ const techColors: Record<string, string> = {
   TypeScript: "#3178C6",
   JavaScript: "#F7DF1E",
   "Tailwind CSS": "#06B6D4",
-  "Next.js": "#000000",
   "Framer Motion": "#0055FF",
   Recharts: "#22B5BF",
   "DnD Kit": "#FF6B6B",
   "CSS Modules": "#1572B6",
   "REST API": "#009688",
   MDX: "#FCB32C",
-  "Image Optimization": "#06B6D4",
   "Node.js": "#339933",
 };
 
@@ -57,7 +55,7 @@ const projects: Project[] = [
   {
     title: "Portfolio Photographe",
     description: "Site portfolio pour un photographe professionnel avec galerie responsive, lazy loading et optimisation des images.",
-    tags: ["Next.js", "Tailwind CSS", "Image Optimization"],
+    tags: ["React", "Tailwind CSS", "Image Optimization"],
     githubUrl: "#",
     images: [],
     featured: false,
@@ -73,7 +71,7 @@ const projects: Project[] = [
   {
     title: "Blog Tech",
     description: "Blog statique optimise pour le SEO avec rendu cote serveur, mode sombre et systeme de tags pour la navigation.",
-    tags: ["Next.js", "MDX", "Tailwind CSS"],
+    tags: ["React", "MDX", "Tailwind CSS"],
     githubUrl: "#",
     images: [],
     featured: false,

@@ -1,5 +1,5 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
+@import "tailwindcss";
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -10,7 +10,7 @@
   --card-foreground: #0f1724;
   --popover: #ffffff;
   --popover-foreground: #0f1724;
-  --primary: #10B981; /* emerald-500 */
+  --primary: #10b981; /* emerald-500 */
   --primary-foreground: #ffffff;
   --secondary: #f3efe6;
   --secondary-foreground: #0f1724;
@@ -23,7 +23,7 @@
   --border: #e6dfd6;
   --input: #ffffff;
   --ring: #a7f3d0;
-  --chart-1: #10B981;
+  --chart-1: #10b981;
   --chart-2: #059669;
   --chart-3: #047857;
   --chart-4: #065f46;
@@ -31,7 +31,7 @@
   --radius: 0.625rem;
   --sidebar: #fffaf5;
   --sidebar-foreground: #0f1724;
-  --sidebar-primary: #10B981;
+  --sidebar-primary: #10b981;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #f3efe6;
   --sidebar-accent-foreground: #0f1724;
@@ -46,7 +46,7 @@
   --card-foreground: #ecf0ea;
   --popover: #0f1724;
   --popover-foreground: #ecf0ea;
-  --primary: #10B981;
+  --primary: #10b981;
   --primary-foreground: #ffffff;
   --secondary: #233029;
   --secondary-foreground: #ecf0ea;
@@ -59,14 +59,14 @@
   --border: #22312a;
   --input: #0f1724;
   --ring: #064e3b;
-  --chart-1: #10B981;
+  --chart-1: #10b981;
   --chart-2: #059669;
   --chart-3: #047857;
   --chart-4: #065f46;
   --chart-5: #064e3b;
   --sidebar: #0f1724;
   --sidebar-foreground: #ecf0ea;
-  --sidebar-primary: #10B981;
+  --sidebar-primary: #10b981;
   --sidebar-primary-foreground: #ecf0ea;
   --sidebar-accent: #17211a;
   --sidebar-accent-foreground: #ecf0ea;
@@ -75,8 +75,8 @@
 }
 
 @theme inline {
-  --font-sans: 'Geist', 'Geist Fallback';
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
