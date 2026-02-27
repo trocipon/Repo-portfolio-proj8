@@ -1,0 +1,134 @@
+{
+  "skills": {
+    "techBadges": [{ "name": "HTML5" }, { "name": "CSS3" }, { "name": "JavaScript" }, { "name": "TypeScript" }, { "name": "React" }, { "name": "Vite" }, { "name": "Sass" }, { "name": "Tailwind CSS" }, { "name": "Node.js" }, { "name": "Express.js" }, { "name": "MongoDB" }, { "name": "Git" }, { "name": "Figma" }, { "name": "API REST" }, { "name": "Lighthouse" }, { "name": "Wave" }, { "name": "Agile & Scrum" }],
+
+    "services": [
+      {
+        "title": "Développement Front-End moderne",
+        "description": "Je conçois et développe des applications web modernes, dynamiques et responsives. J’intègre des maquettes avec précision et je construis des interfaces avec une architecture claire et maintenable."
+      },
+      {
+        "title": "Interactivité et API",
+        "description": "Je construis des fonctionnalités interactives qui améliorent l'expérience de l'utilisateur. Je gère les événements, les formulaires et j’intègre des API REST pour afficher des données dynamiques en temps réel."
+      },
+      {
+        "title": "Développement Back-End sécurisé",
+        "description": "Je mets en place des serveurs Node.js avec Express, et des API sécurisées. Je modélise les données, j’implémente des opérations CRUD avec authentification et je structure des bases MongoDB fiables et sécurisées."
+      },
+      {
+        "title": "Performance, accessibilité et qualité",
+        "description": "J’optimise les performances et la qualité des applications web. Je réalise des audits Lighthouse/Wave et j’améliore l’accessibilité à-travers les bonnes pratiques WCAG."
+      },
+      {
+        "title": "Déploiement & environnement",
+        "description": "Je mets les projets en production proprement et efficacement. Je configure les environnements, je versionne avec Git et je déploie des applications prêtes à être utilisées."
+      },
+      {
+        "title": "Méthodologie et gestion de projet",
+        "description": "Je structure les projets web avec la méthodologie agile pour assurer flexibilité, suivi et efficacité. Je rédige les spécifications techniques, j’organise le suivi via des outils Kanban et j’assure une veille technologique continue."
+      }
+    ]
+  },
+
+  "projects": [
+    {
+      "title": "Booki — Site vitrine responsive (HTML/CSS)",
+      "description": "Création d’un site vitrine pour une agence de voyage — avec intégration pixel-perfect d’une maquette Figma. J’ai appris à gérer la responsive design et à versionner mon code avec Git.",
+      "tags": ["HTML5", "CSS3", "Figma", "Git"],
+      "githubUrl": "https://github.com/trocipon/Repo-booki-proj2.git",
+      "images": ["public/images/projects/project-booki-1.webp", "public/images/projects/project-booki-2.webp"]
+    },
+    {
+      "title": "Sophie Bluel — Interface dynamique avec JavaScript",
+      "description": "Finalisation d’un site d’architecte d'intérieur — avec gestion des formulaires, des événements utilisateurs, et appel d’API REST pour afficher des données dynamiques. J’ai découvert la puissance de JavaScript pour créer des interfaces interactives.",
+      "tags": ["JavaScript", "API REST", "Figma", "Git"],
+      "githubUrl": "https://github.com/trocipon/Repo-Bluel-proj3.git",
+      "images": ["public/images/projects/project-sophiebluel-1.webp", "public/images/projects/project-sophiebluel-2.webp", "public/images/projects/project-sophiebluel-3.webp", "public/images/projects/project-sophiebluel-4.webp", "public/images/projects/project-sophiebluel-5.webp"]
+    },
+    {
+      "title": "Kasa — Application React moderne",
+      "description": "Développement du front-end d’une application de location immobilière entre particuliers — avec React, React Router, et Sass. J’ai appris à structurer une application avec des composants réutilisables et des animations CSS/SCSS.",
+      "tags": ["React", "Vite", "Sass", "Figma", "Git"],
+      "githubUrl": "https://github.com/trocipon/Repo-Kasa-proj5.git",
+      "images": ["public/images/projects/project-kasa-1.webp", "public/images/projects/project-kasa-2.webp"]
+    },
+    {
+      "title": "Nina Carducci — Audit SEO & Accessibilité",
+      "description": "Optimisation d’un site de photographe — avec audit Lighthouse, correction des contrastes, et amélioration du SEO technique. J’ai appris à penser l’expérience utilisateur au-delà du design, en optimisant la performance et l’accessibilité.",
+      "tags": ["Lighthouse", "Wave", "Git"],
+      "githubUrl": "https://github.com/trocipon/Repo-Carducci-proj4.git",
+      "images": ["public/images/projects/project-ninacarducci-1.webp", "public/images/projects/project-ninacarducci-2.webp", "public/images/projects/project-ninacarducci-3.webp"]
+    },
+    {
+      "title": "Mon Vieux Grimoire — Back-end Node.js",
+      "description": "Création d’un serveur Node.js avec Express et MongoDB — pour gérer un système de notation de livres. J’ai appris à implémenter un modèle logique de données et à sécuriser les opérations CRUD.",
+      "tags": ["Node.js", "Express", "MongoDB", "Git"],
+      "githubUrl": "https://github.com/trocipon/Repo-MonVieuxGrimoire-proj6.git",
+      "images": ["public/images/projects/project-mvg-1.webp", "public/images/projects/project-mvg-2.webp", "public/images/projects/project-mvg-3.webp", "public/images/projects/project-mvg-4.webp", "public/images/projects/project-mvg-5.webp"]
+    },
+    {
+      "title": "Menu Maker by Qwenta — Gestion de projet",
+      "description": "Planification et présentation technique d’un site de création de menus pour restaurateurs — avec Kanban, spécifications techniques, et suivi de projet. J’ai appris à gérer un projet en équipe avec la méthodologie agile et le cadre Scrum.",
+      "tags": ["Agile & Scrum"],
+      "githubUrl": "#",
+      "images": ["public/images/projects/project-qwenta-1.webp", "public/images/projects/project-qwenta-2.webp", "public/images/projects/project-qwenta-3.webp"]
+    },
+    {
+      "title": "Portfolio — Mon CV vivant",
+      "description": "Création de mon portfolio personnel, présentant mes compétences, mes projets, et mon parcours. J’ai choisi React, Vite et Tailwind pour un design moderne, épuré, et performant. Ce projet est mon premier projet libre — et il évolue chaque jour.",
+      "tags": ["React", "Vite", "Tailwind CSS", "Git"],
+      "githubUrl": "https://github.com/trocipon/Repo-portfolio-proj8.git",
+      "images": []
+    }
+  ],
+
+  "career": {
+    "timeline": [
+      {
+        "type": "education",
+        "title": "Formation Développeur Web",
+        "organization": "OpenClassrooms",
+        "period": "2025 - 2026",
+        "description": "Formation intensive en développement web (HTML/CSS/JavaScript) avec spécialisation front-end React. 7 projets professionalisants avec mentorats hebdomdaires et soutenances.",
+        "tags": ["HTML/CSS", "JavaScript", "React", "Node.js"],
+        "image": "/images/career-school.jpg"
+      },
+      {
+        "type": "work",
+        "title": "Technicien de police scientifique",
+        "organization": "Police Nationale",
+        "period": "2014 - 2026",
+        "description": "Actes techniques dans le domaine de la police scientifique. Travail en équipe, rigueur et souci du détail. Cette expérience m'a permis de développer des compétences en communication et en résolution de problèmes.",
+        "tags": ["Adaptabilité", "Amélioration continue", "Méthode", "Collaboration"],
+        "image": "/images/career-agency.jpg"
+      },
+      {
+        "type": "education",
+        "title": "Licence de Commerce et Management",
+        "organization": "Université Savoie Mont Blanc",
+        "period": "2010 - 2013",
+        "description": "Ce parcours m'a notamment permis de m'initier à la gestion et la planification de projet en équipe, à l'analyse de marché et au marketing digital. Stage de 3 mois dans une entreprise de services numériques, où j'ai découvert le développement web et son potentiel créatif.",
+        "tags": ["Gestion de projet", "Marketing digital", "Stratégie d'entreprise"],
+        "image": "/images/career-school.jpg"
+      },
+      {
+        "type": "education",
+        "title": "Baccalauréat",
+        "organization": "Lycée du Granier, Chambéry",
+        "period": "2010",
+        "description": "Baccalauréat économique et social avec mention Bien.",
+        "tags": [],
+        "image": "/images/career-bac.jpg"
+      }
+    ]
+  },
+
+  "testimonials": [
+    {
+      "quote": "Thibaud est un élément qui a démontré l'étendue de ses compétences, en les appliquant avec rigueur et intelligence, dans chacune des missions qui lui ont été confiées. Son investissement a toujours été reconnu par ses pairs et s'est avéré d'un grand soutien dans les périodes de forte activité.",
+      "author": "David Ferran",
+      "role": "Technicien en chef de police scientifique",
+      "company": "Police Nationale"
+    }
+  ]
+}
