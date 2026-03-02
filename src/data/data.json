@@ -21,64 +21,87 @@
       },
       {
         "title": "Déploiement & environnement",
-        "description": "Je mets les projets en production proprement et efficacement. Je configure les environnements, je versionne avec Git et je déploie des applications prêtes à être utilisées."
+        "description": "Je configure les environnements, je versionne avec Git et je déploie des applications prêtes à être utilisées."
       },
       {
         "title": "Méthodologie et gestion de projet",
-        "description": "Je structure les projets web avec la méthodologie agile pour assurer flexibilité, suivi et efficacité. Je rédige les spécifications techniques, j’organise le suivi via des outils Kanban et j’assure une veille technologique continue."
+        "description": "Je structure les projets web avec la méthodologie agile pour assurer flexibilité, suivi et efficacité. Je rédige les spécifications techniques, j’organise le suivi via des outils Kanban et j’assure une veille technologique."
       }
     ]
   },
 
   "projects": [
     {
-      "title": "Booki — Site vitrine responsive (HTML/CSS)",
-      "description": "Création d’un site vitrine pour une agence de voyage — avec intégration pixel-perfect d’une maquette Figma. J’ai appris à gérer la responsive design et à versionner mon code avec Git.",
-      "tags": ["HTML5", "CSS3", "Figma", "Git"],
+      "title": "Booki",
+      "description": {
+        "context": "Intégration d’un site vitrine pour une agence de voyage à partir d’une maquette Figma, dans un cadre pédagogique exigeant une rigueur technique et une gestion de version.",
+        "objectives": "Recréer fidèlement la maquette en HTML/CSS en full responsive. Site fonctionnel sur tous les écrans, livrable validé, repo GitHub structuré.",
+        "results": "Site fonctionnel sur tous les écrans, livrable validé, repo GitHub structuré.",
+        "improvements": "Les commits auraient pu être optimisés pour une meilleure lisibilité de l’historique."
+      },
+      "tags": ["HTML5", "CSS3", "Figma", "Git", "GitHub", "Intégration front-end", "Responsive design", "Gestion de projet avec Git"],
       "githubUrl": "https://github.com/trocipon/Repo-booki-proj2.git",
-      "images": ["public/images/projects/project-booki-1.webp", "public/images/projects/project-booki-2.webp"]
+      "images": ["/images/projects/project-booki-1.webp", "/images/projects/project-booki-2.webp"]
     },
     {
-      "title": "Sophie Bluel — Interface dynamique avec JavaScript",
-      "description": "Finalisation d’un site d’architecte d'intérieur — avec gestion des formulaires, des événements utilisateurs, et appel d’API REST pour afficher des données dynamiques. J’ai découvert la puissance de JavaScript pour créer des interfaces interactives.",
-      "tags": ["JavaScript", "API REST", "Figma", "Git"],
+      "title": "Sophie Bluel",
+      "description": {
+        "context": "Développement d’un site dynamique pour une architecte, avec gestion de formulaires, événements utilisateurs et appel à une API.",
+        "objectives": "Rendre le site interactif via JavaScript, mettre en place une modale, afficher dynamiquement le contenu, gérer des événements.",
+        "results": "Site fonctionnel, données affichées dynamiquement, authentification, validation côté client.",
+        "improvements": "Optimiser le nombre de requêtes."
+      },
+      "tags": ["JavaScript", "API REST", "Figma", "Git", "Gestion des événements", "Manipulation du DOM", "Validation de formulaires"],
       "githubUrl": "https://github.com/trocipon/Repo-Bluel-proj3.git",
-      "images": ["public/images/projects/project-sophiebluel-1.webp", "public/images/projects/project-sophiebluel-2.webp", "public/images/projects/project-sophiebluel-3.webp", "public/images/projects/project-sophiebluel-4.webp", "public/images/projects/project-sophiebluel-5.webp"]
+      "images": ["/images/projects/project-sophiebluel-1.webp", "/images/projects/project-sophiebluel-2.webp", "/images/projects/project-sophiebluel-3.webp", "/images/projects/project-sophiebluel-4.webp", "/images/projects/project-sophiebluel-5.webp"]
     },
     {
-      "title": "Kasa — Application React moderne",
-      "description": "Développement du front-end d’une application de location immobilière entre particuliers — avec React, React Router, et Sass. J’ai appris à structurer une application avec des composants réutilisables et des animations CSS/SCSS.",
+      "title": "Kasa",
+      "description": {
+        "context": "Développement du front-end d’une application de location immobilière, avec une architecture composants et une navigation dynamique.",
+        "objectives": "Créer une interface avec React, utiliser des composants réutilisables, gérer la navigation entre pages via React Router, et styliser avec Sass.",
+        "results": "Application single page fonctionnelle, navigation fluide, interface modulaire.",
+        "improvements": "Optimiser les fonctionnalités de Sass."
+      },
       "tags": ["React", "Vite", "Sass", "Figma", "Git"],
       "githubUrl": "https://github.com/trocipon/Repo-Kasa-proj5.git",
-      "images": ["public/images/projects/project-kasa-1.webp", "public/images/projects/project-kasa-2.webp"]
+      "images": ["/images/projects/project-kasa-1.webp", "/images/projects/project-kasa-2.webp"]
     },
     {
-      "title": "Nina Carducci — Audit SEO & Accessibilité",
-      "description": "Optimisation d’un site de photographe — avec audit Lighthouse, correction des contrastes, et amélioration du SEO technique. J’ai appris à penser l’expérience utilisateur au-delà du design, en optimisant la performance et l’accessibilité.",
-      "tags": ["Lighthouse", "Wave", "Git"],
+      "title": "Nina Carducci",
+      "description": {
+        "context": "Audit d’un site de photographe présentant des problèmes de SEO, accessibilité et performance, avec un besoin d’optimisation technique.",
+        "objectives": "Corriger les erreurs techniques, améliorer l’accessibilité (WCAG), et optimiser les performances pour le référencement.",
+        "results": " Amélioration des scores d'audit, meilleures performances.",
+        "improvements": "Optimisation des images, minification des fichiers css."
+      },
+      "tags": ["Lighthouse", "Wave", "Git", "Optimisation SEO", "Accessibilité", "Performance"],
       "githubUrl": "https://github.com/trocipon/Repo-Carducci-proj4.git",
-      "images": ["public/images/projects/project-ninacarducci-1.webp", "public/images/projects/project-ninacarducci-2.webp", "public/images/projects/project-ninacarducci-3.webp"]
+      "images": ["/images/projects/project-ninacarducci-1.webp", "/images/projects/project-ninacarducci-2.webp", "/images/projects/project-ninacarducci-3.webp"]
     },
     {
-      "title": "Mon Vieux Grimoire — Back-end Node.js",
-      "description": "Création d’un serveur Node.js avec Express et MongoDB — pour gérer un système de notation de livres. J’ai appris à implémenter un modèle logique de données et à sécuriser les opérations CRUD.",
-      "tags": ["Node.js", "Express", "MongoDB", "Git"],
+      "title": "Mon Vieux Grimoire",
+      "description": {
+        "context": "Développement du back-end d’un site de notation de livres, avec gestion des données et sécurisation des opérations CRUD.",
+        "objectives": "Mettre en place un serveur Node.js avec Express, modéliser les données, et sécuriser les accès via MongoDB.",
+        "results": "API fonctionnelle avec endpoints CRUD, base de données structurée, sécurité des données.",
+        "improvements": "Tests d’API, déploiement sur un serveur."
+      },
+      "tags": ["Node.js", "Express", "MongoDB", "Git", "Modélisation de données", "OWASP", "Sécurité"],
       "githubUrl": "https://github.com/trocipon/Repo-MonVieuxGrimoire-proj6.git",
-      "images": ["public/images/projects/project-mvg-1.webp", "public/images/projects/project-mvg-2.webp", "public/images/projects/project-mvg-3.webp", "public/images/projects/project-mvg-4.webp", "public/images/projects/project-mvg-5.webp"]
+      "images": ["/images/projects/project-mvg-1.webp", "/images/projects/project-mvg-2.webp", "/images/projects/project-mvg-3.webp", "/images/projects/project-mvg-4.webp", "/images/projects/project-mvg-5.webp"]
     },
     {
-      "title": "Menu Maker by Qwenta — Gestion de projet",
-      "description": "Planification et présentation technique d’un site de création de menus pour restaurateurs — avec Kanban, spécifications techniques, et suivi de projet. J’ai appris à gérer un projet en équipe avec la méthodologie agile et le cadre Scrum.",
-      "tags": ["Agile & Scrum"],
+      "title": "Menu Maker by Qwenta",
+      "description": {
+        "context": "Planification d’un projet de création de menus pour restaurateurs, avec besoin de spécifications techniques et suivi agile.",
+        "objectives": "Découper les fonctionnalités en tâches, rédiger les spécifications, et suivre le projet via un outil Kanban.",
+        "results": "Présentation claire au client, tableau de suivi mis à jour, méthode de veille établie.",
+        "improvements": "Complétion des spécifications techniques et documentation du projet. Maitrise du stack SQL."
+      },
+      "tags": ["Agile & Scrum", "Gestion de projet", "Veille technologique", "Kanban"],
       "githubUrl": "#",
-      "images": ["public/images/projects/project-qwenta-1.webp", "public/images/projects/project-qwenta-2.webp", "public/images/projects/project-qwenta-3.webp"]
-    },
-    {
-      "title": "Portfolio — Mon CV vivant",
-      "description": "Création de mon portfolio personnel, présentant mes compétences, mes projets, et mon parcours. J’ai choisi React, Vite et Tailwind pour un design moderne, épuré, et performant. Ce projet est mon premier projet libre — et il évolue chaque jour.",
-      "tags": ["React", "Vite", "Tailwind CSS", "Git"],
-      "githubUrl": "https://github.com/trocipon/Repo-portfolio-proj8.git",
-      "images": []
+      "images": ["/images/projects/project-qwenta-1.webp", "/images/projects/project-qwenta-2.webp", "/images/projects/project-qwenta-3.webp"]
     }
   ],
 
@@ -89,7 +112,7 @@
         "title": "Formation Développeur Web",
         "organization": "OpenClassrooms",
         "period": "2025 - 2026",
-        "description": "Formation intensive en développement web (HTML/CSS/JavaScript) avec spécialisation front-end React. 7 projets professionalisants avec mentorats hebdomdaires et soutenances.",
+        "description": "Formation intensive en développement web. 7 projets professionalisants avec mentorats. Acquisition de compétences techniques solides en HTML/CSS, JavaScript, React, Node.js, et méthodologie agile.",
         "tags": ["HTML/CSS", "JavaScript", "React", "Node.js"],
         "image": "/images/career-school.jpg"
       },
@@ -125,7 +148,7 @@
 
   "testimonials": [
     {
-      "quote": "Thibaud est un élément qui a démontré l'étendue de ses compétences, en les appliquant avec rigueur et intelligence, dans chacune des missions qui lui ont été confiées. Son investissement a toujours été reconnu par ses pairs et s'est avéré d'un grand soutien dans les périodes de forte activité.",
+      "quote": "Thibaud est un élément qui a démontré l'étendue de ses compétences, en les appliquant avec rigueur et intelligence, dans chacune des missions qui lui ont été confiées à la Division de Police Scientifique de Toulouse. Son investissement a toujours été reconnu par ses pairs et s'est avéré d'un grand soutien dans les périodes de forte activité.",
       "author": "David Ferran",
       "role": "Technicien en chef de police scientifique",
       "company": "Police Nationale"
