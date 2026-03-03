@@ -63,6 +63,16 @@
   font-size: 2rem;
 }
 
+/* Ripple Animation */
+@keyframes rippleEffect {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(16, 185, 129, 0);
+  }
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
   .flip-card {
@@ -81,4 +91,9 @@
 
 .flip-card-back p {
   margin: 0 !important;
+}
+
+.flip-card .flip-card-front .flex {
+  position: relative;
+  animation: rippleEffect 1.5s infinite;
 }
