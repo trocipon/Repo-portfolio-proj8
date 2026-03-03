@@ -75,7 +75,26 @@ export function ProjectModal({ project, onClose }: { project: Project; onClose: 
             </div>
           </div>
           {/* Images */}
-          <div className="flex flex-col gap-4">{project.images.length === 1 && <img src={project.images[0]} alt={`Capture d'écran du projet`} className="w-full rounded-lg border border-border hidden md:block" /* Hide single image for tablet and larger */ loading="lazy" decoding="async" />}</div>
+          <div className="flex flex-col gap-4">
+            {project.images.length === 1 && (
+              <img
+                src={project.images[0]}
+                alt={`Capture d'écran du projet`}
+                className="w-full rounded-lg border border-border block md:hidden"
+                loading="lazy"
+                decoding="async"
+              />
+            )}
+            {project.images.length > 1 && (
+              <div className="block md:hidden">
+                {" "}
+                {/* Show all images for mobile */}
+                {project.images.map((image, index) => (
+                  <img key={index} src={image} alt={`Capture d'écran ${index + 1} du projet`} className="w-full rounded-lg border border-border mb-4" loading="lazy" decoding="async" />
+                ))}
+              </div>
+            )}
+          </div>
           {project.images.length > 1 && (
             <div className="hidden md:block">
               {" "}
