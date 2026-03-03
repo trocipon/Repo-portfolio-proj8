@@ -1,8 +1,7 @@
 // Map des noms vers les Simple Icons connus
 export const iconSlugs: Record<string, string> = {
   HTML5: "html5",
-  CSS3: "css3",
-  CSS: "css3",
+  CSS3: "css",
   JavaScript: "javascript",
   TypeScript: "typescript",
   React: "react",
