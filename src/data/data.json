@@ -120,7 +120,7 @@
         "period": "2025 - 2026",
         "description": "Formation intensive en développement web. 7 projets professionalisants avec mentorats. Acquisition de compétences techniques solides en HTML/CSS, JavaScript, React, Node.js, et méthodologie agile.",
         "tags": ["HTML/CSS", "JavaScript", "React", "Node.js"],
-        "image": "/images/career-school.jpg"
+        "image": "/images/career-school.webp"
       },
       {
         "type": "work",
@@ -129,7 +129,7 @@
         "period": "2014 - 2026",
         "description": "Actes techniques dans le domaine de la police scientifique. Travail en équipe, rigueur et souci du détail. Cette expérience m'a permis de développer des compétences en communication et en résolution de problèmes.",
         "tags": ["Adaptabilité", "Amélioration continue", "Méthode", "Collaboration"],
-        "image": "/images/career-agency.jpg"
+        "image": "/images/career-agency.webp"
       },
       {
         "type": "education",
@@ -138,7 +138,7 @@
         "period": "2010 - 2013",
         "description": "Ce parcours m'a notamment permis de m'initier à la gestion et la planification de projet en équipe, à l'analyse de marché et au marketing digital. Stage de 3 mois dans une entreprise de services numériques, où j'ai découvert le développement web et son potentiel créatif.",
         "tags": ["Gestion de projet", "Marketing digital", "Stratégie d'entreprise"],
-        "image": "/images/career-school.jpg"
+        "image": "/images/career-school.webp"
       },
       {
         "type": "education",
@@ -147,7 +147,7 @@
         "period": "2010",
         "description": "Baccalauréat économique et social avec mention Bien.",
         "tags": [],
-        "image": "/images/career-bac.jpg"
+        "image": "/images/career-bac.webp"
       }
     ]
   },
