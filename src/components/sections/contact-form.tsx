@@ -1,4 +1,11 @@
 import { useState } from "react";
+import { z } from "zod";
+
+const contactSchema = z.object({
+  name: z.string().min(1, "Le nom est requis."),
+  email: z.string().email("Veuillez entrer un email valide."),
+  message: z.string().min(1, "Le message est requis."),
+});
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -7,10 +14,24 @@ export function ContactForm() {
     e.preventDefault();
 
     const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    const data = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      message: formData.get("message") as string,
+    };
+
+    const validation = contactSchema.safeParse(data);
+
+    if (!validation.success) {
+      alert(validation.error.issues.map((err: z.ZodIssue) => err.message).join("\n"));
+      return;
+    }
 
     fetch("https://formspree.io/f/xbdavaqg", {
       method: "POST",
-      body: new FormData(form),
+      body: formData,
       headers: {
         Accept: "application/json",
       },
