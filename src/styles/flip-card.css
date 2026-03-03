@@ -83,10 +83,3 @@
 .flip-card-back p {
   margin: 0 !important; /* Remove margins to prevent overflow */
 }
-
-/* Dark mode styles for Flip Cards */
-.dark .flip-card-skills,
-.dark .flip-card-front-skills,
-.dark .flip-card-back-skills {
-  /* Ajoutez ici les styles spécifiques au mode sombre */
-}

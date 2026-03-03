@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ThemeToggle } from "../ui/theme-toggle";
-import { Menu, X, Download } from "../utils/icons";
+import { FaBars as Menu, FaTimes as X, FaDownload as Download } from "react-icons/fa";
 
 const navLinks = [
   { label: "Accueil", href: "#accueil" },
