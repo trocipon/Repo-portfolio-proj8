@@ -1,4 +1,3 @@
-import ReCAPTCHA from "react-google-recaptcha";
 import { useState, useRef } from "react";
 import { Send } from "../utils/icons";
 import { InputField } from "../ui/input-field";
@@ -51,9 +50,6 @@ export function ContactForm() {
     if (values.honeypot) {
       console.warn("Honeypot triggered: potential spam detected.");
       newErrors.honeypot = "Spam détecté.";
-    }
-    if (!captchaValue) {
-      newErrors.captcha = "Veuillez valider le CAPTCHA.";
     }
     return newErrors;
   }
@@ -138,12 +134,6 @@ export function ContactForm() {
               </span>
             )}
           </div>
-          <ReCAPTCHA sitekey={import.meta.env.REACT_APP_RECAPTCHA_SITE_KEY || ""} onChange={handleCaptchaChange} />
-          {errors.captcha && (
-            <span className="text-xs text-red-500 mt-1" role="alert">
-              {errors.captcha}
-            </span>
-          )}
           <button type="submit" className={`inline-flex w-fit items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-60 disabled:cursor-not-allowed`} disabled={loading} aria-busy={loading}>
             {loading ? (
               <svg className="animate-spin h-4 w-4 mr-2 text-primary-foreground" viewBox="0 0 24 24">

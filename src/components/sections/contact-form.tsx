@@ -1,21 +1,10 @@
-/// <reference types="vite/client" />
-import ReCAPTCHA from "react-google-recaptcha";
 import { useState } from "react";
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
-  const [captchaValue, setCaptchaValue] = useState<string | null>(null);
-
-  function handleCaptchaChange(value: string | null) {
-    setCaptchaValue(value);
-  }
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!captchaValue) {
-      alert("Veuillez valider le CAPTCHA.");
-      return;
-    }
 
     const form = e.target as HTMLFormElement;
 
@@ -50,7 +39,6 @@ export function ContactForm() {
           <input type="text" name="name" placeholder="Votre nom" required className="rounded-lg border px-4 py-2" />
           <input type="email" name="email" placeholder="Votre email" required className="rounded-lg border px-4 py-2" />
           <textarea name="message" placeholder="Votre message" required className="rounded-lg border px-4 py-2" />
-          <ReCAPTCHA sitekey={import.meta.env.REACT_APP_RECAPTCHA_SITE_KEY || ""} onChange={handleCaptchaChange} />
           <button type="submit" className="bg-primary text-white px-4 py-2 rounded-lg">
             Envoyer
           </button>
