@@ -7,7 +7,7 @@ import { ProjectCard } from "../features/project-card";
 const ProjectModal = lazy(() => import("../features/project-modal").then((m) => ({ default: m.ProjectModal })));
 
 export function ProjectsSection() {
-  const [activeFilter, setActiveFilter] = useState<string | null>(null);
+  const [activeFilter, setActiveFilter] = useState<string | null>("Tous");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const filtered = activeFilter && activeFilter !== "Tous" ? projects.filter((p) => p.tags.includes(activeFilter)) : projects;
