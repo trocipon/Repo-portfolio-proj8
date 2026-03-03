@@ -1,0 +1,92 @@
+/* General Flip Card Styles */
+.flip-card {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  position: relative !important;
+  transition:
+    box-shadow 0.2s,
+    transform 0.2s;
+}
+.flip-card:hover {
+  box-shadow: 0 6px 24px 0 rgba(0, 0, 0, 0.1) !important;
+  transform: translateY(-4px) scale(1.03) !important;
+}
+
+/* Flip Card Inner */
+.flip-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 0.75rem;
+  transition: transform 0.6s cubic-bezier(0.4, 2, 0.3, 1) !important;
+  transform-style: preserve-3d !important;
+}
+.flip-card-inner.flipped {
+  transform: rotateY(180deg) !important;
+}
+
+/* Flip Card Faces */
+.flip-card-face {
+  position: absolute !important;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: var(--card, #23272b) !important;
+  border: 1px solid var(--border-color, #e5e7eb) !important;
+  color: var(--card-foreground, #ecf0ea) !important;
+  backface-visibility: hidden !important;
+}
+.flip-card-front {
+  z-index: 2 !important;
+}
+.flip-card-back {
+  transform: rotateY(180deg) !important;
+  z-index: 3 !important;
+  font-size: 0.75rem !important;
+  line-height: 1.25rem !important;
+  word-wrap: break-word !important;
+}
+
+/* Icon Styles */
+.flip-card-face .icon {
+  color: var(--primary, #22c55e); /* Couleur verte pour les icônes */
+  background-color: rgba(34, 197, 94, 0.1); /* Fond arrondi avec opacité réduite */
+  border-radius: 50%; /* Forme circulaire */
+  padding: 0.5rem; /* Espacement interne */
+  margin-bottom: 0.5rem; /* Espacement externe */
+  font-size: 2rem; /* Taille des icônes */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .flip-card {
+    height: 300px !important; /* Increase height for mobile to fit text */
+  }
+  .flip-card-back {
+    font-size: 0.8rem !important; /* Slightly larger font for readability */
+  }
+}
+@media (min-width: 768px) {
+  .flip-card-back {
+    font-size: 0.875rem !important; /* Normal font size for larger screens */
+    line-height: 1.5rem !important;
+  }
+}
+
+/* Utility Styles */
+.flip-card-back p {
+  margin: 0 !important; /* Remove margins to prevent overflow */
+}
+
+/* Dark mode styles for Flip Cards */
+.dark .flip-card-skills,
+.dark .flip-card-front-skills,
+.dark .flip-card-back-skills {
+  /* Ajoutez ici les styles spécifiques au mode sombre */
+}

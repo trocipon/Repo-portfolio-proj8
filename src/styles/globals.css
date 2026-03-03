@@ -1,8 +1,30 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:is(.dark *));
+@theme {
+  --color-background: #f6f1ea;
+  --color-foreground: #0f1724;
+  --color-card: #ffffff;
+  --color-card-foreground: #0f1724;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #0f1724;
+  --color-primary: #10b981;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #f3efe6;
+  --color-secondary-foreground: #0f1724;
+  --color-muted: #f4efe8;
+  --color-muted-foreground: #6b7280;
+  --color-accent: #f6efe6;
+  --color-accent-foreground: #0f1724;
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #ffffff;
+  --color-border: #e6dfd6;
+  --color-input: #ffffff;
+  --color-ring: #a7f3d0;
+}
 
+/* ========================= VARIABLES ========================= */
 :root {
+  /* Couleurs principales */
   --background: #f6f1ea; /* cream light */
   --foreground: #0f1724; /* dark slate */
   --card: #ffffff;
@@ -22,32 +44,22 @@
   --border: #e6dfd6;
   --input: #ffffff;
   --ring: #a7f3d0;
-  --chart-1: #10b981;
-  --chart-2: #059669;
-  --chart-3: #047857;
-  --chart-4: #065f46;
-  --chart-5: #064e3b;
   --radius: 0.625rem;
-  --sidebar: #fffaf5;
-  --sidebar-foreground: #0f1724;
-  --sidebar-primary: #10b981;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #f3efe6;
-  --sidebar-accent-foreground: #0f1724;
-  --sidebar-border: #e6dfd6;
-  --sidebar-ring: #a7f3d0;
+  /* Polices globales */
+  --font-main: "Montserrat", "Roboto", sans-serif;
+  --font-heading: "Montserrat", "Roboto", sans-serif;
 }
 
 .dark {
   --background: #111215; /* dark background */
   --foreground: #ecf0ea;
-  --card: #0f1724;
+  --card: #23272b;
   --card-foreground: #ecf0ea;
   --popover: #0f1724;
   --popover-foreground: #ecf0ea;
   --primary: #10b981;
   --primary-foreground: #ffffff;
-  --secondary: #233029;
+  --secondary: #181c22;
   --secondary-foreground: #ecf0ea;
   --muted: #0f1724;
   --muted-foreground: #94a3b8;
@@ -58,24 +70,16 @@
   --border: #22312a;
   --input: #0f1724;
   --ring: #064e3b;
-  --chart-1: #10b981;
-  --chart-2: #059669;
-  --chart-3: #047857;
-  --chart-4: #065f46;
-  --chart-5: #064e3b;
   --sidebar: #0f1724;
   --sidebar-foreground: #ecf0ea;
-  --sidebar-primary: #10b981;
-  --sidebar-primary-foreground: #ecf0ea;
   --sidebar-accent: #17211a;
   --sidebar-accent-foreground: #ecf0ea;
-  --sidebar-border: #22312a;
-  --sidebar-ring: #064e3b;
 }
 
-@theme inline {
-  --font-sans: "Geist", "Geist Fallback";
-  --font-mono: "Geist Mono", "Geist Mono Fallback";
+/* ========================= THEME MAPPING ========================= */
+:root {
+  --font-sans: "Montserrat", "Roboto", sans-serif;
+  --font-mono: "Roboto Mono", monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -95,30 +99,288 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/* ========================= COMPOSANTS ========================= */
+/* Boutons de filtres projets : style identique aux boutons du carrousel skills */
+.project-filter-btn {
+  background-color: #fff;
+  border: 1px solid var(--primary);
+  box-shadow: 0 1px 4px 0 rgba(16, 185, 129, 0.04);
+  color: var(--primary);
+  font-weight: 500;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    box-shadow 0.2s;
+  will-change: background-color, color, box-shadow;
+}
+
+.dark .project-filter-btn {
+  background-color: #23272b;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.project-filter-btn:hover,
+.project-filter-btn.active {
+  background-color: var(--primary);
+  color: #fff;
+  box-shadow: 0 2px 8px 0 rgba(16, 185, 129, 0.15);
+}
+
+/* Effet hover pour les boutons dark/light et Envoyer le message */
+.inline-flex.items-center.gap-2.rounded-lg.bg-primary:hover,
+.theme-toggle:hover,
+button[aria-label*="theme"]:hover,
+button[type="submit"]:hover {
+  box-shadow: 0 2px 8px 0 rgba(16, 185, 129, 0.15);
+  transform: translateY(-2px) scale(1.03);
+  cursor: pointer;
+  transition:
+    box-shadow 0.2s,
+    transform 0.2s;
+  will-change: transform, box-shadow;
+}
+
+/* Cards */
+.bg-card {
+  background-color: var(--card);
+}
+
+.dark .bg-card {
+  background-color: #23272b;
+}
+
+.text-card-foreground {
+  color: var(--card-foreground);
+}
+
+.dark .text-card-foreground {
+  color: #ecf0ea;
+}
+
+.border-border {
+  border-color: var(--border);
+}
+
+.dark .border-border {
+  border-color: #22312a;
+}
+
+/* Suppression des styles spécifiques aux flip-cards pour centralisation */
+
+/* Optimise les animations - évite forced layout shifts */
+[class*="animate"],
+[class*="transition"] {
+  will-change: auto;
+}
+
+.animate-bounce {
+  will-change: transform;
+}
+
+/* ========================= FORMULAIRES ========================= */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+textarea {
+  background-color: var(--input);
+  border: 2px solid var(--border);
+  color: var(--foreground);
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+  box-shadow: 0 1px 4px 0 rgba(16, 185, 129, 0.04);
+}
+input:focus,
+textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--ring);
+}
+.dark input[type="text"],
+.dark input[type="email"],
+.dark input[type="password"],
+.dark input[type="search"],
+.dark input[type="tel"],
+.dark input[type="url"],
+.dark textarea {
+  background-color: #181c22;
+  color: #ecf0ea;
+  border: 2px solid #22312a;
+}
+.dark input:focus,
+.dark textarea:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 2px #10b98144;
+}
+
+/* ========================= POLICES & OPTIMISATIONS ========================= */
+/* Utiliser une pile de fallback système pour minimiser FOUT pendant le chargement de Google Fonts */
+@supports (font-display: swap) {
+  body {
+    font-family:
+      "Montserrat",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      "Roboto",
+      "Helvetica Neue",
+      Arial,
+      sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Georgia", "Times New Roman", serif;
+  }
+}
+
+/* Fallback si font-display n'est pas supporté */
+@supports not (font-display: swap) {
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Times New Roman", serif;
+  }
+}
+
+/* ========================= BASE & TYPOGRAPHIE ========================= */
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    border-color: var(--border);
+    outline-color: var(--ring);
+    outline-offset: 2px;
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: "Montserrat", "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
   }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Georgia", serif;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--foreground);
+  }
+  h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 1.1;
+  }
+  h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    line-height: 1.15;
+  }
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  h5 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  /* ========================= MEDIA QUERIES ========================= */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.75rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+    }
+    h3 {
+      font-size: 1.25rem;
+    }
+    h4 {
+      font-size: 1.125rem;
+    }
+    h5 {
+      font-size: 1rem;
+    }
+    h6 {
+      font-size: 0.875rem;
+    }
+    body {
+      font-size: 0.95rem;
+    }
+  }
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.25rem;
+    }
+    h2 {
+      font-size: 1.125rem;
+    }
+    h3 {
+      font-size: 1rem;
+    }
+    h4 {
+      font-size: 0.95rem;
+    }
+    h5 {
+      font-size: 0.875rem;
+    }
+    h6 {
+      font-size: 0.75rem;
+    }
+    body {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+body {
+  font-family: var(--font-main);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+button {
+  font-family: var(--font-main) !important;
 }
