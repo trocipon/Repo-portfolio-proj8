@@ -1,0 +1,15 @@
+@media (min-width: 768px) and (max-width: 1023px) {
+  nav {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  ul {
+    display: inline-flex;
+    gap: 1rem;
+  }
+
+  li {
+    flex-shrink: 0;
+  }
+}
