@@ -1,35 +1,37 @@
-import { ChevronDown } from "lucide-react";
-import { FadeIn } from "@/src/components/ui/fade-in";
+import { FadeIn } from "@/components/ui/fade-in";
 
 export function AboutSection() {
   return (
-    <section id="a-propos" className="px-6 py-24" aria-label="A propos de moi">
+    <section id="a-propos" className="px-4 py-8 sm:px-6 md:py-12 lg:py-16" aria-label="À propos de moi">
       <div className="mx-auto max-w-6xl">
         <FadeIn>
-          <div className="mb-4 text-sm font-medium uppercase tracking-widest text-primary">A propos</div>
-          <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground md:text-4xl">{"Qui suis-je ?"}</h2>
+          <div className="mb-4 text-sm font-medium uppercase tracking-widest text-primary">À propos</div>
+          <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">Qui suis-je ?</h2>
         </FadeIn>
 
-        <div className="mt-12 grid items-start gap-12 lg:grid-cols-2">
-          {/* Text - left side */}
+        <div className="mt-8 md:mt-12 grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-8 md:gap-12 items-center">
+          {/* Colonne gauche : photo */}
           <FadeIn delay={100}>
-            <div className="flex flex-col gap-6 lg:pr-12">
-              <p className="text-base leading-relaxed text-muted-foreground">{"Passionné par le développement web depuis plusieurs années, je me spécialise dans la création d'interfaces utilisateur modernes et accessibles. Mon approche combine créativité et rigueur technique pour livrer des expériences web de qualité."}</p>
-              <p className="text-base leading-relaxed text-muted-foreground">{"Forme aux technologies front-end les plus actuelles, je travaille principalement avec React, JavaScript/TypeScript et Tailwind CSS. Je suis constamment en veille technologique pour integrer les meilleures pratiques et outils dans mes projets."}</p>
-              <p className="text-base leading-relaxed text-muted-foreground">{"L'accessibilite et la performance sont au coeur de ma demarche. Chaque projet est une opportunite de creer quelque chose d'utile, d'elegant et d'inclusif."}</p>
+            <div className="flex items-center justify-center w-full h-full">
+              <div className="relative w-full sm:w-80 md:w-96 lg:w-[420px] aspect-[3/4] overflow-hidden rounded-2xl border-2 border-primary/20 shadow-xl">
+                <img src="/images/empreinte-intro.webp" alt="Empreinte digitale intro" width="384" height="384" loading="lazy" className="h-full w-full object-cover" style={{ contain: "content", aspectRatio: "1/1" }} />
+              </div>
+              <div className="hidden lg:block absolute -bottom-3 -left-3 w-96 aspect-square rounded-2xl border-2 border-primary/10 -z-10" aria-hidden="true" />
             </div>
           </FadeIn>
-
-          {/* Portrait - right side */}
+          {/* Colonne droite : texte */}
           <FadeIn delay={200}>
-            <div className="flex items-start justify-end">
-              <div className="relative">
-                <div className="relative h-96 w-[420px] max-w-full overflow-hidden rounded-2xl border-2 border-primary/20">
-                  <img src="/images/portrait.webp" alt="Portrait de Thibaud Rocipon" className="absolute inset-0 h-full w-full object-cover" />
-                </div>
-                {/* Decorative accent */}
-                <div className="absolute -bottom-3 -right-3 h-full w-full rounded-2xl border-2 border-primary/10 -z-10" aria-hidden="true" />
-              </div>
+            <div className="flex flex-col gap-6 lg:pr-12 text-justify">
+              <p className="text-base leading-relaxed text-muted-foreground">Policier scientifique pendant dix ans, j’ai construit ma carrière autour d’un fil conducteur simple : comprendre les systèmes pour mieux les améliorer.</p>
+              <p className="text-base leading-relaxed text-muted-foreground">
+                Sur le terrain, j’ai appris que chaque détail compte. Observer, analyser, formuler des hypothèses, documenter, tester, ajuster. Je ne codais pas encore, mais je participais déjà à la <strong>réflexion produit</strong>.
+              </p>
+              <p className="text-base leading-relaxed text-muted-foreground">
+                Ma rencontre avec le développement web, dans un cours OpenClassrooms, a prolongé cette trajectoire naturellement. Créer une interface, améliorer un parcours utilisateur, transformer une idée en produit fonctionnel : c’est le même travail d’analyse et de précision, avec un nouveau terrain d’expression. J'ai donc suivi un parcours de formation au code source, JavaScript et React, avec un intérêt particulier pour <strong>l’expérience utilisateur</strong>. J'ai également appris à utiliser Node.js, Express, les API et MongoDB, côté back-end.
+              </p>
+              <p className="text-base leading-relaxed text-muted-foreground">
+                Ce que je veux aujourd'hui ? Intégrer une équipe dynamique où mettre à profit ma rigueur, mon sens du détail, et mon engagement. Construire des <strong>produits utiles, modernes et performants</strong> n’est pas une rupture. C’en est la continuité.
+              </p>
             </div>
           </FadeIn>
         </div>
