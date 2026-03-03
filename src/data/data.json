@@ -1,6 +1,6 @@
 {
   "skills": {
-    "techBadges": [{ "name": "HTML5" }, { "name": "CSS3" }, { "name": "JavaScript" }, { "name": "TypeScript" }, { "name": "React" }, { "name": "Vite" }, { "name": "Sass" }, { "name": "Tailwind CSS" }, { "name": "Node.js" }, { "name": "Express.js" }, { "name": "MongoDB" }, { "name": "Git" }, { "name": "Figma" }, { "name": "API REST" }, { "name": "Lighthouse" }, { "name": "Wave" }, { "name": "Agile & Scrum" }],
+    "techBadges": [{ "name": "HTML5" }, { "name": "CSS3" }, { "name": "JavaScript" }, { "name": "TypeScript" }, { "name": "React" }, { "name": "Vite" }, { "name": "Sass" }, { "name": "Tailwind" }, { "name": "Node.js" }, { "name": "Express" }, { "name": "MongoDB" }, { "name": "Git" }, { "name": "Figma" }, { "name": "Lighthouse" }],
 
     "services": [
       {
@@ -37,7 +37,8 @@
         "context": "Intégration d’un site vitrine pour une agence de voyage à partir d’une maquette Figma, dans un cadre pédagogique exigeant une rigueur technique et une gestion de version.",
         "objectives": "Recréer fidèlement la maquette en HTML/CSS en full responsive. Site fonctionnel sur tous les écrans, livrable validé, repo GitHub structuré.",
         "results": "Site fonctionnel sur tous les écrans, livrable validé, repo GitHub structuré.",
-        "improvements": "Les commits auraient pu être optimisés pour une meilleure lisibilité de l’historique."
+        "improvements": "Les commits auraient pu être optimisés pour une meilleure lisibilité de l’historique.",
+        "skillsDeveloped": "Intégration front-end, responsive design, gestion de projet avec Git."
       },
       "tags": ["HTML5", "CSS3", "Figma", "Git", "GitHub", "Intégration front-end", "Responsive design", "Gestion de projet avec Git"],
       "githubUrl": "https://github.com/trocipon/Repo-booki-proj2.git",
@@ -49,7 +50,8 @@
         "context": "Développement d’un site dynamique pour une architecte, avec gestion de formulaires, événements utilisateurs et appel à une API.",
         "objectives": "Rendre le site interactif via JavaScript, mettre en place une modale, afficher dynamiquement le contenu, gérer des événements.",
         "results": "Site fonctionnel, données affichées dynamiquement, authentification, validation côté client.",
-        "improvements": "Optimiser le nombre de requêtes."
+        "improvements": "Optimiser le nombre de requêtes.",
+        "skillsDeveloped": "JavaScript, consommation d'API REST, gestion des événements, manipulation du DOM, validation de formulaires."
       },
       "tags": ["JavaScript", "API REST", "Figma", "Git", "Gestion des événements", "Manipulation du DOM", "Validation de formulaires"],
       "githubUrl": "https://github.com/trocipon/Repo-Bluel-proj3.git",
@@ -61,7 +63,8 @@
         "context": "Développement du front-end d’une application de location immobilière, avec une architecture composants et une navigation dynamique.",
         "objectives": "Créer une interface avec React, utiliser des composants réutilisables, gérer la navigation entre pages via React Router, et styliser avec Sass.",
         "results": "Application single page fonctionnelle, navigation fluide, interface modulaire.",
-        "improvements": "Optimiser les fonctionnalités de Sass."
+        "improvements": "Optimiser les fonctionnalités de Sass.",
+        "skillsDeveloped": "React, architecture composants, React Router, Sass."
       },
       "tags": ["React", "Vite", "Sass", "Figma", "Git"],
       "githubUrl": "https://github.com/trocipon/Repo-Kasa-proj5.git",
@@ -72,8 +75,9 @@
       "description": {
         "context": "Audit d’un site de photographe présentant des problèmes de SEO, accessibilité et performance, avec un besoin d’optimisation technique.",
         "objectives": "Corriger les erreurs techniques, améliorer l’accessibilité (WCAG), et optimiser les performances pour le référencement.",
-        "results": " Amélioration des scores d'audit, meilleures performances.",
-        "improvements": "Optimisation des images, minification des fichiers css."
+        "results": " Amélioration des performances, de l'accessibilité (score 70 à 100), et du référencement (score 73 à 100).",
+        "improvements": "Optimisation de la version mobile avec focus sur la taille des images, minification des fichiers css.",
+        "skillsDeveloped": "Audit technique, optimisation SEO, accessibilité web, performance web."
       },
       "tags": ["Lighthouse", "Wave", "Git", "Optimisation SEO", "Accessibilité", "Performance"],
       "githubUrl": "https://github.com/trocipon/Repo-Carducci-proj4.git",
@@ -85,7 +89,8 @@
         "context": "Développement du back-end d’un site de notation de livres, avec gestion des données et sécurisation des opérations CRUD.",
         "objectives": "Mettre en place un serveur Node.js avec Express, modéliser les données, et sécuriser les accès via MongoDB.",
         "results": "API fonctionnelle avec endpoints CRUD, base de données structurée, sécurité des données.",
-        "improvements": "Tests d’API, déploiement sur un serveur."
+        "improvements": "Tests d’API, déploiement sur un serveur.",
+        "skillsDeveloped": "Lien back-end/front-end, mise en place d'une base de données, modélisation de données, sécurité web."
       },
       "tags": ["Node.js", "Express", "MongoDB", "Git", "Modélisation de données", "OWASP", "Sécurité"],
       "githubUrl": "https://github.com/trocipon/Repo-MonVieuxGrimoire-proj6.git",
@@ -97,7 +102,8 @@
         "context": "Planification d’un projet de création de menus pour restaurateurs, avec besoin de spécifications techniques et suivi agile.",
         "objectives": "Découper les fonctionnalités en tâches, rédiger les spécifications, et suivre le projet via un outil Kanban.",
         "results": "Présentation claire au client, tableau de suivi mis à jour, méthode de veille établie.",
-        "improvements": "Complétion des spécifications techniques et documentation du projet. Maitrise du stack SQL."
+        "improvements": "Complétion des spécifications techniques et documentation du projet. Maitrise du stack SQL.",
+        "skillsDeveloped": "Méthodologie agile, gestion de projet, rédaction de spécifications techniques, veille technologique."
       },
       "tags": ["Agile & Scrum", "Gestion de projet", "Veille technologique", "Kanban"],
       "githubUrl": "#",
