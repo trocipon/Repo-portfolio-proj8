@@ -1,9 +1,16 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
+import { visualizer } from "rollup-plugin-visualizer";
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    visualizer({
+      filename: "dist/stats.html",
+      open: true,
+    }),
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
@@ -11,6 +18,9 @@ export default defineConfig({
   },
   server: {
     port: 3000,
+    headers: {
+      "Cache-Control": "public, max-age=31536000, immutable",
+    },
   },
   build: {
     minify: "terser",
@@ -55,9 +65,16 @@ export default defineConfig({
           if (id.includes("features/project-modal")) {
             return "project-modal";
           }
+          if (id.includes("features/tech-carousel")) {
+            return "tech-carousel";
+          }
+          if (id.includes("features/contact-form")) {
+            return "contact-form";
+          }
         },
         chunkFileNames: "assets/[name]-[hash].js",
         entryFileNames: "assets/[name]-[hash].js",
+        assetFileNames: "assets/[name]-[hash][extname]",
       },
     },
     reportCompressedSize: false,
