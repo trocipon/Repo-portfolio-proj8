@@ -15,7 +15,7 @@ export function HeroSection() {
             <div className="flex flex-col items-center justify-center text-center h-full">
               <h1 className="text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">Thibaud Rocipon</h1>
               <p className="mt-4 text-lg font-extrabold text-primary md:text-xl">Développeur Front-End</p>
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-foreground/80 md:text-lg">Ancien policier scientifique, aujourd'hui développeur web front-end. J'applique la même exigence d'analyse et de précision à la conception d'interfaces performantes, accessibles et centrées sur l'utilisateur.</p>
+              <p className="mt-6 max-w-xl text-base leading-relaxed text-foreground/80 md:text-lg">Ancien policier scientifique, aujourd'hui développeur web front-end. J'applique la même exigence d'analyse et de précision à la réalisation d'interfaces performantes, accessibles et centrées sur l'utilisateur.</p>
               <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
                 <a
                   href="#projets"
