@@ -55,31 +55,30 @@
 
 /* Icon Styles */
 .flip-card-face .icon {
-  color: var(--primary, #22c55e); /* Couleur verte pour les icônes */
-  background-color: rgba(34, 197, 94, 0.1); /* Fond arrondi avec opacité réduite */
-  border-radius: 50%; /* Forme circulaire */
-  padding: 0.5rem; /* Espacement interne */
-  margin-bottom: 0.5rem; /* Espacement externe */
-  font-size: 2rem; /* Taille des icônes */
+  color: var(--primary, #22c55e);
+  background-color: rgba(34, 197, 94, 0.1);
+  border-radius: 50%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
 }
 
 /* Media Queries */
 @media (max-width: 768px) {
   .flip-card {
-    height: 300px !important; /* Increase height for mobile to fit text */
+    height: 300px !important;
   }
   .flip-card-back {
-    font-size: 0.8rem !important; /* Slightly larger font for readability */
+    font-size: 0.8rem !important;
   }
 }
 @media (min-width: 768px) {
   .flip-card-back {
-    font-size: 0.875rem !important; /* Normal font size for larger screens */
+    font-size: 0.875rem !important;
     line-height: 1.5rem !important;
   }
 }
 
-/* Utility Styles */
 .flip-card-back p {
-  margin: 0 !important; /* Remove margins to prevent overflow */
+  margin: 0 !important;
 }
