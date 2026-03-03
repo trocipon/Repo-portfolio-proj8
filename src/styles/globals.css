@@ -25,20 +25,20 @@
 /* ========================= VARIABLES ========================= */
 :root {
   /* Couleurs principales */
-  --background: #f6f1ea; /* cream light */
-  --foreground: #0f1724; /* dark slate */
+  --background: #ffffff;
+  --foreground: #000000;
   --card: #ffffff;
   --card-foreground: #0f1724;
   --popover: #ffffff;
   --popover-foreground: #0f1724;
-  --primary: #10b981; /* emerald-500 */
+  --primary: #10b981;
   --primary-foreground: #ffffff;
-  --secondary: #f3efe6;
-  --secondary-foreground: #0f1724;
+  --secondary: #eaeaea;
+  --secondary-foreground: #1a1a1a;
   --muted: #f4efe8;
-  --muted-foreground: #6b7280;
+  --muted-foreground: #4a4a4a;
   --accent: #f6efe6;
-  --accent-foreground: #0f1724;
+  --accent-foreground: #1a1a1a;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
   --border: #e6dfd6;
@@ -51,7 +51,7 @@
 }
 
 .dark {
-  --background: #111215; /* dark background */
+  --background: #111215;
   --foreground: #ecf0ea;
   --card: #23272b;
   --card-foreground: #ecf0ea;
@@ -106,7 +106,7 @@
 }
 
 /* ========================= COMPOSANTS ========================= */
-/* Boutons de filtres projets : style identique aux boutons du carrousel skills */
+/* Boutons de filtres projets */
 .project-filter-btn {
   background-color: #fff;
   border: 1px solid var(--primary);
@@ -133,7 +133,15 @@
   box-shadow: 0 2px 8px 0 rgba(16, 185, 129, 0.15);
 }
 
-/* Effet hover pour les boutons dark/light et Envoyer le message */
+/* Optimisation des animations et transitions */
+.project-filter-btn {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  will-change: transform, box-shadow;
+}
+
+/* Effet hover pour les boutons */
 .inline-flex.items-center.gap-2.rounded-lg.bg-primary:hover,
 .theme-toggle:hover,
 button[aria-label*="theme"]:hover,
@@ -174,7 +182,7 @@ button[type="submit"]:hover {
 
 /* Suppression des styles spécifiques aux flip-cards pour centralisation */
 
-/* Optimise les animations - évite forced layout shifts */
+/* Optimise les animations */
 [class*="animate"],
 [class*="transition"] {
   will-change: auto;
@@ -223,7 +231,7 @@ textarea:focus {
 }
 
 /* ========================= POLICES & OPTIMISATIONS ========================= */
-/* Utiliser une pile de fallback système pour minimiser FOUT pendant le chargement de Google Fonts */
+
 @supports (font-display: swap) {
   body {
     font-family:
