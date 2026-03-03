@@ -1,4 +1,4 @@
-import { useTheme } from "./theme-provider";
+import { useTheme } from "./use-theme";
 import { useEffect, useState } from "react";
 
 export function ThemeToggle() {

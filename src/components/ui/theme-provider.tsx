@@ -7,7 +7,7 @@ interface ThemeContextValue {
   setTheme: (theme: string) => void;
 }
 
-const ThemeContext = React.createContext<ThemeContextValue | undefined>(undefined);
+export const ThemeContext = React.createContext<ThemeContextValue | undefined>(undefined);
 
 export function ThemeProvider({ children, attribute, defaultTheme = "light", enableSystem = true }: any) {
   const [theme, setTheme] = React.useState<string>(() => {
@@ -38,10 +38,4 @@ export function ThemeProvider({ children, attribute, defaultTheme = "light", ena
   return <ThemeContext.Provider value={{ theme, setTheme }}>{children}</ThemeContext.Provider>;
 }
 
-export function useTheme() {
-  const ctx = React.useContext(ThemeContext);
-  if (!ctx) {
-    return { theme: "light", setTheme: () => {} };
-  }
-  return ctx;
-}
+// `useTheme` moved to ./use-theme.tsx to keep one top-level export per file
