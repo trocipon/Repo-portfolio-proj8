@@ -1,6 +1,10 @@
+import { useState } from "react";
 import { Linkedin, ArrowUp } from "../utils/icons";
+import LegalModal from "../features/legal-modal";
 
 export function Footer() {
+  const [isLegalModalOpen, setLegalModalOpen] = useState(false);
+
   const currentYear = new Date().getFullYear();
 
   return (
@@ -22,7 +26,14 @@ export function Footer() {
           </a>
         </div>
 
-        <p className="text-xs text-muted-foreground">{`\u00A9 ${currentYear} Thibaud Rocipon. Tous droits réservés.`}</p>
+        {/* Legal Modal */}
+        {isLegalModalOpen && <LegalModal isOpen={isLegalModalOpen} onClose={() => setLegalModalOpen(false)} />}
+        <div className="text-center md:text-right">
+          <button className="mt-1 text-xs font-bold text-muted-foreground hover:underline cursor-pointer" onClick={() => setLegalModalOpen(true)}>
+            Mentions légales
+          </button>
+          <p className="text-xs text-muted-foreground">{`© ${currentYear} Thibaud Rocipon. Tous droits réservés.`}</p>
+        </div>
       </div>
 
       {/* Back to top */}

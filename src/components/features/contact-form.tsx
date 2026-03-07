@@ -145,6 +145,7 @@ export function ContactForm() {
             )}
             {loading ? "Envoi..." : "Envoyer le message"}
           </button>
+          <p className="mt-2 text-xs text-muted-foreground text-left italic">En envoyant ce formulaire, vous acceptez que vos données soient utilisées pour vous répondre, conformément aux mentions légales.</p>
         </form>
       )}
     </div>
