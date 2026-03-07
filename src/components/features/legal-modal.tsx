@@ -19,7 +19,7 @@ const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
           <p className="mt-2 text-sm leading-relaxed text-foreground/80 text-justify">
             <strong>Éditeur du site</strong>
             <br />
-            Le site thibaud-rocipon.dev est édité par Thibaud Rocipon, développeur web basé à Bagnères-De-Bigorre (65) - France.
+            Le site thibaudrocipon.dev est édité par Thibaud Rocipon, développeur web basé à Bagnères-De-Bigorre (65) - France.
             <br />
             Vous pouvez me contacter via le formulaire de contact.
           </p>
