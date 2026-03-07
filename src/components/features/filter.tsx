@@ -7,21 +7,11 @@ interface FilterProps {
   onFilterChange: (filter: string | null) => void;
 }
 
-export const Filter: React.FC<FilterProps> = ({
-  options,
-  activeFilter,
-  onFilterChange,
-}) => {
+export const Filter: React.FC<FilterProps> = ({ options, activeFilter, onFilterChange }) => {
   return (
-    <div
-      className="flex flex-wrap gap-2 mb-4"
-      role="group"
-      aria-label="Filtrer les projets par technologie"
-    >
+    <div className="flex flex-wrap gap-2 mb-4" role="group" aria-label="Filtrer les projets par technologie">
       {options.map((option) => {
-        const badge = techBadgesWithIcons.find(
-          (badge) => badge.name === option
-        );
+        const badge = techBadgesWithIcons.find((badge) => badge.name === option);
 
         const isActive = activeFilter === option;
 
@@ -38,23 +28,11 @@ export const Filter: React.FC<FilterProps> = ({
               focus:outline-none focus-visible:ring-2 
               focus-visible:ring-primary focus-visible:ring-offset-2
               active:scale-95
-              ${
-                isActive
-                  ? "bg-primary text-white border-primary"
-                  : "bg-card text-muted-foreground border-border hover:border-primary hover:bg-emerald-100"
-              }
+              ${isActive ? "bg-primary text-white border-primary" : "bg-card text-muted-foreground border-border hover:border-primary hover:bg-emerald-100"}
+              cursor-pointer
             `}
           >
-            {badge?.iconUrl && (
-              <img
-                src={badge.iconUrl}
-                alt=""
-                aria-hidden="true"
-                className="h-4 w-4"
-                loading="lazy"
-                decoding="async"
-              />
-            )}
+            {badge?.iconUrl && <img src={badge.iconUrl} alt="" aria-hidden="true" className="h-4 w-4" loading="lazy" decoding="async" />}
             {option}
           </button>
         );

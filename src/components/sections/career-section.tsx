@@ -7,7 +7,7 @@ export function CareerSection() {
   const timeline = (data as any).career.timeline;
 
   return (
-    <section id="parcours" className="bg-secondary/50 px-4 py-24" aria-label="Mon parcours">
+    <section id="parcours" tabIndex={-1} className="bg-secondary/50 px-4 py-24" aria-label="Mon parcours">
       <div className="mx-auto max-w-6xl">
         <FadeIn>
           <div className="mb-4 text-sm font-medium uppercase tracking-widest text-primary">Parcours</div>

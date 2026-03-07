@@ -10,7 +10,7 @@ const services = data.skills.services.map((service) => ({
 
 export function SkillsSection() {
   return (
-    <section id="competences" className="bg-secondary/50 px-4 py-10 md:py-16" aria-label="Competences techniques">
+    <section id="competences" tabIndex={-1} className="bg-secondary/50 px-4 py-10 md:py-16" aria-label="Competences techniques">
       <div className="mx-auto max-w-6xl">
         <FadeIn>
           <div className="mb-4 text-sm font-medium uppercase tracking-widest text-primary">Compétences</div>

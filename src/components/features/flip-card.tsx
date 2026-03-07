@@ -21,7 +21,18 @@ export function FlipCard({ title, description, className = "" }: FlipCardProps) 
   }[title];
 
   return (
-    <div className={`flip-card ${className}`} onClick={() => setFlipped((f) => !f)} style={{ perspective: "1000px" }}>
+    <div
+      className={`flip-card ${className}`}
+      onClick={() => setFlipped((f) => !f)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          setFlipped((f) => !f);
+        }
+      }}
+      tabIndex={0}
+      role="button"
+      style={{ perspective: "1000px" }}
+    >
       <div className={`flip-card-inner${flipped ? " flipped" : ""}`}>
         <div className="flip-card-face flip-card-front">
           {Icon && (

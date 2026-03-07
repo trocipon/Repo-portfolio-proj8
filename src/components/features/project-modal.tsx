@@ -7,7 +7,7 @@ export function ProjectModal({ project, onClose }: { project: Project; onClose: 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-foreground/60 backdrop-blur-sm p-4 sm:p-6" onClick={onClose} role="dialog" aria-modal="true" aria-label={`Details du projet ${project.title}`}>
       <div className="relative w-full max-w-lg sm:max-w-5xl max-h-[95vh] sm:max-h-[90vh] rounded-2xl border border-border bg-card p-0 shadow-2xl flex flex-col overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-        <button onClick={onClose} className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground hover:bg-muted z-10 cursor-pointer" aria-label="Fermer">
+        <button onClick={onClose} className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground hover:bg-muted z-10 cursor-pointer" aria-label="Fermer" tabIndex={0} autoFocus>
           <span className="h-4 w-4 flex items-center justify-center">✕</span>
         </button>
         {/* Contenu avec scroll unique */}
@@ -76,15 +76,7 @@ export function ProjectModal({ project, onClose }: { project: Project; onClose: 
           </div>
           {/* Images */}
           <div className="flex flex-col gap-4">
-            {project.images.length === 1 && (
-              <img
-                src={project.images[0]}
-                alt={`Capture d'écran du projet`}
-                className="w-full rounded-lg border border-border block md:hidden"
-                loading="lazy"
-                decoding="async"
-              />
-            )}
+            {project.images.length === 1 && <img src={project.images[0]} alt={`Capture d'écran du projet`} className="w-full rounded-lg border border-border block md:hidden" loading="lazy" decoding="async" />}
             {project.images.length > 1 && (
               <div className="block md:hidden">
                 {" "}

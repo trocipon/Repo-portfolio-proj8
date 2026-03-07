@@ -14,7 +14,7 @@ export function ProjectsSection() {
   const techBadges = ["Tous", "HTML5", "JavaScript", "React", "Node.js"];
 
   return (
-    <section id="projets" className="px-4 py-8 sm:px-6 md:py-12 lg:py-16" aria-label="Mes projets">
+    <section id="projets" tabIndex={-1} className="px-4 py-8 sm:px-6 md:py-12 lg:py-16" aria-label="Mes projets">
       <div className="mx-auto max-w-6xl">
         <FadeIn>
           <div className="mb-4 text-sm font-medium uppercase tracking-widest text-primary">Projets</div>

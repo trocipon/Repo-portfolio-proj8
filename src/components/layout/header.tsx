@@ -16,12 +16,26 @@ const navLinks = [
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement> | React.KeyboardEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith("#")) {
       e.preventDefault();
       const el = document.querySelector(href);
       if (el) {
         el.scrollIntoView({ behavior: "smooth" });
+        (el as HTMLElement).focus(); // Déplace le focus sur la section correspondante
+      }
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLAnchorElement>) => {
+    if (e.key === "Enter" || e.key === " ") {
+      const href = e.currentTarget.getAttribute("href");
+      if (href && href.startsWith("#")) {
+        e.preventDefault();
+        const el = document.querySelector(href);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
       }
     }
   };
@@ -29,11 +43,31 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md" style={{ contain: "layout style" }}>
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 sm:px-8 py-3" aria-label="Navigation principale">
-        <a role="img" aria-label="Retour à l'accueil" href="#accueil" className="w-12 h-8 flex items-center justify-center" onClick={(e) => handleNavClick(e, "#accueil")}></a>
+        <a
+          role="img"
+          aria-label="Retour à l'accueil"
+          href="#accueil"
+          className="w-12 h-8 flex items-center justify-center"
+          onClick={(e) => handleNavClick(e, "#accueil")}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              handleNavClick(e, "#accueil");
+            }
+          }}
+        ></a>
         <ul className="hidden items-center gap-6 md:flex" role="list">
           {navLinks.map((link) => (
             <li key={link.href}>
-              <a href={link.href} className="relative text-base font-bold font-sans text-foreground transition-colors duration-200 px-2 py-1 tracking-wide hover:text-primary after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left" onClick={(e) => handleNavClick(e, link.href)}>
+              <a
+                href={link.href}
+                className="relative text-base font-bold font-sans text-foreground transition-colors duration-200 px-2 py-1 tracking-wide hover:text-primary after:absolute after:left-0 after:-bottom-1 after:w-full after:h-0.5 after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left"
+                onClick={(e) => handleNavClick(e, link.href)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    handleNavClick(e, link.href);
+                  }
+                }}
+              >
                 {link.label}
               </a>
             </li>

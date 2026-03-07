@@ -2,7 +2,7 @@ import { FadeIn } from "@/components/ui/fade-in";
 
 export function AboutSection() {
   return (
-    <section id="a-propos" className="px-4 py-8 sm:px-6 md:py-12 lg:py-16" aria-label="À propos de moi">
+    <section id="a-propos" tabIndex={-1} className="px-4 py-8 sm:px-6 md:py-12 lg:py-16" aria-label="À propos de moi">
       <div className="mx-auto max-w-6xl">
         <FadeIn>
           <div className="mb-4 text-sm font-medium uppercase tracking-widest text-primary">À propos</div>
