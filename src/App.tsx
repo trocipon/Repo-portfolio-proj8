@@ -21,10 +21,10 @@ export default function App() {
         <main>
           <HeroSection />
           <AboutSection />
-          <SkillsSection />
           <Suspense fallback={<SectionLoader />}>
             <LazyProjectsSection />
           </Suspense>
+          <SkillsSection />
           <Suspense fallback={<SectionLoader />}>
             <LazyCareerSection />
           </Suspense>

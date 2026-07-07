@@ -6,8 +6,8 @@ import "../../styles/header.css";
 const navLinks = [
   { label: "Accueil", href: "#accueil" },
   { label: "À propos", href: "#a-propos" },
-  { label: "Compétences", href: "#competences" },
   { label: "Projets", href: "#projets" },
+  { label: "Compétences", href: "#competences" },
   { label: "Parcours", href: "#parcours" },
   { label: "Témoignages", href: "#temoignages" },
   { label: "Contact", href: "#contact" },
