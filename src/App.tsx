@@ -5,7 +5,6 @@ import { HeroSection } from "./components/sections/hero-section";
 import { AboutSection } from "./components/sections/about-section";
 import { SkillsSection } from "./components/sections/skills-section";
 import { Footer } from "./components/layout/footer";
-import { BackgroundPattern } from "./components/ui/background-pattern";
 import { SectionLoader } from "./components/ui/section-loader";
 
 // Lazy load les sections volumineuses pour réduire la chaîne critique
@@ -21,23 +20,20 @@ export default function App() {
         <Header />
         <main>
           <HeroSection />
-          <div style={{ position: "relative" }}>
-            <BackgroundPattern />
-            <AboutSection />
-            <SkillsSection />
-            <Suspense fallback={<SectionLoader />}>
-              <LazyProjectsSection />
-            </Suspense>
-            <Suspense fallback={<SectionLoader />}>
-              <LazyCareerSection />
-            </Suspense>
-            <Suspense fallback={<SectionLoader />}>
-              <LazyTestimonialsSection />
-            </Suspense>
-            <Suspense fallback={<SectionLoader />}>
-              <LazyContactSection />
-            </Suspense>
-          </div>
+          <AboutSection />
+          <SkillsSection />
+          <Suspense fallback={<SectionLoader />}>
+            <LazyProjectsSection />
+          </Suspense>
+          <Suspense fallback={<SectionLoader />}>
+            <LazyCareerSection />
+          </Suspense>
+          <Suspense fallback={<SectionLoader />}>
+            <LazyTestimonialsSection />
+          </Suspense>
+          <Suspense fallback={<SectionLoader />}>
+            <LazyContactSection />
+          </Suspense>
         </main>
         <Footer />
       </ThemeProvider>
