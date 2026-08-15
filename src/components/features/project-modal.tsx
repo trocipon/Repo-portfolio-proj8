@@ -1,9 +1,8 @@
-import React, { Suspense } from "react";
 import { Project } from "../utils/project-utils";
 import { techBadgesWithIcons } from "../utils/techbadges";
 import { FaGithub as Github, FaExternalLinkAlt } from "react-icons/fa";
-const Carousel = React.lazy(() => import("./carousel"));
-const Collapse = React.lazy(() => import("../ui/collapse"));
+import Carousel from "./carousel";
+import Collapse from "../ui/collapse";
 
 export function ProjectModal({ project, onClose }: { project: Project; onClose: () => void }) {
   return (
@@ -44,15 +43,12 @@ export function ProjectModal({ project, onClose }: { project: Project; onClose: 
         <div className="flex flex-col sm:flex-row gap-6 p-6 sm:p-10">
           {/* Colonne gauche */}
           <div className="flex-1 sticky top-0 h-fit">
-            <Suspense fallback={<div>Chargement...</div>}>
-              <Carousel images={project.images} />
-            </Suspense>
+            <Carousel images={project.images} />
           </div>
 
           {/* Colonne droite */}
           <div className="flex-1">
-            <Suspense fallback={<div>Chargement...</div>}>
-              <Collapse title="Contexte">
+            <Collapse title="Contexte">
                 <p className="text-sm text-foreground/80">{project.description.context}</p>
               </Collapse>
               <Collapse title="Objectifs">
@@ -112,7 +108,6 @@ export function ProjectModal({ project, onClose }: { project: Project; onClose: 
                   )}
                 </div>
               </div>
-            </Suspense>
           </div>
         </div>
       </div>

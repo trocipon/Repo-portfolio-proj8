@@ -44,7 +44,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
             alt={`Projet image ${current + 1}`}
             width="700"
             height="700"
-            loading="lazy"
+            loading="eager"
             decoding="async"
             className="rounded-xl border border-border object-contain bg-card shadow-lg"
             style={{
