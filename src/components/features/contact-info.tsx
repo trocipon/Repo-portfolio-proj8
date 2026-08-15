@@ -25,12 +25,16 @@ export function ContactInfo() {
 
       <div className="rounded-xl border border-border bg-card p-6">
         <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">Localisation</h3>
-        <div className="mt-3 flex items-start gap-3">
+        <div className="mt-3 flex items-center gap-3">
           <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
             <MapPin className="h-4 w-4" />
           </div>
           <div>
-            <p className="mt-2 text-sm text-foreground/80">Mobile sur toute la France</p>
+            <p className="text-sm text-foreground/80">
+              Hautes Pyrénées (65)
+              <br />
+              Mobile Sud-Ouest / Nord-Ouest
+            </p>
           </div>
         </div>
       </div>
