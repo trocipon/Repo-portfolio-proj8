@@ -22,15 +22,17 @@ export function AboutSection() {
           {/* Colonne droite : texte */}
           <FadeIn delay={200}>
             <div className="flex flex-col gap-6 lg:pr-12 text-justify">
-              <p className="text-base leading-relaxed text-muted-foreground">Policier scientifique pendant dix ans, j’ai construit ma carrière autour d’un fil conducteur simple : comprendre les systèmes pour mieux les améliorer.</p>
               <p className="text-base leading-relaxed text-muted-foreground">
-                Sur le terrain, j’ai appris que chaque détail compte. Observer, analyser, formuler des hypothèses, documenter, tester, ajuster. Je ne codais pas encore, mais je participais déjà à la <strong>réflexion produit</strong>.
+                Après douze ans en police scientifique, je me reconvertis vers le <strong>Product Design</strong>. Mon parcours m’a appris à analyser des situations complexes, recueillir et croiser l’information, collaborer avec des interlocuteurs très différents et formuler des conclusions précises. Des réflexes qui trouvent naturellement leur place dans une démarche centrée sur les besoins des utilisateurs.
               </p>
               <p className="text-base leading-relaxed text-muted-foreground">
-                Ma rencontre avec le développement web, dans un cours OpenClassrooms, a prolongé cette trajectoire naturellement. Créer une interface, améliorer un parcours utilisateur, transformer une idée en produit fonctionnel : c’est le même travail d’analyse et de précision, avec un nouveau terrain d’expression. J'ai donc suivi un parcours de formation au code source, JavaScript et React, avec un intérêt particulier pour <strong>l’expérience utilisateur</strong>. J'ai également appris à utiliser Node.js, Express, les API et MongoDB, côté back-end.
+                J’ai également été <strong>correspondant projet</strong> sur un outil métier interne : j’ai recueilli les besoins des utilisateurs, suivi les évolutions avec l’équipe technique et testé les fonctionnalités avant leur déploiement. Une première immersion dans le cycle produit, avec la conviction qu’une conception bien pensée peut simplifier le travail quotidien et faire gagner du temps à toute une équipe.
               </p>
               <p className="text-base leading-relaxed text-muted-foreground">
-                Ce que je veux aujourd'hui ? Intégrer une équipe dynamique où mettre à profit ma rigueur, mon sens du détail, et mon engagement. Construire des <strong>produits utiles, modernes et performants</strong> n’est pas une rupture. C’en est la continuité.
+                Aujourd’hui, je me forme au Product Design chez OpenClassrooms. Ma façon de travailler reste la même : <strong>comprendre avant de proposer</strong>. J’observe, j’écoute, j’analyse et je structure avant de concevoir, puis je mesure l’impact pour améliorer les solutions.
+              </p>
+              <p className="text-base leading-relaxed text-muted-foreground">
+                Formé au développement web (JavaScript, React), je peux dialoguer efficacement avec les équipes de développement. Je m’intéresse particulièrement aux produits B2B et SaaS à forte profondeur fonctionnelle, où le design consiste à rendre simples des outils complexes. Je recherche un premier poste de Product Designer junior à partir de <strong>novembre 2026</strong>, mobile dans le Sud-Ouest et le Nord-Ouest.
               </p>
             </div>
           </FadeIn>

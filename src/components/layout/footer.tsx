@@ -12,7 +12,7 @@ export function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 md:flex-row md:justify-between">
         <div className="text-center md:text-left">
           <p className="text-sm font-semibold text-foreground">Thibaud Rocipon</p>
-          <p className="mt-1 text-xs text-muted-foreground">Développeur Web - JavaScript React</p>
+          <p className="mt-1 text-xs text-muted-foreground">Product Designer Junior</p>
         </div>
 
         <div className="flex items-center gap-4">

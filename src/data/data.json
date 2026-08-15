@@ -1,113 +1,243 @@
 {
   "skills": {
-    "techBadges": [{ "name": "HTML5" }, { "name": "CSS3" }, { "name": "JavaScript" }, { "name": "TypeScript" }, { "name": "React" }, { "name": "Vite" }, { "name": "Sass" }, { "name": "Tailwind" }, { "name": "Node.js" }, { "name": "Express" }, { "name": "MongoDB" }, { "name": "Git" }, { "name": "Figma" }, { "name": "Lighthouse" }],
+    "techBadges": [{ "name": "Figma" }, { "name": "Notion" }, { "name": "Canva" }, { "name": "Miro" }, { "name": "V0" }, { "name": "Lovable" }, { "name": "HTML5" }, { "name": "CSS3" }, { "name": "JavaScript" }, { "name": "TypeScript" }, { "name": "React" }, { "name": "Vite" }, { "name": "Sass" }, { "name": "Tailwind" }, { "name": "Node.js" }, { "name": "Express" }, { "name": "MongoDB" }, { "name": "Git" }, { "name": "Photoshop" }, { "name": "GIMP" }, { "name": "Lighthouse" }],
 
     "services": [
       {
-        "title": "Développement Front-End moderne",
-        "description": "Je conçois et développe des applications web modernes, dynamiques et responsives. J’intègre des maquettes avec précision et je construis des interfaces avec une architecture claire et maintenable."
+        "title": "Conception UX/UI",
+        "description": "Je mène des recherches utilisateurs et je structure la réflexion produit avant de concevoir : personas, customer journey map, service blueprint. Je traduis ensuite ces constats en wireframes puis en maquettes Figma, jusqu'au prototypage interactif testable."
       },
       {
-        "title": "Interactivité et API",
-        "description": "Je construis des fonctionnalités interactives qui améliorent l'expérience de l'utilisateur. Je gère les événements, les formulaires et j’intègre des API REST pour afficher des données dynamiques en temps réel."
+        "title": "Culture produit & business",
+        "description": "J'analyse les données existantes (Analytics, CRM, retours utilisateurs et client) pour cadrer les problématiques, je benchmark et je priorise les pistes d'amélioration, et je relie mes recommandations à des indicateurs concrets : OKR, projections KPI, impact business, ROI."
       },
       {
-        "title": "Développement Back-End sécurisé",
-        "description": "Je mets en place des serveurs Node.js avec Express, et des API sécurisées. Je modélise les données, j’implémente des opérations CRUD avec authentification et je structure des bases MongoDB fiables et sécurisées."
-      },
-      {
-        "title": "Performance, accessibilité et qualité",
-        "description": "J’optimise les performances et la qualité des applications web. Je réalise des audits Lighthouse/Wave et j’améliore l’accessibilité à-travers les bonnes pratiques WCAG."
-      },
-      {
-        "title": "Déploiement & environnement",
-        "description": "Je configure les environnements, je versionne avec Git et je déploie des applications prêtes à être utilisées."
-      },
-      {
-        "title": "Méthodologie et gestion de projet",
-        "description": "Je structure les projets web avec la méthodologie agile pour assurer flexibilité, suivi et efficacité. Je rédige les spécifications techniques, j’organise le suivi via des outils Kanban et j’assure une veille technologique."
+        "title": "Culture technique & développement",
+        "description": "Mes bases certifiées en développement web (HTML, CSS, JavaScript, React, API REST) me permettent de collaborer avec les équipes techniques, d'anticiper la faisabilité de mes conceptions et de prototyper rapidement avec des outils comme V0."
       }
     ]
   },
 
   "projects": [
     {
-      "title": "Booki",
+      "title": "Les Cordons Bleus",
+      "type": "pédagogique",
+      "introduction": "Refonte UX du site d'une école de cuisine traditionnelle : audit, recherche utilisateur et prototype avec projections d'impact business.",
+      "year": 2026,
       "description": {
-        "context": "Intégration d’un site vitrine pour une agence de voyage à partir d’une maquette Figma, dans un cadre pédagogique exigeant une rigueur technique et une gestion de version.",
-        "objectives": "Recréer fidèlement la maquette en HTML/CSS en full responsive. Site fonctionnel sur tous les écrans, livrable validé, repo GitHub structuré.",
-        "results": "Site fonctionnel sur tous les écrans, livrable validé, repo GitHub structuré.",
-        "improvements": "Les commits auraient pu être optimisés pour une meilleure lisibilité de l’historique.",
-        "skillsDeveloped": "Intégration front-end, responsive design, gestion de projet avec Git."
+        "context": "Projet pédagogique mené dans le cadre du parcours Product Designer chez OpenClassrooms, sur le site d'une école de cuisine traditionnelle.",
+        "objectives": [
+          "Identifier les problématiques UX du site actuel à partir des données existantes et des retours utilisateurs.",
+          "Proposer une refonte du catalogue de cours et un nouveau funnel de réservation.",
+          "Chiffrer l'impact business des recommandations avant de les prioriser.",
+          "Analyser les données existantes (Analytics, CRM, retours utilisateurs et client) et benchmarker la concurrence.",
+          "Construire des personas et un service blueprint pour cartographier le parcours client.",
+          "Réaliser un audit à froid et un questionnaire client pour objectiver les points de friction.",
+          "Prototyper une version responsive intégrant une fonctionnalité IA, une refonte du catalogue et des contenus enrichis."
+        ],
+        "skillsDeveloped": ["Recherche utilisateur", "Personas", "Service Blueprint", "Audit UX", "Priorisation", "Analyse KPI/ROI"],
+        "improvements": "Le funnel proposé pourrait encore être testé auprès d'utilisateurs réels pour valider les hypothèses avant une mise en production.",
+        "results": [
+          "Livraison d'un audit à froid, d'un questionnaire client et d'un brief UX complet.",
+          "Recommandations priorisées avec projections KPI à 6 et 12 mois.",
+          "Impact business estimé : +120K€ de chiffre d'affaires projeté."
+        ]
       },
-      "tags": ["HTML5", "CSS3", "Figma", "Git", "GitHub", "Intégration front-end", "Responsive design", "Gestion de projet avec Git"],
+      "tags": ["Recherche utilisateur", "Personas", "Service Blueprint", "Figma", "Priorisation", "KPI"],
+      "githubUrl": "#",
+      "images": ["/images/projects/project-cordonsbleus-1.webp", "/images/projects/project-cordonsbleus-2.webp"],
+      "duration": "Juin 2026"
+    },
+    {
+      "title": "E-Moving",
+      "type": "pédagogique",
+      "introduction": "Design d'interface d'un site de vente de vélos et trottinettes électriques, des user flows au prototype interactif.",
+      "year": 2026,
+      "description": {
+        "context": "Projet pédagogique mené dans le cadre du parcours Product Designer chez OpenClassrooms.",
+        "objectives": [
+          "Définir les besoins utilisateurs à partir de customer journey maps.",
+          "Améliorer les user flows existants.",
+          "Structurer un système de composants UI cohérent pour mobile et desktop.",
+          "Créer des wireframes puis des maquettes Figma en autolayout, pour mobile et desktop.",
+          "Prototyper les parcours clés de façon interactive."
+        ],
+        "skillsDeveloped": ["Customer Journey Map", "User flows", "Wireframing", "Design system / composants UI", "Prototypage interactif"],
+        "improvements": "Les composants pourraient être formalisés dans une librairie Figma partagée pour faciliter les futures itérations.",
+        "results": [
+          "Wireframes et maquettes Figma autolayout livrés pour mobile et desktop.",
+          "Système de composants UI structuré.",
+          "Prototype interactif navigable."
+        ]
+      },
+      "tags": ["Figma", "User flows", "CJM", "Wireframing", "Prototypage"],
+      "githubUrl": "#",
+      "images": ["/images/projects/project-emoving-1.webp", "/images/projects/project-emoving-2.webp"],
+      "duration": "Avril 2026"
+    },
+    {
+      "title": "Booki",
+      "type": "pédagogique",
+      "introduction": "Intégration d’un site vitrine pour une agence de voyage à partir d’une maquette Figma",
+      "year": 2025,
+      "description": {
+        "context": "Projet pédagogique mené en 2025, dans le cadre de ma formation OpenClassrooms",
+        "objectives": ["Transformer une maquette Figma en un site fonctionnel avec HTML et CSS.", " Rendre le site entièrement responsive.", "Structurer le code, adopter de bonnes pratiques d’intégration et de gestion de version avec Git."],
+        "skillsDeveloped": ["Intégration front-end : HTML5 et CSS3 natifs, sans librairie tierce", "Maquette : découverte de Figma et réalisation d’un zoning avant le codage", "Structuration du code : isolation des responsabilités, organisation et factorisation", "Responsive design : utilisation des media queries pour tous les écrans.", "Versioning : Git et GitHub pour suivre l’évolution du projet."],
+        "improvements": "S'agissant de mon premier projet de développement, l’historique des commits aurait pu être optimisé afin d’améliorer la lisibilité des différentes étapes de construction du site.",
+        "results": ["Fidélité à la maquette : Le projet respecte entièrement la maquette de référence.", "Responsive design : Le site s’adapte aux écrans desktop, tablette et mobile.", "Livraison : Dépôt GitHub structuré.", "Validation : Projet validé lors de la soutenance."]
+      },
+      "tags": ["HTML5", "CSS3", "Figma", "Git", "GitHub"],
       "githubUrl": "https://github.com/trocipon/Repo-booki-proj2.git",
-      "images": ["/images/projects/project-booki-1.webp", "/images/projects/project-booki-2.webp"]
+      "images": ["/images/projects/project-booki-1.webp", "/images/projects/project-booki-2.webp"],
+      "duration": "6 semaines"
     },
     {
       "title": "Sophie Bluel",
+      "type": "pédagogique",
+      "introduction": "Développement d’un site web dynamique pour une architecte d'intérieur, dans le cadre d’un projet de formation orienté vers l’interactivité côté client.",
       "description": {
-        "context": "Développement d’un site dynamique pour une architecte, avec gestion de formulaires, événements utilisateurs et appel à une API.",
-        "objectives": "Rendre le site interactif via JavaScript, mettre en place une modale, afficher dynamiquement le contenu, gérer des événements.",
-        "results": "Site fonctionnel, données affichées dynamiquement, authentification, validation côté client.",
-        "improvements": "Optimiser le nombre de requêtes.",
-        "skillsDeveloped": "JavaScript, consommation d'API REST, gestion des événements, manipulation du DOM, validation de formulaires."
+        "context": "Projet pédagogique réalisé dans le cadre de ma formation OpenClassrooms, à partir d'une maquette Figma et d'une API backend fournie.",
+        "objectives": [
+          "Rendre le site interactif en JavaScript vanilla, sans framework.",
+          "Afficher dynamiquement les projets de l'architecte à partir d'une API REST.",
+          "Mettre en place une authentification et un mode édition réservé à l'administratrice du site.",
+          "Valider les formulaires côté client avant envoi."
+        ],
+        "skillsDeveloped": [
+          "Manipulation dynamique du DOM en JavaScript vanilla",
+          "Consommation d'une API REST à partir de la documentation Swagger",
+          "Gestion des événements utilisateurs et des modales interactives",
+          "Validation de formulaires côté client avec des expressions régulières (Regex)",
+          "Authentification utilisateur et gestion des droits d'édition",
+          "Versioning avec Git et GitHub"
+        ],
+        "improvements": "L’apprentissage de JavaScript a constitué un défi important sur ce projet, mais m’a permis d’en comprendre les bases en profondeur. Certaines interactions pourraient encore être optimisées, notamment en réduisant le nombre de requêtes vers l’API et en améliorant la gestion des erreurs côté client.",
+        "results": [
+          "Affichage dynamique des projets de l'architecte depuis l'API.",
+          "Interface d'administration avec authentification fonctionnelle.",
+          "Fonctionnalités interactives opérationnelles : modale, filtres, formulaires.",
+          "Projet versionné et documenté sur GitHub."
+        ]
       },
       "tags": ["JavaScript", "API REST", "Figma", "Git", "Gestion des événements", "Manipulation du DOM", "Validation de formulaires"],
       "githubUrl": "https://github.com/trocipon/Repo-Bluel-proj3.git",
-      "images": ["/images/projects/project-sophiebluel-1.webp", "/images/projects/project-sophiebluel-2.webp", "/images/projects/project-sophiebluel-3.webp", "/images/projects/project-sophiebluel-4.webp", "/images/projects/project-sophiebluel-5.webp"]
+      "images": ["/images/projects/project-sophiebluel-1.webp", "/images/projects/project-sophiebluel-2.webp", "/images/projects/project-sophiebluel-3.webp", "/images/projects/project-sophiebluel-4.webp", "/images/projects/project-sophiebluel-5.webp"],
+      "duration": "6 semaines"
     },
     {
       "title": "Kasa",
       "description": {
-        "context": "Développement du front-end d’une application de location immobilière, avec une architecture composants et une navigation dynamique.",
-        "objectives": "Créer une interface avec React, utiliser des composants réutilisables, gérer la navigation entre pages via React Router, et styliser avec Sass.",
-        "results": "Application single page fonctionnelle, navigation fluide, interface modulaire.",
-        "improvements": "Optimiser les fonctionnalités de Sass.",
-        "skillsDeveloped": "React, architecture composants, React Router, Sass."
+        "context": "Développement du front-end d'une application de location immobilière entre particuliers, à partir d'une maquette Figma, avec une architecture à base de composants réutilisables.",
+        "objectives": [
+          "Construire l'interface avec React à partir de la maquette Figma.",
+          "Mettre en place la navigation entre les pages (accueil, logement, à propos, erreur 404) avec React Router.",
+          "Concevoir des composants réutilisables (bannière, carte, tag, accordéon) alimentés par des données JSON.",
+          "Styliser l'interface avec Sass et des variables de design cohérentes."
+        ],
+        "skillsDeveloped": [
+          "Architecture par composants React",
+          "Routage multi-pages avec React Router",
+          "Props et réutilisabilité des composants",
+          "Préprocesseur Sass (variables, mixins, nesting)",
+          "Gestion d'état local (accordéons, galerie d'images)"
+        ],
+        "improvements": "Les fonctionnalités de Sass (mixins, variables partagées) pourraient être davantage mutualisées entre composants, et certains états pourraient être gérés via un contexte React plutôt qu'en local.",
+        "results": [
+          "Application single page fonctionnelle avec navigation fluide entre les logements.",
+          "Composants modulaires et réutilisables (bannière, accordéon, tag).",
+          "Interface fidèle à la maquette Figma, responsive desktop et mobile."
+        ]
       },
       "tags": ["React", "Vite", "Sass", "Figma", "Git"],
       "githubUrl": "https://github.com/trocipon/Repo-Kasa-proj5.git",
-      "images": ["/images/projects/project-kasa-1.webp", "/images/projects/project-kasa-2.webp"]
+      "images": ["/images/projects/project-kasa-1.webp", "/images/projects/project-kasa-2.webp"],
+      "duration": "4 semaines"
     },
     {
       "title": "Nina Carducci",
       "description": {
-        "context": "Audit d’un site de photographe présentant des problèmes de SEO, accessibilité et performance, avec un besoin d’optimisation technique.",
-        "objectives": "Corriger les erreurs techniques, améliorer l’accessibilité (WCAG), et optimiser les performances pour le référencement.",
-        "results": " Amélioration des performances, de l'accessibilité (score 70 à 100), et du référencement (score 73 à 100).",
-        "improvements": "Optimisation de la version mobile avec focus sur la taille des images, minification des fichiers css.",
-        "skillsDeveloped": "Audit technique, optimisation SEO, accessibilité web, performance web."
+        "context": "Audit d'un site de photographe présentant des problèmes de SEO, d'accessibilité et de performance, avec un besoin d'optimisation technique.",
+        "objectives": [
+          "Corriger les erreurs techniques bloquantes identifiées par l'audit initial.",
+          "Améliorer l'accessibilité du site selon les critères WCAG.",
+          "Optimiser les performances et le référencement naturel (SEO)."
+        ],
+        "skillsDeveloped": [
+          "Audit technique avec Lighthouse et Wave",
+          "Optimisation des images (poids, formats, attributs alt)",
+          "Amélioration du HTML sémantique et des contrastes",
+          "Minification CSS et réduction des requêtes bloquantes",
+          "Bonnes pratiques SEO on-page (balises meta, structure des titres)"
+        ],
+        "improvements": "La version mobile pourrait encore être optimisée, notamment sur la taille des images et la minification des fichiers CSS restants.",
+        "results": [
+          "Score de performance et d'accessibilité passé de 70 à 100 sur Lighthouse.",
+          "Score de référencement (SEO) passé de 73 à 100.",
+          "Site conforme aux principaux critères d'accessibilité WCAG."
+        ]
       },
       "tags": ["Lighthouse", "Wave", "Git", "Optimisation SEO", "Accessibilité", "Performance"],
       "githubUrl": "https://github.com/trocipon/Repo-Carducci-proj4.git",
-      "images": ["/images/projects/project-ninacarducci-1.webp", "/images/projects/project-ninacarducci-2.webp", "/images/projects/project-ninacarducci-3.webp"]
+      "images": ["/images/projects/project-ninacarducci-1.webp", "/images/projects/project-ninacarducci-2.webp", "/images/projects/project-ninacarducci-3.webp"],
+      "duration": "1 semaine"
     },
     {
       "title": "Mon Vieux Grimoire",
       "description": {
-        "context": "Développement du back-end d’un site de notation de livres, avec gestion des données et sécurisation des opérations CRUD.",
-        "objectives": "Mettre en place un serveur Node.js avec Express, modéliser les données, et sécuriser les accès via MongoDB.",
-        "results": "API fonctionnelle avec endpoints CRUD, base de données structurée, sécurité des données.",
-        "improvements": "Tests d’API, déploiement sur un serveur.",
-        "skillsDeveloped": "Lien back-end/front-end, mise en place d'une base de données, modélisation de données, sécurité web."
+        "context": "Développement du back-end d'un site de notation de livres, avec gestion des données et sécurisation des opérations CRUD.",
+        "objectives": [
+          "Concevoir une API REST sécurisée avec Node.js et Express.",
+          "Modéliser les données des livres et des utilisateurs dans une base MongoDB.",
+          "Mettre en place l'authentification des utilisateurs et la gestion des droits.",
+          "Gérer l'upload et l'optimisation des images de couverture."
+        ],
+        "skillsDeveloped": [
+          "Conception d'API REST avec Express",
+          "Modélisation de données avec Mongoose / MongoDB",
+          "Authentification par token (JWT) et hashage des mots de passe",
+          "Upload et traitement d'images côté serveur",
+          "Bonnes pratiques de sécurité web (validation des entrées, protection contre les failles courantes)"
+        ],
+        "improvements": "Les tests automatisés de l'API et le déploiement sur un serveur de production restent à mettre en place pour fiabiliser le projet dans la durée.",
+        "results": [
+          "API fonctionnelle avec endpoints CRUD complets pour les livres et les notations.",
+          "Base de données structurée et sécurisée.",
+          "Authentification et gestion des droits opérationnelles."
+        ]
       },
       "tags": ["Node.js", "Express", "MongoDB", "Git", "Modélisation de données", "OWASP", "Sécurité"],
       "githubUrl": "https://github.com/trocipon/Repo-MonVieuxGrimoire-proj6.git",
-      "images": ["/images/projects/project-mvg-1.webp", "/images/projects/project-mvg-2.webp", "/images/projects/project-mvg-3.webp", "/images/projects/project-mvg-4.webp", "/images/projects/project-mvg-5.webp"]
+      "images": ["/images/projects/project-mvg-1.webp", "/images/projects/project-mvg-2.webp", "/images/projects/project-mvg-3.webp", "/images/projects/project-mvg-4.webp", "/images/projects/project-mvg-5.webp"],
+      "duration": "5 semaines"
     },
     {
       "title": "Menu Maker by Qwenta",
       "description": {
-        "context": "Planification d’un projet de création de menus pour restaurateurs, avec besoin de spécifications techniques et suivi agile.",
-        "objectives": "Découper les fonctionnalités en tâches, rédiger les spécifications, et suivre le projet via un outil Kanban.",
-        "results": "Présentation claire au client, tableau de suivi mis à jour, méthode de veille établie.",
-        "improvements": "Complétion des spécifications techniques et documentation du projet. Maitrise du stack SQL.",
-        "skillsDeveloped": "Méthodologie agile, gestion de projet, rédaction de spécifications techniques, veille technologique."
+        "context": "Planification d'un projet de création de menus pour restaurateurs, avec besoin de spécifications techniques et suivi agile.",
+        "objectives": [
+          "Découper les fonctionnalités attendues en tâches priorisées.",
+          "Rédiger des spécifications techniques claires pour l'équipe de développement.",
+          "Suivre l'avancement du projet via un tableau Kanban."
+        ],
+        "skillsDeveloped": [
+          "Rédaction de spécifications fonctionnelles et techniques",
+          "Découpage et priorisation des tâches (méthode Agile)",
+          "Suivi de projet avec un outil Kanban",
+          "Modélisation de données avec le stack SQL",
+          "Veille technologique"
+        ],
+        "improvements": "Les spécifications techniques et la documentation du projet ont depuis été complétées, avec une meilleure maîtrise du stack SQL utilisé pour la modélisation des données.",
+        "results": [
+          "Présentation claire du projet et de ses fonctionnalités au client.",
+          "Tableau de suivi Kanban tenu à jour tout au long du projet.",
+          "Méthode de veille technologique mise en place pour la suite de la formation."
+        ]
       },
       "tags": ["Agile & Scrum", "Gestion de projet", "Veille technologique", "Kanban"],
       "githubUrl": "#",
-      "images": ["/images/projects/project-qwenta-1.webp", "/images/projects/project-qwenta-2.webp", "/images/projects/project-qwenta-3.webp"]
+      "images": ["/images/projects/project-qwenta-1.webp", "/images/projects/project-qwenta-2.webp", "/images/projects/project-qwenta-3.webp"],
+      "duration": "2 semaines"
     }
   ],
 
@@ -115,12 +245,21 @@
     "timeline": [
       {
         "type": "education",
+        "title": "Formation Product Designer",
+        "organization": "OpenClassrooms",
+        "period": "2026 - en cours",
+        "description": "Parcours Product Designer, spécialisation UX/UI Designer. Recherche utilisateur, personas, customer journey map, service blueprint, wireframing, maquettes Figma et prototypage interactif, à travers des projets professionnalisants avec mentorat.",
+        "tags": ["Recherche utilisateur", "Figma", "Prototypage", "Service Blueprint"],
+        "image": "/images/career-agency.webp"
+      },
+      {
+        "type": "education",
         "title": "Formation Développeur Web",
         "organization": "OpenClassrooms",
         "period": "2025 - 2026",
         "description": "Formation intensive en développement web. 7 projets professionalisants avec mentorats. Acquisition de compétences techniques solides en HTML/CSS, JavaScript, React, Node.js, et méthodologie agile.",
         "tags": ["HTML/CSS", "JavaScript", "React", "Node.js"],
-        "image": "/images/career-school.webp"
+        "image": "/images/career-tech.webp"
       },
       {
         "type": "work",
@@ -129,7 +268,7 @@
         "period": "2014 - 2026",
         "description": "Actes techniques dans le domaine de la police scientifique. Travail en équipe, rigueur et souci du détail. Cette expérience m'a permis de développer des compétences en communication et en résolution de problèmes.",
         "tags": ["Adaptabilité", "Amélioration continue", "Méthode", "Collaboration"],
-        "image": "/images/career-agency.webp"
+        "image": "/images/career-school.webp"
       },
       {
         "type": "education",
@@ -155,7 +294,7 @@
   "testimonials": [
     {
       "quote": "Thibaud est un élément qui a démontré l'étendue de ses compétences, en les appliquant avec rigueur et intelligence, dans chacune des missions qui lui ont été confiées à la Division de Police Scientifique de Toulouse. Son investissement a toujours été reconnu par ses pairs et s'est avéré d'un grand soutien dans les périodes de forte activité.",
-      "author": "David Ferran",
+      "author": "David F.",
       "role": "Technicien en chef de police scientifique",
       "company": "Police Nationale"
     }
