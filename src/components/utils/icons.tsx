@@ -1,5 +1,5 @@
 import { FaGraduationCap, FaQuoteLeft, FaTachometerAlt, FaTasks, FaGithub, FaLinkedin, FaBriefcase, FaDownload, FaMapPin, FaMailBulk, FaArrowUp, FaArrowDown, FaPaperPlane } from "react-icons/fa";
-import { MdMonitor, MdFlashOn, MdStorage, MdSpeed, MdRocketLaunch, MdViewKanban } from "react-icons/md";
+import { MdMonitor, MdFlashOn, MdStorage, MdSpeed, MdRocketLaunch, MdViewKanban, MdDesignServices, MdInsights } from "react-icons/md";
 
 export const GraduationCap = FaGraduationCap;
 export const Quote = FaQuoteLeft;
@@ -21,3 +21,5 @@ export const Server = MdStorage;
 export const Rocket = MdRocketLaunch;
 export const Speed = MdSpeed;
 export const ViewKanban = MdViewKanban;
+export const DesignServices = MdDesignServices;
+export const Insights = MdInsights;
