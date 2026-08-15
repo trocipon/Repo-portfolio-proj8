@@ -40,7 +40,7 @@ export default defineConfig({
       output: {
         manualChunks: (id) => {
           // Séparer les dépendances principales
-          if (id.includes("node_modules/react")) {
+          if (id.includes("node_modules/react/") || id.includes("node_modules/react-dom/") || id.includes("node_modules/scheduler/")) {
             return "react-vendor";
           }
           if (id.includes("node_modules")) {
