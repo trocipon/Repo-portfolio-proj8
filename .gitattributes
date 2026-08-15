@@ -1,0 +1,13 @@
+# Force une fin de ligne LF cohérente pour tous les fichiers texte,
+# quel que soit l'OS/éditeur utilisé pour les modifier (évite les diffs
+# entièrement bruités par un simple changement CRLF/LF).
+* text=auto eol=lf
+
+# Fichiers binaires : jamais de conversion de fin de ligne
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary
+*.woff binary
+*.woff2 binary
