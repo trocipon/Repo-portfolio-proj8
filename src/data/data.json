@@ -5,15 +5,18 @@
     "services": [
       {
         "title": "Conception UX/UI",
-        "description": "Je mène des recherches utilisateurs et je structure la réflexion produit avant de concevoir : personas, customer journey map, service blueprint. Je traduis ensuite ces constats en wireframes puis en maquettes Figma, jusqu'au prototypage interactif testable."
+        "description": "Je mène des recherches utilisateurs et je structure la réflexion produit avant de concevoir : personas, customer journey map, service blueprint. Je traduis ensuite ces constats en wireframes puis en maquettes Figma, jusqu'au prototypage interactif testable.",
+        "techBadges": ["Figma", "Canva", "Miro", "Photoshop", "GIMP"]
       },
       {
         "title": "Culture produit & business",
-        "description": "J'analyse les données existantes (Analytics, CRM, retours utilisateurs et client) pour cadrer les problématiques, je benchmark et je priorise les pistes d'amélioration, et je relie mes recommandations à des indicateurs concrets : OKR, projections KPI, impact business, ROI."
+        "description": "J'analyse les données existantes (Analytics, CRM, retours utilisateurs et client) pour cadrer les problématiques, je benchmark et je priorise les pistes d'amélioration, et je relie mes recommandations à des indicateurs concrets : OKR, projections KPI, impact business, ROI.",
+        "techBadges": ["Notion"]
       },
       {
         "title": "Culture technique & développement",
-        "description": "Mes bases certifiées en développement web (HTML, CSS, JavaScript, React, API REST) me permettent de collaborer avec les équipes techniques, d'anticiper la faisabilité de mes conceptions et de prototyper rapidement avec des outils comme V0."
+        "description": "Mes bases certifiées en développement web (HTML, CSS, JavaScript, React, API REST) me permettent de collaborer avec les équipes techniques, d'anticiper la faisabilité de mes conceptions et de prototyper rapidement avec des outils comme V0.",
+        "techBadges": ["HTML5", "CSS3", "JavaScript", "TypeScript", "React", "Vite", "Sass", "Tailwind", "Node.js", "Express", "MongoDB", "Git", "V0", "Lovable", "Lighthouse"]
       }
     ]
   },
@@ -46,7 +49,8 @@
       "tags": ["Recherche utilisateur", "Personas", "Service Blueprint", "Figma", "Priorisation", "KPI"],
       "githubUrl": "#",
       "images": ["/images/projects/project-cordonsbleus-1.webp", "/images/projects/project-cordonsbleus-2.webp"],
-      "duration": "Juin 2026"
+      "duration": "Juin 2026",
+      "featured": true
     },
     {
       "title": "E-Moving",
@@ -73,7 +77,8 @@
       "tags": ["Figma", "User flows", "CJM", "Wireframing", "Prototypage"],
       "githubUrl": "#",
       "images": ["/images/projects/project-emoving-1.webp", "/images/projects/project-emoving-2.webp"],
-      "duration": "Avril 2026"
+      "duration": "Avril 2026",
+      "featured": true
     },
     {
       "title": "Booki",
@@ -89,6 +94,7 @@
       },
       "tags": ["HTML5", "CSS3", "Figma", "Git", "GitHub"],
       "githubUrl": "https://github.com/trocipon/Repo-booki-proj2.git",
+      "liveDemoUrl": "https://trocipon.github.io/Repo-booki-proj2/",
       "images": ["/images/projects/project-booki-1.webp", "/images/projects/project-booki-2.webp"],
       "duration": "6 semaines"
     },
@@ -179,6 +185,7 @@
       },
       "tags": ["Lighthouse", "Wave", "Git", "Optimisation SEO", "Accessibilité", "Performance"],
       "githubUrl": "https://github.com/trocipon/Repo-Carducci-proj4.git",
+      "liveDemoUrl": "https://trocipon.github.io/Repo-Carducci-proj4/",
       "images": ["/images/projects/project-ninacarducci-1.webp", "/images/projects/project-ninacarducci-2.webp", "/images/projects/project-ninacarducci-3.webp"],
       "duration": "1 semaine"
     },

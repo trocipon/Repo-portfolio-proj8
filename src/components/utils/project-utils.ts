@@ -16,7 +16,7 @@ export interface Project {
   tags: string[];
   githubUrl: string;
   images: string[];
-  featured: boolean;
+  featured?: boolean;
   duration: string;
   liveDemoUrl?: string;
   type: "pédagogique" | "professionnel" | "personnel"; // Added type field to differentiate project categories
