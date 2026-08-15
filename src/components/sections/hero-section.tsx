@@ -1,5 +1,6 @@
 import { ArrowDown } from "../utils/icons";
 import { FadeIn } from "@/components/ui/fade-in";
+import { Button } from "../ui/button";
 import { scrollToSection } from "../utils/shared-utils";
 
 export function HeroSection() {
@@ -13,33 +14,33 @@ export function HeroSection() {
               <p className="mt-4 text-lg font-extrabold text-primary md:text-xl">Product Designer Junior</p>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-foreground/80 md:text-lg">Douze ans d'enquête en police scientifique, aujourd'hui au service de la conception produit.</p>
               <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
-                <a
+                <Button
                   href="#projets"
-                  className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                  variant="primary"
                   onClick={(e) => {
                     e.preventDefault();
                     scrollToSection("projets");
                   }}
                 >
                   Voir mes projets
-                </a>
-                <a
+                </Button>
+                <Button
                   href="#contact"
-                  className="inline-flex items-center gap-2 rounded-lg border border-border bg-secondary px-6 py-3 text-sm font-medium text-secondary-foreground transition-colors hover:bg-muted theme-toggle"
+                  variant="secondary"
                   onClick={(e) => {
                     e.preventDefault();
                     scrollToSection("contact");
                   }}
                 >
                   Me contacter
-                </a>
+                </Button>
               </div>
             </div>
           </FadeIn>
           <FadeIn delay={200}>
             <div className="flex items-center justify-center w-full">
               <div className="relative w-full sm:w-80 md:w-96 lg:w-[420px] aspect-[3/4] overflow-hidden rounded-2xl border-2 border-primary/20 shadow-xl">
-                <img src="/images/portrait.webp" alt="Portrait de Thibaud Rocipon" width="420" height="560" loading="lazy" className="h-full w-full object-cover" style={{ contain: "content", aspectRatio: "3/4" }} />
+                <img src="/images/portrait.webp" alt="Portrait de Thibaud Rocipon" width="420" height="560" loading="eager" fetchPriority="high" decoding="async" className="h-full w-full object-cover" style={{ contain: "content", aspectRatio: "3/4" }} />
               </div>
               <div className="absolute -bottom-3 -right-3 w-full sm:w-80 md:w-96 lg:w-[420px] aspect-[3/4] rounded-2xl border-2 border-primary/10 -z-10 hidden lg:block" aria-hidden="true" />
             </div>

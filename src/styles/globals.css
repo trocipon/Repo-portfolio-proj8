@@ -150,18 +150,23 @@ section[id] {
   will-change: transform, box-shadow;
 }
 
-/* Effet hover pour les boutons */
-.inline-flex.items-center.gap-2.rounded-lg.bg-primary:hover,
-.theme-toggle:hover,
-button[aria-label*="theme"]:hover,
-button[type="submit"]:hover {
+/* Effet hover pour les boutons CTA (primary/secondary) */
+.btn-cta:hover {
   box-shadow: 0 2px 8px 0 rgba(30, 58, 95, 0.18);
   transform: translateY(-2px) scale(1.03);
   cursor: pointer;
-  transition:
-    box-shadow 0.2s,
-    transform 0.2s;
   will-change: transform, box-shadow;
+}
+
+/* Effet hover partagé par toutes les cartes cliquables (projets, compétences) */
+.card-interactive {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.card-interactive:hover {
+  box-shadow: 0 6px 24px 0 rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
 }
 
 /* Cards */

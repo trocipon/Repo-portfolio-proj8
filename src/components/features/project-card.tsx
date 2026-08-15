@@ -11,7 +11,7 @@ interface ProjectCardProps {
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
   return (
     <article
-      className="group relative flex cursor-pointer flex-col overflow-hidden rounded-xl border border-border bg-card transition-all hover:border-primary/30 hover:shadow-sm"
+      className="card-interactive group relative flex cursor-pointer flex-col overflow-hidden rounded-xl border border-border bg-card hover:border-primary/30"
       onClick={onClick}
       role="button"
       tabIndex={0}
