@@ -8,12 +8,14 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    if (images.length > 1) {
-      const nextIndex = (current + 1) % images.length;
-      const img = new window.Image();
-      img.src = images[nextIndex];
-    }
-  }, [current, images]);
+    // Disable background scroll when the project modal is open
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      // Re-enable background scroll when the project modal is closed
+      document.body.style.overflow = "";
+    };
+  }, []); // Run only once when the component is mounted
 
   const next = () => setCurrent((prev) => (prev + 1) % images.length);
   const prev = () => setCurrent((prev) => (prev - 1 + images.length) % images.length);
@@ -53,7 +55,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
               display: "block",
               contain: "content",
               willChange: "contents",
-              aspectRatio: "1" ,
+              aspectRatio: "16/9",
             }}
           />
         </div>
@@ -67,13 +69,6 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
       <div className="mt-2 text-sm text-foreground/80 font-medium">
         {current + 1} / {images.length}
       </div>
-      <style>{`
-        @media (max-width: 1024px) {
-          .carousel-container {
-            max-height: 60vh; /* Adjusted for tablet screens */
-          }
-        }
-      `}</style>
     </div>
   );
 };

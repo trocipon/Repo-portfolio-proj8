@@ -17,6 +17,11 @@ export const iconSlugs: Record<string, string> = {
   Git: "git",
   Figma: "figma",
   Lighthouse: "lighthouse",
+  Notion: "notion",
+  Canva: "canva",
+  Miro: "miro",
+  Photoshop: "adobephotoshop",
+  GIMP: "gimp",
 };
 
 export function normalizeKey(s: string): string {
@@ -32,4 +37,18 @@ export function getIconUrl(name: string): string | null {
   const slug = normalizedIconSlugs[key];
 
   return slug ? `https://cdn.simpleicons.org/${slug}` : null;
+}
+
+/**
+ * Défile en douceur jusqu'à la section ciblée puis y déplace le focus,
+ * sans laisser le focus déclencher son propre saut de scroll (preventScroll)
+ * qui viendrait interrompre/écraser l'animation en cours. Point d'entrée
+ * unique utilisé par tous les liens d'ancre du site (nav, boutons du hero,
+ * carrousel de compétences) pour garantir un comportement identique partout.
+ */
+export function scrollToSection(id: string): void {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.scrollIntoView({ behavior: "smooth", block: "start" });
+  el.focus({ preventScroll: true });
 }
