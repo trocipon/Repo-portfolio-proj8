@@ -51,6 +51,7 @@
   font-size: 0.75rem !important;
   line-height: 1.25rem !important;
   word-wrap: break-word !important;
+  padding: 1rem;
 }
 
 /* Icon Styles */
@@ -66,19 +67,22 @@
 /* Ripple Animation */
 @keyframes rippleEffect {
   0% {
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5);
+    box-shadow: 0 0 0 0 rgba(30, 58, 95, 0.5);
   }
   100% {
-    box-shadow: 0 0 0 20px rgba(16, 185, 129, 0);
+    box-shadow: 0 0 0 20px rgba(30, 58, 95, 0);
   }
 }
 
 /* Media Queries */
 @media (max-width: 768px) {
   .flip-card {
-    height: 300px !important;
+    height: auto;
+    min-height: 200px;
   }
+
   .flip-card-back {
+    padding: 1rem;
     font-size: 0.8rem !important;
   }
 }
