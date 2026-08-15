@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ThemeToggle } from "../ui/theme-toggle";
 import { FaBars as Menu, FaTimes as X, FaDownload as Download } from "react-icons/fa";
+import { scrollToSection } from "../utils/shared-utils";
 import "../../styles/header.css";
 
 const navLinks = [
@@ -19,11 +20,7 @@ export function Header() {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement> | React.KeyboardEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith("#")) {
       e.preventDefault();
-      const el = document.querySelector(href);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-        (el as HTMLElement).focus(); // Déplace le focus sur la section correspondante
-      }
+      scrollToSection(href.slice(1));
     }
   };
 
@@ -32,10 +29,7 @@ export function Header() {
       const href = e.currentTarget.getAttribute("href");
       if (href && href.startsWith("#")) {
         e.preventDefault();
-        const el = document.querySelector(href);
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth" });
-        }
+        scrollToSection(href.slice(1));
       }
     }
   };

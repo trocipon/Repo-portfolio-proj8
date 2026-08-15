@@ -1,5 +1,6 @@
 import { useRef, useEffect } from "react";
 import { techBadgesWithIcons } from "../utils/techbadges";
+import { scrollToSection } from "../utils/shared-utils";
 
 export function TechCarousel() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -84,10 +85,7 @@ export function TechCarousel() {
             style={{ contain: "content" }}
             onClick={(e) => {
               e.preventDefault();
-              const target = document.getElementById("projets");
-              if (target) {
-                target.scrollIntoView({ behavior: "smooth" });
-              }
+              scrollToSection("projets");
             }}
           >
             {/* Suppression complète de l'image pour CSS */}

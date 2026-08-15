@@ -1,5 +1,6 @@
 import { ArrowDown } from "../utils/icons";
 import { FadeIn } from "@/components/ui/fade-in";
+import { scrollToSection } from "../utils/shared-utils";
 
 export function HeroSection() {
   return (
@@ -9,18 +10,15 @@ export function HeroSection() {
           <FadeIn delay={100}>
             <div className="flex flex-col items-center justify-center text-center h-full">
               <h1 className="text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">Thibaud Rocipon</h1>
-              <p className="mt-4 text-lg font-extrabold text-primary md:text-xl">Développeur Front-End</p>
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-foreground/80 md:text-lg">Ancien policier scientifique, aujourd'hui développeur web front-end. J'applique la même exigence d'analyse et de précision à la réalisation d'interfaces performantes, accessibles et centrées sur l'utilisateur.</p>
+              <p className="mt-4 text-lg font-extrabold text-primary md:text-xl">Product Designer Junior</p>
+              <p className="mt-6 max-w-xl text-base leading-relaxed text-foreground/80 md:text-lg">Douze ans d'enquête en police scientifique, aujourd'hui au service de la conception produit.</p>
               <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
                 <a
                   href="#projets"
                   className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
                   onClick={(e) => {
                     e.preventDefault();
-                    const target = document.getElementById("projets");
-                    if (target) {
-                      target.scrollIntoView({ behavior: "smooth" });
-                    }
+                    scrollToSection("projets");
                   }}
                 >
                   Voir mes projets
@@ -30,10 +28,7 @@ export function HeroSection() {
                   className="inline-flex items-center gap-2 rounded-lg border border-border bg-secondary px-6 py-3 text-sm font-medium text-secondary-foreground transition-colors hover:bg-muted theme-toggle"
                   onClick={(e) => {
                     e.preventDefault();
-                    const target = document.getElementById("contact");
-                    if (target) {
-                      target.scrollIntoView({ behavior: "smooth" });
-                    }
+                    scrollToSection("contact");
                   }}
                 >
                   Me contacter
@@ -58,13 +53,10 @@ export function HeroSection() {
         aria-label="Défiler vers la section À propos"
         onClick={(e) => {
           e.preventDefault();
-          const target = document.getElementById("a-propos");
-          if (target) {
-            target.scrollIntoView({ behavior: "smooth" });
-          }
+          scrollToSection("a-propos");
         }}
       >
-        <ArrowDown className="h-8 w-8 animate-bounce" />
+        <ArrowDown className="h-8 w-8" />
       </a>
     </section>
   );
