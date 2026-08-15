@@ -1,6 +1,8 @@
 import { useState, useRef } from "react";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { Send } from "../utils/icons";
 import { InputField } from "../ui/input-field";
+import { Button } from "../ui/button";
 
 interface FormState {
   name: string;
@@ -16,7 +18,6 @@ interface Errors {
   subject?: string;
   message?: string;
   honeypot?: string;
-  captcha?: string;
 }
 
 const errorMessages = {
@@ -36,8 +37,8 @@ export function ContactForm() {
   const [errors, setErrors] = useState<Errors>({});
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [captchaValue, setCaptchaValue] = useState<string | null>(null);
   const firstErrorRef = useRef<HTMLInputElement | null>(null);
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   function validate(values: FormState): Errors {
     const newErrors: Errors = {};
@@ -59,12 +60,7 @@ export function ContactForm() {
     setErrors((prev) => ({ ...prev, [e.target.name]: "" }));
   }
 
-  function handleCaptchaChange(value: string | null) {
-    setCaptchaValue(value);
-    setErrors((prev) => ({ ...prev, captcha: "" }));
-  }
-
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const validationErrors = validate(formState);
     setErrors(validationErrors);
@@ -75,9 +71,16 @@ export function ContactForm() {
       return;
     }
     setLoading(true);
+
+    // Vérification invisible en complément du honeypot déjà en place ; comme
+    // pour le téléchargement du CV, le score n'est pas exploitable côté
+    // client (pas de backend pour appeler l'API siteverify avec la clé
+    // secrète), le jeton est transmis à Formspree à titre indicatif.
+    const recaptchaToken = executeRecaptcha ? await executeRecaptcha("contact_form") : null;
+
     fetch("https://formspree.io/f/xbdavaqg", {
       method: "POST",
-      body: JSON.stringify(formState),
+      body: JSON.stringify({ ...formState, recaptchaToken }),
       headers: {
         "Content-Type": "application/json",
       },
@@ -108,9 +111,8 @@ export function ContactForm() {
             onClick={() => {
               setSubmitted(false);
               setFormState({ name: "", email: "", subject: "", message: "", honeypot: "" });
-              setCaptchaValue(null);
             }}
-            className="mt-6 text-sm font-medium text-primary hover:underline"
+            className="mt-6 text-sm font-medium text-primary hover:underline cursor-pointer"
           >
             Envoyer un autre message
           </button>
@@ -134,7 +136,7 @@ export function ContactForm() {
               </span>
             )}
           </div>
-          <button type="submit" className={`inline-flex w-fit items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-60 disabled:cursor-not-allowed`} disabled={loading} aria-busy={loading}>
+          <Button type="submit" variant="primary" className="w-fit disabled:opacity-60 disabled:cursor-not-allowed" disabled={loading} aria-busy={loading}>
             {loading ? (
               <svg className="animate-spin h-4 w-4 mr-2 text-primary-foreground" viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
@@ -144,7 +146,7 @@ export function ContactForm() {
               <Send className="h-4 w-4" />
             )}
             {loading ? "Envoi..." : "Envoyer le message"}
-          </button>
+          </Button>
           <p className="mt-2 text-xs text-muted-foreground text-left italic">En envoyant ce formulaire, vous acceptez que vos données soient utilisées pour vous répondre, conformément aux mentions légales.</p>
         </form>
       )}

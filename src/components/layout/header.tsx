@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ThemeToggle } from "../ui/theme-toggle";
 import { FaBars as Menu, FaTimes as X, FaDownload as Download } from "react-icons/fa";
 import { scrollToSection } from "../utils/shared-utils";
+import { useCvDownload } from "../utils/use-cv-download";
 import "../../styles/header.css";
 
 const navLinks = [
@@ -16,6 +17,7 @@ const navLinks = [
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const downloadCv = useCvDownload();
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement> | React.KeyboardEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith("#")) {
@@ -69,13 +71,17 @@ export function Header() {
         </ul>
 
         <div className="hidden items-center gap-3 md:flex">
+          <button onClick={() => downloadCv()} className="inline-flex items-center gap-2 rounded-lg border border-border bg-secondary px-3.5 py-2 text-sm font-medium text-secondary-foreground transition-colors hover:bg-muted cursor-pointer" aria-label="Télécharger mon CV">
+            <Download className="h-3.5 w-3.5" />
+            CV
+          </button>
           <ThemeToggle />
         </div>
 
         {/* Mobile menu button */}
         <div className="flex items-center gap-3 md:hidden">
           <ThemeToggle />
-          <button onClick={() => setMobileOpen(!mobileOpen)} className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-foreground font-sans md:hidden sm:h-8 sm:w-8" aria-expanded={mobileOpen} aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}>
+          <button onClick={() => setMobileOpen(!mobileOpen)} className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-foreground font-sans md:hidden sm:h-8 sm:w-8 cursor-pointer" aria-expanded={mobileOpen} aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}>
             {mobileOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </button>
         </div>
@@ -97,6 +103,18 @@ export function Header() {
                 </a>
               </li>
             ))}
+            <li>
+              <button
+                onClick={() => {
+                  downloadCv();
+                  setMobileOpen(false);
+                }}
+                className="flex items-center gap-2 py-3 text-base font-bold text-foreground transition-colors duration-200 tracking-wide hover:text-primary px-2 cursor-pointer"
+              >
+                <Download className="h-4 w-4" />
+                Télécharger mon CV
+              </button>
+            </li>
           </ul>
         </div>
       )}
