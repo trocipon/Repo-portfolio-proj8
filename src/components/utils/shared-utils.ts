@@ -46,9 +46,13 @@ export function getIconUrl(name: string): string | null {
  * unique utilisé par tous les liens d'ancre du site (nav, boutons du hero,
  * carrousel de compétences) pour garantir un comportement identique partout.
  */
+export function prefersReducedMotion(): boolean {
+  return typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+}
+
 export function scrollToSection(id: string): void {
   const el = document.getElementById(id);
   if (!el) return;
-  el.scrollIntoView({ behavior: "smooth", block: "start" });
+  el.scrollIntoView({ behavior: prefersReducedMotion() ? "auto" : "smooth", block: "start" });
   el.focus({ preventScroll: true });
 }

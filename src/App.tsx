@@ -20,8 +20,11 @@ export default function App() {
     <div className="font-sans antialiased">
       <GoogleReCaptchaProvider reCaptchaKey={RECAPTCHA_V3_SITE_KEY}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+          <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-primary-foreground">
+            Aller au contenu principal
+          </a>
           <Header />
-          <main>
+          <main id="main-content">
             <HeroSection />
             <AboutSection />
             <Suspense fallback={<SectionLoader />}>

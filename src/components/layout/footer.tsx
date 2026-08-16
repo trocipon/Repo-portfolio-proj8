@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Linkedin, ArrowUp } from "../utils/icons";
 import LegalModal from "../features/legal-modal";
+import { prefersReducedMotion } from "../utils/shared-utils";
 
 export function Footer() {
   const [isLegalModalOpen, setLegalModalOpen] = useState(false);
@@ -27,7 +28,7 @@ export function Footer() {
         </div>
 
         {/* Legal Modal */}
-        {isLegalModalOpen && <LegalModal isOpen={isLegalModalOpen} onClose={() => setLegalModalOpen(false)} />}
+        {isLegalModalOpen && <LegalModal onClose={() => setLegalModalOpen(false)} />}
         <div className="text-center md:text-right">
           <button className="mt-1 text-xs font-bold text-muted-foreground hover:underline cursor-pointer" onClick={() => setLegalModalOpen(true)}>
             Mentions légales
@@ -37,7 +38,7 @@ export function Footer() {
       </div>
 
       {/* Back to top */}
-      <button type="button" className="absolute right-6 -top-5 flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-muted-foreground shadow-sm transition-all cursor-pointer hover:shadow-lg" aria-label="Revenir en haut de la page" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+      <button type="button" className="absolute right-6 -top-5 flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-muted-foreground shadow-sm transition-all cursor-pointer hover:shadow-lg" aria-label="Revenir en haut de la page" onClick={() => window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" })}>
         <ArrowUp className="h-4 w-4 transition-transform duration-200 group-hover:-translate-y-1" />
       </button>
     </footer>
