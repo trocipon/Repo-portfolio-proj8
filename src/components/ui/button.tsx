@@ -15,8 +15,13 @@ type ButtonAsAnchor = BaseProps & React.AnchorHTMLAttributes<HTMLAnchorElement> 
 type ButtonProps = ButtonAsButton | ButtonAsAnchor;
 
 const variantClasses: Record<ButtonVariant, string> = {
-  primary: "bg-primary text-primary-foreground hover:bg-primary/90",
-  secondary: "border border-border bg-secondary text-secondary-foreground hover:bg-muted",
+  primary: "bg-primary text-primary-foreground hover:bg-primary/90 active:bg-primary/80",
+  // Contour plutôt que remplissage plein : la hiérarchie avec le primary
+  // repose sur une différence de forme (plein/contour), pas seulement sur une
+  // nuance de couleur — plus robuste visuellement et en accessibilité. Le
+  // texte utilise --foreground (fort contraste garanti dans les deux thèmes)
+  // plutôt que --primary, qui n'est pas assez contrasté sur fond sombre.
+  secondary: "border border-primary bg-transparent text-foreground hover:bg-primary/10 active:bg-primary/20",
 };
 
 const baseClasses = "btn-cta inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-medium transition-[background-color,box-shadow,transform] duration-200";

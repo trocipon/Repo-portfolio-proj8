@@ -115,47 +115,18 @@ section[id] {
 }
 
 /* ========================= COMPOSANTS ========================= */
-/* Boutons de filtres projets */
-.project-filter-btn {
-  background-color: #fff;
-  border: 1px solid var(--primary);
-  box-shadow: 0 1px 4px 0 rgba(30, 58, 95, 0.06);
-  color: var(--primary);
-  font-weight: 500;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    box-shadow 0.2s;
-  will-change: background-color, color, box-shadow;
-}
-
-.dark .project-filter-btn {
-  background-color: #23272b;
-  color: var(--primary);
-  border: 1px solid var(--primary);
-}
-
-.project-filter-btn:hover,
-.project-filter-btn.active {
-  background-color: var(--primary);
-  color: #fff;
-  box-shadow: 0 2px 8px 0 rgba(30, 58, 95, 0.18);
-}
-
-/* Optimisation des animations et transitions */
-.project-filter-btn {
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-  will-change: transform, box-shadow;
-}
-
-/* Effet hover pour les boutons CTA (primary/secondary) */
+/* États hover/pressed pour les boutons CTA (primary/secondary). La couleur
+   change déjà au survol (voir button.tsx) ; on ajoute juste une ombre légère
+   pour le hover et un léger tassement pour le clic (feedback "pressed"),
+   sans le grossissement précédent qui pouvait paraître gadget. */
 .btn-cta:hover {
   box-shadow: 0 2px 8px 0 rgba(30, 58, 95, 0.18);
-  transform: translateY(-2px) scale(1.03);
   cursor: pointer;
   will-change: transform, box-shadow;
+}
+.btn-cta:active {
+  transform: scale(0.97);
+  box-shadow: 0 1px 4px 0 rgba(30, 58, 95, 0.12);
 }
 
 /* Effet hover partagé par toutes les cartes cliquables (projets, compétences) */
@@ -404,4 +375,18 @@ h6 {
 
 button {
   font-family: var(--font-main) !important;
+}
+
+/* Respecte la préférence système "réduire les animations" : neutralise les
+   transitions/animations CSS déclarées ailleurs (fondus, survols, etc.) sans
+   avoir à dupliquer la condition dans chaque composant. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
