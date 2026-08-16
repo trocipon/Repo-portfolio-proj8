@@ -10,8 +10,10 @@ export function CareerSection() {
     <section id="parcours" tabIndex={-1} className="bg-secondary/50 px-4 py-24" aria-label="Mon parcours">
       <div className="mx-auto max-w-6xl">
         <FadeIn>
-          <div className="mb-4 text-sm font-medium uppercase tracking-widest text-primary">Parcours</div>
-          <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground md:text-4xl">Mon chemin professionnel</h2>
+          <div className="mb-4 flex justify-center sm:justify-start">
+            <span className="rounded-full bg-foreground px-3 py-1 text-xs font-bold uppercase tracking-widest text-background">Parcours</span>
+          </div>
+          <h2 className="text-balance text-center text-3xl font-bold tracking-tight text-foreground sm:text-left md:text-4xl lg:text-5xl">Mon chemin professionnel</h2>
         </FadeIn>
 
         <FadeIn delay={200}>

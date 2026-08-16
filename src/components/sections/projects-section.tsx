@@ -31,9 +31,11 @@ export function ProjectsSection() {
     <section id="projets" tabIndex={-1} className="bg-secondary/50 px-4 py-8 sm:px-6 md:py-12 lg:py-16" aria-label="Mes projets">
       <div className="mx-auto max-w-6xl">
         <FadeIn>
-          <div className="mb-4 text-sm font-medium uppercase tracking-widest text-primary">Projets</div>
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground md:text-4xl">Travaux réalisés</h2>
+          <div className="mb-4 flex justify-center sm:justify-start">
+            <span className="rounded-full bg-foreground px-3 py-1 text-xs font-bold uppercase tracking-widest text-background">Projets</span>
+          </div>
+          <div className="flex flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
+            <h2 className="text-balance text-center text-3xl font-bold tracking-tight text-foreground sm:text-left md:text-4xl lg:text-5xl">Travaux réalisés</h2>
             <Button type="button" variant="secondary" onClick={toggleShowAll}>
               {showAll ? "Voir moins de projets" : "Voir tous les projets"}
             </Button>

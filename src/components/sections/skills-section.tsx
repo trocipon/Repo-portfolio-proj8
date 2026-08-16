@@ -9,8 +9,10 @@ export function SkillsSection() {
     <section id="competences" tabIndex={-1} className="px-4 py-10 md:py-16" aria-label="Competences techniques">
       <div className="mx-auto max-w-6xl">
         <FadeIn>
-          <div className="mb-4 text-sm font-medium uppercase tracking-widest text-primary">Compétences</div>
-          <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground md:text-4xl">Services et stack technique</h2>
+          <div className="mb-4 flex justify-center sm:justify-start">
+            <span className="rounded-full bg-foreground px-3 py-1 text-xs font-bold uppercase tracking-widest text-background">Compétences</span>
+          </div>
+          <h2 className="text-balance text-center text-3xl font-bold tracking-tight text-foreground sm:text-left md:text-4xl lg:text-5xl">Services et stack technique</h2>
         </FadeIn>
         <FadeIn delay={200}>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
