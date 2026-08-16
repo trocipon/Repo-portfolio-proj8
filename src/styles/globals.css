@@ -1,6 +1,11 @@
 @import "tailwindcss";
 
 @theme {
+  /* Enregistrées ici (et non seulement dans :root plus bas) pour que Tailwind
+     génère bien les utilitaires font-main / font-heading — un --font-* défini
+     hors de @theme n'est qu'une variable CSS, pas une classe utilitaire. */
+  --font-main: "Open Sans", "Segoe UI", sans-serif;
+  --font-heading: "Neue Machina", "Space Grotesk", "Open Sans", "Segoe UI", sans-serif;
   --color-background: #f6f1ea;
   --color-foreground: #0f1724;
   --color-card: #ffffff;
