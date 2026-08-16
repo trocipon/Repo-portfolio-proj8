@@ -4,9 +4,14 @@
 
     "services": [
       {
-        "title": "Conception UX/UI",
-        "description": "Je mène des recherches utilisateurs et je structure la réflexion produit avant de concevoir : personas, customer journey map, service blueprint. Je traduis ensuite ces constats en wireframes puis en maquettes Figma, jusqu'au prototypage interactif testable.",
-        "techBadges": ["Figma", "Canva", "Miro", "Photoshop", "GIMP"]
+        "title": "UX — Recherche & structuration",
+        "description": "Je mène des recherches utilisateurs et je structure la réflexion produit avant de concevoir : personas, customer journey map, service blueprint, wireframes basse fidélité.",
+        "techBadges": ["Miro", "Figma", "Notion"]
+      },
+      {
+        "title": "UI — Design & prototypage",
+        "description": "Je traduis ces constats en maquettes Figma à haute fidélité, jusqu'au prototypage interactif testable, avec une attention portée à la cohérence visuelle et au design system.",
+        "techBadges": ["Figma", "Canva", "Photoshop", "GIMP"]
       },
       {
         "title": "Culture produit & business",
@@ -46,7 +51,7 @@
           "Impact business estimé : +120K€ de chiffre d'affaires projeté."
         ]
       },
-      "tags": ["Recherche utilisateur", "Personas", "Service Blueprint", "Figma", "Priorisation", "KPI"],
+      "tags": ["UX", "UI", "Stratégie produit", "Recherche utilisateur", "Personas", "Service Blueprint", "Figma", "Priorisation", "KPI"],
       "githubUrl": "#",
       "beforeUrl": "https://v0-cordon-bleu-school.vercel.app/",
       "liveDemoUrl": "https://les-cordons-bleus-prototype-r8imk0zox-trocipons-projects.vercel.app/",
@@ -81,7 +86,7 @@
           "Prototype interactif navigable."
         ]
       },
-      "tags": ["Figma", "User flows", "CJM", "Wireframing", "Prototypage"],
+      "tags": ["UX", "UI", "Figma", "User flows", "CJM", "Wireframing", "Prototypage"],
       "githubUrl": "#",
       "beforeUrl": "https://www.figma.com/proto/9OBmOrfjQXYh7wlsLKHcDZ/E-moving-P3?node-id=19910-2659&p=f&viewport=25%2C35%2C0.06&t=ZBTVzZBkWHxJOE2G-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
       "liveDemoUrl": "https://www.figma.com/proto/9OBmOrfjQXYh7wlsLKHcDZ/E-moving-P3?node-id=19844-8639&p=f&viewport=147%2C175%2C0.04&t=p3me6y857ZXkwanJ-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=19844%3A8639&page-id=19841%3A3927",
@@ -106,10 +111,11 @@
         "improvements": "S'agissant de mon premier projet de développement, l’historique des commits aurait pu être optimisé afin d’améliorer la lisibilité des différentes étapes de construction du site.",
         "results": ["Fidélité à la maquette : Le projet respecte entièrement la maquette de référence.", "Responsive design : Le site s’adapte aux écrans desktop, tablette et mobile.", "Livraison : Dépôt GitHub structuré.", "Validation : Projet validé lors de la soutenance."]
       },
-      "tags": ["HTML5", "CSS3", "Figma", "Git", "GitHub"],
+      "tags": ["Bases techniques", "HTML5", "CSS3", "Figma", "Git", "GitHub"],
       "githubUrl": "https://github.com/trocipon/Repo-booki-proj2.git",
       "liveDemoUrl": "https://trocipon.github.io/Repo-booki-proj2/",
-      "images": ["/images/projects/project-booki-1.webp", "/images/projects/project-booki-2.webp"],
+      "documents": [{ "label": "Maquette Figma", "url": "https://www.figma.com/design/c2eWtHIAnaPTLCqpsvcAKV/Maquettes-Booki--desktop--mobile--tablette---copie-?node-id=3-0&t=rqaQtQ1UCDyV662B-1" }],
+      "images": ["/images/projects/booki/project-booki-1.webp", "/images/projects/booki/project-booki-2.webp"],
       "duration": "6 semaines"
     },
     {
@@ -140,9 +146,11 @@
           "Projet versionné et documenté sur GitHub."
         ]
       },
-      "tags": ["JavaScript", "API REST", "Figma", "Git", "Gestion des événements", "Manipulation du DOM", "Validation de formulaires"],
+      "tags": ["Bases techniques", "JavaScript", "API REST", "Figma", "Git", "Gestion des événements", "Manipulation du DOM", "Validation de formulaires"],
       "githubUrl": "https://github.com/trocipon/Repo-Bluel-proj3.git",
-      "images": ["/images/projects/project-sophiebluel-1.webp", "/images/projects/project-sophiebluel-2.webp", "/images/projects/project-sophiebluel-3.webp", "/images/projects/project-sophiebluel-4.webp", "/images/projects/project-sophiebluel-5.webp"],
+      "liveDemoUrl": "https://repo-bluel-proj3.vercel.app/",
+      "documents": [{ "label": "Maquette Figma", "url": "https://www.figma.com/design/JJbFJgT4XjAhq7wVfGyA1K/Sophie-Bluel---Desktop--copie-?node-id=0-1&t=mNfVQogP0pPYMK0C-1" }],
+      "images": ["/images/projects/sophie_bluel/project-sophiebluel-1.webp", "/images/projects/sophie_bluel/project-sophiebluel-2.webp", "/images/projects/sophie_bluel/project-sophiebluel-3.webp", "/images/projects/sophie_bluel/project-sophiebluel-4.webp", "/images/projects/sophie_bluel/project-sophiebluel-5.webp"],
       "duration": "6 semaines"
     },
     {
@@ -171,9 +179,11 @@
           "Interface fidèle à la maquette Figma, responsive desktop et mobile."
         ]
       },
-      "tags": ["React", "Vite", "Sass", "Figma", "Git"],
+      "tags": ["Bases techniques", "React", "Vite", "Sass", "Figma", "Git"],
       "githubUrl": "https://github.com/trocipon/Repo-Kasa-proj5.git",
-      "images": ["/images/projects/project-kasa-1.webp", "/images/projects/project-kasa-2.webp"],
+      "liveDemoUrl": "https://repo-kasa-proj5.vercel.app/",
+      "documents": [{ "label": "Maquette Figma", "url": "https://www.figma.com/design/BEHh0vjbMrJLGA2Se3QWxf/Kasa_FR--copie-?node-id=0-1&t=VOhNNhoHiUMgUoot-1" }],
+      "images": ["/images/projects/kasa/project-kasa-1.webp", "/images/projects/kasa/project-kasa-2.webp"],
       "duration": "4 semaines"
     },
     {
@@ -201,10 +211,15 @@
           "Site conforme aux principaux critères d'accessibilité WCAG."
         ]
       },
-      "tags": ["Lighthouse", "Wave", "Git", "Optimisation SEO", "Accessibilité", "Performance"],
+      "tags": ["UX", "Bases techniques", "Lighthouse", "Wave", "Git", "Optimisation SEO", "Accessibilité", "Performance"],
       "githubUrl": "https://github.com/trocipon/Repo-Carducci-proj4.git",
+      "beforeUrl": "https://nina-carducci.github.io/",
       "liveDemoUrl": "https://trocipon.github.io/Repo-Carducci-proj4/",
-      "images": ["/images/projects/project-ninacarducci-1.webp", "/images/projects/project-ninacarducci-2.webp", "/images/projects/project-ninacarducci-3.webp"],
+      "documents": [
+        { "label": "Rapport d'intervention", "url": "/documents/projects/nina_carducci/Rocipon_Thibaud_2_Rapport_d'intervention_112025.pdf" },
+        { "label": "Audit Lighthouse", "url": "/documents/projects/nina_carducci/Rocipon_Thibaud_3_Audit_Lighthouse_112025.pdf" }
+      ],
+      "images": ["/images/projects/nina_carducci/project-ninacarducci-1.webp", "/images/projects/nina_carducci/project-ninacarducci-2.webp", "/images/projects/nina_carducci/project-ninacarducci-3.webp"],
       "duration": "1 semaine"
     },
     {
@@ -233,9 +248,9 @@
           "Authentification et gestion des droits opérationnelles."
         ]
       },
-      "tags": ["Node.js", "Express", "MongoDB", "Git", "Modélisation de données", "OWASP", "Sécurité"],
+      "tags": ["Bases techniques", "Node.js", "Express", "MongoDB", "Git", "Modélisation de données", "OWASP", "Sécurité"],
       "githubUrl": "https://github.com/trocipon/Repo-MonVieuxGrimoire-proj6.git",
-      "images": ["/images/projects/project-mvg-1.webp", "/images/projects/project-mvg-2.webp", "/images/projects/project-mvg-3.webp", "/images/projects/project-mvg-4.webp", "/images/projects/project-mvg-5.webp"],
+      "images": ["/images/projects/mon_vieux_grimoire/project-mvg-1.webp", "/images/projects/mon_vieux_grimoire/project-mvg-2.webp", "/images/projects/mon_vieux_grimoire/project-mvg-3.webp", "/images/projects/mon_vieux_grimoire/project-mvg-4.webp", "/images/projects/mon_vieux_grimoire/project-mvg-5.webp"],
       "duration": "5 semaines"
     },
     {
@@ -263,10 +278,111 @@
           "Méthode de veille technologique mise en place pour la suite de la formation."
         ]
       },
-      "tags": ["Agile & Scrum", "Gestion de projet", "Veille technologique", "Kanban"],
+      "tags": ["Stratégie produit", "Agile & Scrum", "Gestion de projet", "Veille technologique", "Kanban"],
       "githubUrl": "#",
-      "images": ["/images/projects/project-qwenta-1.webp", "/images/projects/project-qwenta-2.webp", "/images/projects/project-qwenta-3.webp"],
+      "documents": [
+        { "label": "Tableau Kanban", "url": "https://app.notion.com/p/304e5417019881688c9add7e516c9961?v=304e5417019881c0a7cf000c7320ade3&source=copy_link" },
+        { "label": "Spécifications techniques", "url": "/documents/projects/qwenta/Rocipon_Thibaud_1_specifications_techniques_022026.pdf" },
+        { "label": "Présentation", "url": "/documents/projects/qwenta/Rocipon_Thibaud_4_presentation_022026.pdf" }
+      ],
+      "images": ["/images/projects/qwenta/project-qwenta-1.webp", "/images/projects/qwenta/project-qwenta-2.webp", "/images/projects/qwenta/project-qwenta-3.webp"],
       "duration": "2 semaines"
+    },
+    {
+      "title": "Les Bambinets",
+      "type": "pédagogique",
+      "year": 2026,
+      "introduction": "Conception d'une application mobile pour apprendre la langue des signes aux jeunes parents et aux professionnels de la petite enfance, de l'arborescence au design system.",
+      "description": {
+        "context": "Projet pédagogique mené dans le cadre du parcours Product Designer chez OpenClassrooms : conception d'une application mobile d'apprentissage de la langue des signes destinée aux jeunes parents et aux professionnels de la petite enfance.",
+        "objectives": [
+          "Structurer l'arborescence et les parcours utilisateurs (apprendre, rechercher, réviser, quiz, questions/réponses).",
+          "Définir une direction artistique rassurante et ludique, adaptée à un public de jeunes parents.",
+          "Construire un moodboard et un design system (couleurs, typographies, composants) cohérents avec cette identité.",
+          "Concevoir des wireframes mobile-first respectant les bonnes pratiques d'accessibilité (contrastes, tailles de cible tactile)."
+        ],
+        "skillsDeveloped": ["User flow", "Moodboard", "Design system", "Accessibilité mobile", "Direction artistique"],
+        "improvements": "Le glossaire de signes et les fonctionnalités de révision pourraient être enrichis et testés auprès d'un panel de parents pour valider la mémorisation.",
+        "results": [
+          "Arborescence complète et user flows validés pour les parcours clés (apprendre, rechercher, réviser, quiz).",
+          "Moodboard et design system livrés : palette, typographies, composants UI, iconographie.",
+          "Wireframes mobile conformes aux critères d'accessibilité (contrastes AA, cibles tactiles suffisantes)."
+        ]
+      },
+      "tags": ["UX", "UI", "Figma"],
+      "githubUrl": "#",
+      "liveDemoUrl": "https://www.figma.com/proto/4pKPRlK92uvIJfQNi6Oo3h/WF--maquette-et-proto-%22Les-bambinets%22?node-id=4075-6&p=f&viewport=25%2C207%2C0.32&t=ntQHiyRbWMLpksWO-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=4075%3A6&page-id=4075%3A5",
+      "documents": [
+        { "label": "User flow", "url": "/documents/projects/les_bambinets/Rocipon_Thibaud_1_UserFlow_072026.pdf" },
+        { "label": "Moodboard", "url": "/documents/projects/les_bambinets/Rocipon_Thibaud_2_Moodboard_072026.pdf" },
+        { "label": "Maquette Figma", "url": "https://www.figma.com/design/4pKPRlK92uvIJfQNi6Oo3h/WF--maquette-et-proto-%22Les-bambinets%22?node-id=4075-5&t=orzBMrVFYKilOber-1" },
+        { "label": "Design system", "url": "https://www.figma.com/design/pvfhmmAlfvmdAjJB7sbqbX/Design-System-%22Les-Bambinets%22?node-id=0-748&t=SOH3ONen9EPcfn4a-1" }
+      ],
+      "images": [],
+      "duration": "À compléter"
+    },
+    {
+      "title": "Flowrate",
+      "type": "pédagogique",
+      "year": 2026,
+      "introduction": "Audit UX croisant analyse qualitative (heuristiques) et données comportementales quantitatives pour prioriser les problèmes d'onboarding d'un SaaS de gestion du temps.",
+      "description": {
+        "context": "Projet pédagogique mené dans le cadre du parcours Product Designer chez OpenClassrooms : audit UX d'un SaaS de gestion du temps et de planification de ressources, destiné aux freelances, agences et dirigeants.",
+        "objectives": [
+          "Réaliser un audit heuristique de l'onboarding selon les 10 heuristiques de Nielsen.",
+          "Croiser ces constats qualitatifs avec des données comportementales quantitatives (taux d'abandon, comportements de session).",
+          "Prioriser les problèmes identifiés selon leur sévérité et leur confirmation par les deux sources.",
+          "Formuler des recommandations actionnables pour réduire l'abandon en onboarding."
+        ],
+        "skillsDeveloped": ["Audit heuristique", "Analyse de données quantitatives", "Priorisation", "Recommandations UX"],
+        "improvements": "Les recommandations gagneraient à être testées via des tests utilisateurs ou de l'A/B testing pour valider leur impact réel sur le taux de conversion.",
+        "results": [
+          "12 problèmes UX identifiés et priorisés selon leur sévérité et leur confirmation qualitative/quantitative.",
+          "Funnel d'onboarding cartographié : abandon de 46% à la création de compte, 31% à la configuration de l'espace de travail, 19% à la formation.",
+          "Recommandations priorisées livrées : indicateur de progression, gestion des erreurs de formulaire, simplification du jargon technique."
+        ]
+      },
+      "tags": ["UX", "Stratégie produit"],
+      "githubUrl": "#",
+      "documents": [
+        { "label": "Audit qualitatif et quantitatif", "url": "https://app.notion.com/p/P6-Product-Designer-Audit-Flowrate-3b7e5417019880d6b91ffc7911a89320?source=copy_link" },
+        { "label": "Croisement des données", "url": "/documents/projects/flowrate/Croisement%20donn%C3%A9es%20audit%20Flowrate.pdf" },
+        { "label": "Roadmap produit", "url": "https://app.notion.com/p/6aae541701988379b08e812abbb2e71d?v=345e5417019883b885a6880f7bfd8ce6&source=copy_link" }
+      ],
+      "images": [],
+      "duration": "À compléter"
+    },
+    {
+      "title": "SNCF Connect",
+      "type": "pédagogique",
+      "year": 2026,
+      "introduction": "Recherche utilisateur qualitative sur le parcours de réservation de billet de l'application SNCF Connect : protocole de test, entretiens et synthèse des irritants.",
+      "description": {
+        "context": "Projet pédagogique mené dans le cadre du parcours Product Designer chez OpenClassrooms : audit UX indépendant du parcours de réservation de billet de l'application SNCF Connect, via des tests utilisateurs qualitatifs.",
+        "objectives": [
+          "Concevoir un protocole de test utilisateur (recrutement, tâches, critères de réussite).",
+          "Mener des entretiens et observer des utilisateurs en situation de réservation.",
+          "Cartographier le parcours utilisateur et identifier les points de friction.",
+          "Synthétiser les résultats et formuler des recommandations priorisées."
+        ],
+        "skillsDeveloped": ["Protocole de test utilisateur", "Conduite d'entretiens", "Cartographie de parcours", "Synthèse et restitution"],
+        "improvements": "L'échantillon testé pourrait être élargi pour confirmer statistiquement les irritants observés et affiner les recommandations selon les profils d'utilisateurs.",
+        "results": [
+          "Protocole de test et grille d'entretien livrés.",
+          "Parcours utilisateur cartographié avec les points de friction identifiés (filtres peu visibles, sélection de siège peu claire, confirmation ambiguë).",
+          "Scores de facilité perçue recueillis par tâche et recommandations priorisées."
+        ]
+      },
+      "tags": ["UX", "Recherche utilisateur"],
+      "githubUrl": "#",
+      "documents": [
+        { "label": "Protocole de test", "url": "/documents/projects/sncf_connect/Rocipon_Thibaud_1_protocole_032026.pdf" },
+        { "label": "Retranscriptions", "url": "/documents/projects/sncf_connect/Rocipon_Thibaud_2_retranscriptions_032026.pdf" },
+        { "label": "Parcours utilisateur", "url": "/documents/projects/sncf_connect/Rocipon_Thibaud_3_parcours_032026.pdf" },
+        { "label": "Présentation", "url": "/documents/projects/sncf_connect/Rocipon_Thibaud_4_pr%C3%A9sentation_032026.pdf" }
+      ],
+      "images": [],
+      "duration": "À compléter"
     }
   ],
 
