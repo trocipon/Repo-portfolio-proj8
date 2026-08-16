@@ -54,7 +54,7 @@ export function HeroSection() {
               reste sous les pastilles dans la même colonne sur desktop. */}
           <FadeIn delay={225} className="order-4 lg:order-1 lg:col-start-1 lg:row-start-3">
             <div className="flex flex-col items-center justify-center text-center h-full">
-              <p className="max-w-xl text-base leading-relaxed text-foreground/80 md:text-lg">Douze ans d'enquête en police scientifique, aujourd'hui au service de la conception produit.</p>
+              <p className="max-w-xl text-base leading-relaxed text-foreground/80 md:text-lg">Douze ans d'enquête en police scientifique, aujourd'hui au service de la conception de produit digital.</p>
               <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
                 <Button
                   href="#projets"
