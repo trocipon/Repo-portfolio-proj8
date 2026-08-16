@@ -1,4 +1,4 @@
-import { DesignServices, Insights, Monitor } from "../utils/icons";
+import { DesignServices, Insights, Monitor, Search } from "../utils/icons";
 import { techBadgesWithIcons } from "../utils/techbadges";
 
 interface FlipCardProps {
@@ -9,7 +9,8 @@ interface FlipCardProps {
 }
 
 const iconByTitle = {
-  "Conception UX/UI": DesignServices,
+  "UX — Recherche & structuration": Search,
+  "UI — Design & prototypage": DesignServices,
   "Culture produit & business": Insights,
   "Culture technique & développement": Monitor,
 };

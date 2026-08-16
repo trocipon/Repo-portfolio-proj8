@@ -3,6 +3,7 @@ import { FadeIn } from "@/components/ui/fade-in";
 import { Project, projects } from "@/components/utils/project-utils";
 import { ProjectCard } from "../features/project-card";
 import { Button } from "../ui/button";
+import { ArrowDown, ArrowUp } from "../utils/icons";
 
 const ProjectModal = lazy(() => import("../features/project-modal").then((m) => ({ default: m.ProjectModal })));
 const ProjectsGridFull = lazy(() => import("../features/projects-grid-full"));
@@ -36,8 +37,9 @@ export function ProjectsSection() {
           </div>
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
             <h2 className="text-balance text-center text-3xl font-bold tracking-tight text-foreground sm:text-left md:text-4xl lg:text-5xl">Travaux réalisés</h2>
-            <Button type="button" variant="secondary" onClick={toggleShowAll}>
+            <Button type="button" variant="tertiary" onClick={toggleShowAll}>
               {showAll ? "Voir moins de projets" : "Voir tous les projets"}
+              {showAll ? <ArrowUp className="h-3.5 w-3.5" aria-hidden="true" /> : <ArrowDown className="h-3.5 w-3.5" aria-hidden="true" />}
             </Button>
           </div>
         </FadeIn>

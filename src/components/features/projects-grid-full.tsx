@@ -7,7 +7,13 @@ interface ProjectsGridFullProps {
   onSelectProject: (project: Project) => void;
 }
 
-const techBadges = ["Tous", "HTML5", "JavaScript", "React", "Node.js"];
+// Filtres orientés démarche Product Design plutôt que stack technique. La
+// dimension produit/business (impact chiffré, priorisation, gestion de
+// projet) a sa propre catégorie pour ne pas être invisible à côté de UX/UI.
+// "Bases techniques" reste disponible pour qui veut vérifier la compétence
+// dev, sans être mis au même niveau que la démarche design — elle vient en
+// appui du propos, pas en concurrence avec lui.
+const filterOptions = ["Tous", "UX", "UI", "Stratégie produit", "Bases techniques"];
 
 export default function ProjectsGridFull({ onSelectProject }: ProjectsGridFullProps) {
   const [activeFilter, setActiveFilter] = useState<string | null>("Tous");
@@ -17,7 +23,7 @@ export default function ProjectsGridFull({ onSelectProject }: ProjectsGridFullPr
   return (
     <>
       <div className="flex flex-wrap gap-2">
-        <Filter options={techBadges} activeFilter={activeFilter} onFilterChange={setActiveFilter} />
+        <Filter options={filterOptions} activeFilter={activeFilter} onFilterChange={setActiveFilter} />
       </div>
       <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {filtered.map((project) => (
