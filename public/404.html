@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Page introuvable | Thibaud Rocipon</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --background: #f6f1ea;
+        --foreground: #0f1724;
+        --primary: #1e3a5f;
+        --primary-foreground: #ffffff;
+        --muted-foreground: #6b7280;
+        --border: #e6dfd6;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --background: #10151f;
+          --foreground: #ecf0ea;
+          --primary: #4d7099;
+          --primary-foreground: #ffffff;
+          --muted-foreground: #94a3b8;
+          --border: #2a3550;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--background);
+        color: var(--foreground);
+        font-family: "Open Sans", "Segoe UI", sans-serif;
+        text-align: center;
+        padding: 1.5rem;
+      }
+      main {
+        max-width: 32rem;
+      }
+      .code {
+        font-family: "Space Grotesk", "Open Sans", sans-serif;
+        font-weight: 700;
+        font-size: 5rem;
+        line-height: 1;
+        color: var(--primary);
+        margin: 0;
+      }
+      h1 {
+        font-family: "Space Grotesk", "Open Sans", sans-serif;
+        font-weight: 700;
+        font-size: 1.5rem;
+        margin: 1rem 0 0.5rem;
+      }
+      p {
+        color: var(--muted-foreground);
+        line-height: 1.6;
+        margin: 0 0 2rem;
+      }
+      a.button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background-color: var(--primary);
+        color: var(--primary-foreground);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        transition: opacity 0.2s;
+      }
+      a.button:hover {
+        opacity: 0.9;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="code">404</p>
+      <h1>Cette page n'existe pas</h1>
+      <p>Le lien suivi est peut-être erroné, ou la page a été déplacée. Retournez à l'accueil pour poursuivre votre visite.</p>
+      <a class="button" href="/">Retour à l'accueil</a>
+    </main>
+  </body>
+</html>
