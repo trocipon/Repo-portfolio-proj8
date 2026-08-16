@@ -1,21 +1,21 @@
 import React from "react";
+import { useModalA11y } from "../utils/use-modal-a11y";
 
 interface LegalModalProps {
-  isOpen: boolean;
   onClose: () => void;
 }
 
-const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
-  if (!isOpen) return null;
+const LegalModal: React.FC<LegalModalProps> = ({ onClose }) => {
+  const dialogRef = useModalA11y(onClose);
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-foreground/60 backdrop-blur-sm p-4 sm:p-6" onClick={onClose} role="dialog" aria-modal="true" aria-label="Mentions légales">
-      <div className="relative w-full max-w-lg sm:max-w-5xl max-h-[95vh] sm:max-h-[90vh] rounded-2xl border border-border bg-card p-0 shadow-2xl flex flex-col overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-        <button onClick={onClose} className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground hover:bg-muted z-10 cursor-pointer" aria-label="Fermer" tabIndex={0} autoFocus>
+      <div ref={dialogRef} className="relative w-full max-w-lg sm:max-w-5xl max-h-[95vh] sm:max-h-[90vh] rounded-2xl border border-border bg-card p-0 shadow-2xl flex flex-col overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+        <button onClick={onClose} className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground hover:bg-muted z-10 cursor-pointer" aria-label="Fermer">
           <span className="h-4 w-4 flex items-center justify-center">✕</span>
         </button>
         <div className="w-full flex flex-col gap-6 p-6 sm:p-10">
-          <h2 className="text-xl font-bold text-foreground text-center">Mentions légales</h2>
+          <h2 className="text-2xl font-bold text-foreground text-center">Mentions légales</h2>
           <p className="mt-2 text-sm leading-relaxed text-foreground/80 text-justify">
             <strong>Éditeur du site</strong>
             <br />
