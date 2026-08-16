@@ -5,23 +5,27 @@ export function AboutSection() {
     <section id="a-propos" tabIndex={-1} className="px-4 py-8 sm:px-6 md:py-12 lg:py-16" aria-label="À propos de moi">
       <div className="mx-auto max-w-6xl">
         <FadeIn>
-          <div className="mb-4 text-sm font-medium uppercase tracking-widest text-primary">À propos</div>
-          <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">Qui suis-je ?</h2>
+          <div className="mb-4 flex justify-center sm:justify-start">
+            <span className="rounded-full bg-foreground px-3 py-1 text-xs font-bold uppercase tracking-widest text-background">À propos</span>
+          </div>
+          <h2 className="text-balance text-center text-3xl font-bold tracking-tight text-foreground sm:text-left md:text-4xl lg:text-5xl">Qui suis-je ?</h2>
         </FadeIn>
 
         <div className="mt-8 md:mt-12 grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-8 md:gap-12 items-center">
           {/* Colonne gauche : photo */}
           <FadeIn delay={100}>
             <div className="flex items-center justify-center w-full h-full">
-              <div className="relative w-full sm:w-80 md:w-96 lg:w-[420px] aspect-[3/4] overflow-hidden rounded-2xl border-2 border-primary/20 shadow-xl">
-                <img src="/images/empreinte-intro.webp" alt="Empreinte digitale intro" width="384" height="384" loading="lazy" className="h-full w-full object-cover" style={{ contain: "content", aspectRatio: "1/1" }} />
+              <div className="relative w-56 sm:w-80 md:w-96 lg:w-[420px] aspect-[3/4]">
+                <div className="relative h-full w-full overflow-hidden rounded-2xl border-2 border-primary/20 shadow-xl">
+                  <img src="/images/empreinte-intro.webp" alt="Empreinte digitale intro" width="384" height="384" loading="lazy" className="h-full w-full object-cover" style={{ contain: "content", aspectRatio: "1/1" }} />
+                </div>
+                <div className="hidden lg:block absolute -bottom-3 -left-3 h-full w-full rounded-2xl border-2 border-primary/10 -z-10" aria-hidden="true" />
               </div>
-              <div className="hidden lg:block absolute -bottom-3 -left-3 w-96 aspect-square rounded-2xl border-2 border-primary/10 -z-10" aria-hidden="true" />
             </div>
           </FadeIn>
           {/* Colonne droite : texte */}
           <FadeIn delay={200}>
-            <div className="flex flex-col gap-6 lg:pr-12 text-justify">
+            <div className="flex flex-col gap-6 lg:pr-12">
               <p className="text-base leading-relaxed text-muted-foreground">
                 Après douze ans en police scientifique, je me reconvertis vers le <strong>Product Design</strong>. Mon parcours m’a appris à analyser des situations complexes, recueillir et croiser l’information, collaborer avec des interlocuteurs très différents et formuler des conclusions précises. Des réflexes qui trouvent naturellement leur place dans une démarche centrée sur les besoins des utilisateurs.
               </p>
