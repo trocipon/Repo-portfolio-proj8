@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowUpRight } from "../utils/icons";
+import { ArrowDown } from "../utils/icons";
 import { FadeIn } from "@/components/ui/fade-in";
 import { Button } from "../ui/button";
 import { scrollToSection } from "../utils/shared-utils";
@@ -14,21 +14,15 @@ export function HeroSection() {
           <FadeIn delay={100} className="order-1 lg:order-1 lg:col-start-1 lg:row-start-1">
             <div className="flex flex-col items-center justify-center text-center h-full">
               <h1 className="text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">Thibaud Rocipon</h1>
-              <p className="mt-4 flex items-center gap-1.5 text-lg font-extrabold text-primary md:text-xl">
-                <ArrowUpRight className="h-5 w-5 shrink-0" aria-hidden="true" />
-                Product Designer Junior
-              </p>
-              <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
-                <span className="rounded-full border border-primary/40 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">Mobile Sud-Ouest / Nord-Ouest</span>
-                <span className="rounded-full border border-primary/40 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">Disponible nov. 2026</span>
-              </div>
+              <p className="mt-4 font-heading text-lg font-bold text-primary md:text-xl">Product Designer Junior</p>
             </div>
           </FadeIn>
 
           {/* Photo : entre le sous-titre et la description sur mobile (order-2),
-              colonne de droite sur desktop, alignée sur la hauteur des deux
-              blocs de texte empilés dans la colonne de gauche. */}
-          <FadeIn delay={150} className="order-2 lg:order-2 lg:col-start-2 lg:row-start-1 lg:row-span-2">
+              colonne de droite sur desktop, alignée sur la hauteur des trois
+              blocs empilés dans la colonne de gauche (sous-titre, pastilles,
+              description). */}
+          <FadeIn delay={150} className="order-2 lg:order-2 lg:col-start-2 lg:row-start-1 lg:row-span-3">
             <div className="flex items-center justify-center w-full h-full">
               {/* Conteneur dédié à la taille exacte de la photo : les deux enfants
                   (photo, cadre décoratif) se positionnent l'un contre l'autre plutôt
@@ -43,9 +37,22 @@ export function HeroSection() {
             </div>
           </FadeIn>
 
-          {/* Bloc 2 : description + CTA. Termine le flux mobile (order-3) ;
-              reste sous le bloc 1 dans la même colonne sur desktop. */}
-          <FadeIn delay={200} className="order-3 lg:order-1 lg:col-start-1 lg:row-start-2">
+          {/* Pastilles : bloc à part entière, positionné entre le sous-titre
+              (texte précédent) et la description (texte suivant) — après la
+              photo sur mobile, entre les deux blocs de texte sur desktop. */}
+          <FadeIn delay={175} className="order-3 lg:order-1 lg:col-start-1 lg:row-start-2">
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              <span className="rounded-full border border-foreground/30 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-foreground">Mobile Sud-Ouest / Nord-Ouest</span>
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-foreground/30 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-foreground">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden="true" />
+                Disponible nov. 2026
+              </span>
+            </div>
+          </FadeIn>
+
+          {/* Bloc description + CTA. Termine le flux mobile (order-4) ;
+              reste sous les pastilles dans la même colonne sur desktop. */}
+          <FadeIn delay={225} className="order-4 lg:order-1 lg:col-start-1 lg:row-start-3">
             <div className="flex flex-col items-center justify-center text-center h-full">
               <p className="max-w-xl text-base leading-relaxed text-foreground/80 md:text-lg">Douze ans d'enquête en police scientifique, aujourd'hui au service de la conception produit.</p>
               <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
