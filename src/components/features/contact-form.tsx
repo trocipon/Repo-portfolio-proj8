@@ -136,17 +136,19 @@ export function ContactForm() {
               </span>
             )}
           </div>
-          <Button type="submit" variant="primary" className="w-fit disabled:opacity-60 disabled:cursor-not-allowed" disabled={loading} aria-busy={loading}>
-            {loading ? (
-              <svg className="animate-spin h-4 w-4 mr-2 text-primary-foreground" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-                <path d="M4 12a8 8 0 018-8" stroke="currentColor" strokeWidth="4" fill="none" />
-              </svg>
-            ) : (
-              <Send className="h-4 w-4" />
-            )}
-            {loading ? "Envoi..." : "Envoyer le message"}
-          </Button>
+          <div className="flex justify-center sm:justify-start">
+            <Button type="submit" variant="primary" className="w-fit disabled:opacity-60 disabled:cursor-not-allowed" disabled={loading} aria-busy={loading}>
+              {loading ? (
+                <svg className="animate-spin h-4 w-4 mr-2 text-primary-foreground" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                  <path d="M4 12a8 8 0 018-8" stroke="currentColor" strokeWidth="4" fill="none" />
+                </svg>
+              ) : (
+                <Send className="h-4 w-4" />
+              )}
+              {loading ? "Envoi..." : "Envoyer le message"}
+            </Button>
+          </div>
           <p className="mt-2 text-xs text-muted-foreground text-left italic">En envoyant ce formulaire, vous acceptez que vos données soient utilisées pour vous répondre, conformément aux mentions légales.</p>
         </form>
       )}
