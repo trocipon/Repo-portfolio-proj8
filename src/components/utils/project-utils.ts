@@ -1,5 +1,4 @@
 import data from "../../data/data.json";
-import { normalizeKey, normalizedIconSlugs, missingIcons } from "./shared-utils";
 
 export interface Project {
   title: string;
@@ -19,21 +18,9 @@ export interface Project {
   featured?: boolean;
   duration: string;
   liveDemoUrl?: string;
+  beforeUrl?: string;
+  documents?: { label: string; url: string }[];
   type: "pédagogique" | "professionnel" | "personnel"; // Added type field to differentiate project categories
-}
-
-const PLACEHOLDER_ICON_URL = "/images/placeholder-icon.svg";
-
-export function getIconUrl(name: string): string | null {
-  const key = normalizeKey(name);
-  const slug = normalizedIconSlugs[key];
-
-  if (!slug) {
-    missingIcons.add(name);
-    console.warn(`Icône manquante pour: ${name}`);
-    return null;
-  }
-  return `https://cdn.simpleicons.org/${slug}`;
 }
 
 export const projects: Project[] = (data as any).projects as Project[];

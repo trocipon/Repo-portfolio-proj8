@@ -48,6 +48,13 @@
       },
       "tags": ["Recherche utilisateur", "Personas", "Service Blueprint", "Figma", "Priorisation", "KPI"],
       "githubUrl": "#",
+      "beforeUrl": "https://v0-cordon-bleu-school.vercel.app/",
+      "liveDemoUrl": "https://les-cordons-bleus-prototype-r8imk0zox-trocipons-projects.vercel.app/",
+      "documents": [
+        { "label": "Audit à froid", "url": "/documents/projects/cordons-bleus/Thibaud_Rocipon_1_auditsilencieux_052026.pdf" },
+        { "label": "Brief UX", "url": "/documents/projects/cordons-bleus/Thibaud_Rocipon_3_brief_UX_052026.pdf" },
+        { "label": "Questionnaire client", "url": "https://trocipon.limesurvey.net/119169?lang=fr&newtest=Y" }
+      ],
       "images": ["/images/projects/project-cordonsbleus-1.webp", "/images/projects/project-cordonsbleus-2.webp"],
       "duration": "Juin 2026",
       "featured": true
@@ -76,6 +83,13 @@
       },
       "tags": ["Figma", "User flows", "CJM", "Wireframing", "Prototypage"],
       "githubUrl": "#",
+      "beforeUrl": "https://www.figma.com/proto/9OBmOrfjQXYh7wlsLKHcDZ/E-moving-P3?node-id=19910-2659&p=f&viewport=25%2C35%2C0.06&t=ZBTVzZBkWHxJOE2G-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
+      "liveDemoUrl": "https://www.figma.com/proto/9OBmOrfjQXYh7wlsLKHcDZ/E-moving-P3?node-id=19844-8639&p=f&viewport=147%2C175%2C0.04&t=p3me6y857ZXkwanJ-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=19844%3A8639&page-id=19841%3A3927",
+      "documents": [
+        { "label": "Support de présentation", "url": "/documents/projects/emoving/Rocipon_Thibaud_1_support_042026.pdf" },
+        { "label": "Wireframes papier (desktop)", "url": "/documents/projects/emoving/Rocipon_Thibaud_2_wireframe_papier_desktop_042026.pdf" },
+        { "label": "Wireframes papier (mobile)", "url": "/documents/projects/emoving/Rocipon_Thibaud_2_wireframe_papier_mobile_042026.pdf" }
+      ],
       "images": ["/images/projects/project-emoving-1.webp", "/images/projects/project-emoving-2.webp"],
       "duration": "Avril 2026",
       "featured": true
@@ -133,6 +147,8 @@
     },
     {
       "title": "Kasa",
+      "type": "pédagogique",
+      "introduction": "Développement front-end d'une application de location immobilière entre particuliers avec React, à partir d'une maquette Figma.",
       "description": {
         "context": "Développement du front-end d'une application de location immobilière entre particuliers, à partir d'une maquette Figma, avec une architecture à base de composants réutilisables.",
         "objectives": [
@@ -162,6 +178,8 @@
     },
     {
       "title": "Nina Carducci",
+      "type": "pédagogique",
+      "introduction": "Audit et optimisation d'un site vitrine de photographe : accessibilité, performance et référencement naturel.",
       "description": {
         "context": "Audit d'un site de photographe présentant des problèmes de SEO, d'accessibilité et de performance, avec un besoin d'optimisation technique.",
         "objectives": [
@@ -191,6 +209,8 @@
     },
     {
       "title": "Mon Vieux Grimoire",
+      "type": "pédagogique",
+      "introduction": "Conception d'une API REST sécurisée pour un site de notation de livres, avec Node.js, Express et MongoDB.",
       "description": {
         "context": "Développement du back-end d'un site de notation de livres, avec gestion des données et sécurisation des opérations CRUD.",
         "objectives": [
@@ -220,6 +240,8 @@
     },
     {
       "title": "Menu Maker by Qwenta",
+      "type": "pédagogique",
+      "introduction": "Cadrage produit et spécifications techniques d'un outil de création de menus pour restaurateurs, suivi en méthode Agile.",
       "description": {
         "context": "Planification d'un projet de création de menus pour restaurateurs, avec besoin de spécifications techniques et suivi agile.",
         "objectives": [
@@ -275,7 +297,7 @@
         "period": "2014 - 2026",
         "description": "Actes techniques dans le domaine de la police scientifique. Travail en équipe, rigueur et souci du détail. Cette expérience m'a permis de développer des compétences en communication et en résolution de problèmes.",
         "tags": ["Adaptabilité", "Amélioration continue", "Méthode", "Collaboration"],
-        "image": "/images/career-school.webp"
+        "image": "/images/empreinte-intro.webp"
       },
       {
         "type": "education",
