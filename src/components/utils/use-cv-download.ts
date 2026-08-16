@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
-const CV_PATH = "/CV_ROCIPON_Thibaud_2026.pdf";
+const CV_PATH = "/documents/CV_ROCIPON_Thibaud_2026.pdf";
 const CV_FILENAME = "CV_ROCIPON_Thibaud_2026.pdf";
 
 // Le site est 100% statique : il n'y a pas de backend pour appeler l'API
