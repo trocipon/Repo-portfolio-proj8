@@ -9,9 +9,15 @@ const LegalModal: React.FC<LegalModalProps> = ({ onClose }) => {
   const dialogRef = useModalA11y(onClose);
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-foreground/60 backdrop-blur-sm p-4 sm:p-6" onClick={onClose} role="dialog" aria-modal="true" aria-label="Mentions légales">
-      <div ref={dialogRef} className="relative w-full max-w-lg sm:max-w-5xl max-h-[95vh] sm:max-h-[90vh] rounded-2xl border border-border bg-card p-0 shadow-2xl flex flex-col overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-        <button onClick={onClose} className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground hover:bg-muted z-10 cursor-pointer" aria-label="Fermer">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center sm:bg-foreground/60 sm:backdrop-blur-sm sm:p-6" onClick={onClose} role="dialog" aria-modal="true" aria-label="Mentions légales">
+      {/* Sur mobile, la modale occupe l'écran entier plutôt que de flotter en
+          carte réduite avec un fond assombri : sur un petit écran, une carte
+          "flottante" prend de toute façon presque toute la place, autant
+          l'assumer comme un vrai écran plein (pas d'arrondi, pas de bordure,
+          pas de backdrop puisqu'il n'y a rien de visible derrière). À partir
+          de sm, on retrouve la carte centrée classique. */}
+      <div ref={dialogRef} className="relative w-full h-full sm:h-auto sm:max-w-5xl max-h-none sm:max-h-[90vh] rounded-none sm:rounded-2xl border-0 sm:border sm:border-border bg-card p-0 shadow-none sm:shadow-2xl flex flex-col overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+        <button onClick={onClose} className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-lg bg-muted/70 sm:bg-transparent text-muted-foreground transition-colors hover:text-foreground hover:bg-muted z-10 cursor-pointer" aria-label="Fermer">
           <span className="h-4 w-4 flex items-center justify-center">✕</span>
         </button>
         <div className="w-full flex flex-col gap-6 p-6 sm:p-10">

@@ -10,9 +10,13 @@ export function ProjectModal({ project, onClose }: { project: Project; onClose: 
   const dialogRef = useModalA11y(onClose);
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-foreground/60 backdrop-blur-sm p-4 sm:p-6" onClick={onClose} role="dialog" aria-modal="true" aria-label={`Details du projet ${project.title}`}>
-      <div ref={dialogRef} className="relative w-full max-w-lg sm:max-w-5xl max-h-[95vh] sm:max-h-[90vh] rounded-2xl border border-border bg-card p-0 shadow-2xl flex flex-col overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-        <button onClick={onClose} className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground hover:bg-muted z-10 cursor-pointer" aria-label="Fermer">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center sm:bg-foreground/60 sm:backdrop-blur-sm sm:p-6" onClick={onClose} role="dialog" aria-modal="true" aria-label={`Details du projet ${project.title}`}>
+      {/* Plein écran sur mobile plutôt qu'une carte flottante avec fond
+          assombri : sur petit écran une carte "flottante" occupe de toute
+          façon presque tout l'espace, autant l'assumer comme un vrai écran
+          (pas d'arrondi/bordure/backdrop). Carte centrée classique dès sm. */}
+      <div ref={dialogRef} className="relative w-full h-full sm:h-auto sm:max-w-5xl max-h-none sm:max-h-[90vh] rounded-none sm:rounded-2xl border-0 sm:border sm:border-border bg-card p-0 shadow-none sm:shadow-2xl flex flex-col overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+        <button onClick={onClose} className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-lg bg-muted/70 sm:bg-transparent text-muted-foreground transition-colors hover:text-foreground hover:bg-muted z-10 cursor-pointer" aria-label="Fermer">
           <span className="h-4 w-4 flex items-center justify-center">✕</span>
         </button>
 
@@ -98,7 +102,17 @@ export function ProjectModal({ project, onClose }: { project: Project; onClose: 
                 </ul>
               </Collapse>
               <div className="w-full p-6 sm:p-10 border-t border-border">
-                <div className="flex flex-wrap justify-center gap-3">
+                {/* Une seule rangée, toutes en composant Button (même gabarit),
+                    classées par poids visuel décroissant : primary (l'action la
+                    plus utile — voir le résultat) puis secondary (code, avant),
+                    puis tertiary (documents PDF, complémentaires). */}
+                <div className="flex flex-wrap items-center justify-center gap-3">
+                  {project.liveDemoUrl && (
+                    <Button href={project.liveDemoUrl} target="_blank" rel="noopener noreferrer" variant="primary" onClick={(e) => e.stopPropagation()}>
+                      <FaExternalLinkAlt className="h-4 w-4" />
+                      Voir le prototype
+                    </Button>
+                  )}
                   {project.githubUrl && project.githubUrl !== "#" ? (
                     <Button href={project.githubUrl} target="_blank" rel="noopener noreferrer" variant="secondary" onClick={(e) => e.stopPropagation()}>
                       <Github className="h-4 w-4" />
@@ -111,23 +125,13 @@ export function ProjectModal({ project, onClose }: { project: Project; onClose: 
                       Voir la version initiale
                     </Button>
                   )}
-                  {project.liveDemoUrl && (
-                    <Button href={project.liveDemoUrl} target="_blank" rel="noopener noreferrer" variant="primary" onClick={(e) => e.stopPropagation()}>
-                      <FaExternalLinkAlt className="h-4 w-4" />
-                      Voir le prototype
+                  {project.documents?.map((doc) => (
+                    <Button key={doc.url} href={doc.url} target="_blank" rel="noopener noreferrer" variant="tertiary" onClick={(e) => e.stopPropagation()}>
+                      <FaFileDownload className="h-4 w-4" />
+                      {doc.label}
                     </Button>
-                  )}
+                  ))}
                 </div>
-                {project.documents && project.documents.length > 0 && (
-                  <div className="mt-5 flex flex-wrap justify-center gap-x-5 gap-y-2">
-                    {project.documents.map((doc) => (
-                      <a key={doc.url} href={doc.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-primary" onClick={(e) => e.stopPropagation()}>
-                        <FaFileDownload className="h-3.5 w-3.5" />
-                        {doc.label}
-                      </a>
-                    ))}
-                  </div>
-                )}
               </div>
           </div>
         </div>
