@@ -28,7 +28,7 @@ export const Filter: React.FC<FilterProps> = ({ options, activeFilter, onFilterC
               focus:outline-none focus-visible:ring-2 
               focus-visible:ring-primary focus-visible:ring-offset-2
               active:scale-95
-              ${isActive ? "bg-primary text-white border-primary" : "bg-card text-muted-foreground border-border hover:border-primary hover:bg-[var(--secondary)]"}
+              ${isActive ? "bg-primary text-white border-primary" : "bg-card text-muted-foreground border-border hover:border-primary hover:bg-primary/10 hover:text-primary"}
               cursor-pointer
             `}
           >

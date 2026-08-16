@@ -25,7 +25,7 @@ export function FlipCard({ title, description, techBadges = [], className = "" }
           <Icon className="h-6 w-6" />
         </div>
       )}
-      <h3 className="text-sm font-semibold text-foreground">{title}</h3>
+      <h3 className="text-base font-semibold text-foreground">{title}</h3>
       <p className="mt-3 text-sm leading-relaxed text-foreground/80">{description}</p>
 
       {badges.length > 0 && (
