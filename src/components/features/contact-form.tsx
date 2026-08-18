@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { useRecaptchaAction } from "../utils/use-recaptcha-action";
 import { Send } from "../utils/icons";
-import { InputField } from "../ui/input-field";
+import { InputField, TextareaField } from "../ui/input-field";
 import { Button } from "../ui/button";
 
 interface FormState {
@@ -43,7 +43,7 @@ export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const successHeadingRef = useRef<HTMLHeadingElement | null>(null);
-  const { executeRecaptcha } = useGoogleReCaptcha();
+  const runRecaptcha = useRecaptchaAction("contact_form");
 
   useEffect(() => {
     if (submitted) successHeadingRef.current?.focus();
@@ -90,11 +90,10 @@ export function ContactForm() {
     }
     setLoading(true);
 
-    // Vérification invisible en complément du honeypot déjà en place ; comme
-    // pour le téléchargement du CV, le score n'est pas exploitable côté
-    // client (pas de backend pour appeler l'API siteverify avec la clé
-    // secrète), le jeton est transmis à Formspree à titre indicatif.
-    const recaptchaToken = executeRecaptcha ? await executeRecaptcha("contact_form") : null;
+    // Vérification invisible en complément du honeypot déjà en place ; le
+    // jeton est transmis à Formspree à titre indicatif (voir use-recaptcha-
+    // action.ts pour le détail du fonctionnement sur un site statique).
+    const recaptchaToken = await runRecaptcha();
 
     fetch("https://formspree.io/f/xbdavaqg", {
       method: "POST",
@@ -145,17 +144,7 @@ export function ContactForm() {
             <InputField id="email" label="Email" type="email" value={formState.email} onChange={handleChange} error={errors.email} placeholder="votre@email.com" />
           </div>
           <InputField id="subject" label="Sujet" type="text" value={formState.subject} onChange={handleChange} error={errors.subject} placeholder="Sujet de votre message" />
-          <div className="flex flex-col gap-2">
-            <label htmlFor="message" className="text-sm font-medium text-foreground">
-              Message
-            </label>
-            <textarea id="message" name="message" required rows={5} value={formState.message} onChange={handleChange} className={`resize-none rounded-lg border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary ${errors.message ? "border-red-400" : "border-input"}`} placeholder="Contenu de votre message" aria-required="true" aria-invalid={!!errors.message} aria-describedby={errors.message ? "error-message" : undefined} />
-            {errors.message && (
-              <span id="error-message" className="text-xs text-red-500 mt-1" role="alert">
-                {errors.message}
-              </span>
-            )}
-          </div>
+          <TextareaField id="message" label="Message" value={formState.message} onChange={handleChange} error={errors.message} placeholder="Contenu de votre message" />
           {/* Les deux mentions légales (consentement + reCAPTCHA) forment un
               même bloc de lecture : gap réduit entre elles, indépendant du
               gap-5 du formulaire qui les sépare des champs au-dessus et du
