@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 
 interface CarouselProps {
   images: string[];
+  projectTitle?: string;
 }
 
-const Carousel: React.FC<CarouselProps> = ({ images }) => {
+const Carousel: React.FC<CarouselProps> = ({ images, projectTitle }) => {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
@@ -39,7 +40,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
   return (
     <div className="relative flex flex-col items-center justify-center w-full py-4">
       <div className="relative flex items-center justify-center w-full">
-        <button onClick={prev} aria-label="Image précédente" className="absolute left-2 z-20 flex items-center justify-center rounded-full bg-card border border-border shadow-md p-2 text-primary hover:bg-primary hover:text-primary-foreground active:bg-primary active:text-primary-foreground focus-visible:bg-primary focus-visible:text-primary-foreground transition-colors duration-200 cursor-pointer">
+        <button onClick={prev} aria-label="Image précédente" className="absolute left-2 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-card border border-border shadow-md text-primary hover:bg-primary hover:text-primary-foreground active:bg-primary active:text-primary-foreground focus-visible:bg-primary focus-visible:text-primary-foreground transition-colors duration-200 cursor-pointer">
           <span className="sr-only">Image précédente</span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -55,7 +56,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
         >
           <img
             src={images[current]}
-            alt={`Projet image ${current + 1}`}
+            alt={projectTitle ? `${projectTitle} — capture ${current + 1} sur ${images.length}` : `Capture ${current + 1} sur ${images.length}`}
             width="700"
             height="394"
             loading="eager"
@@ -73,7 +74,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
             }}
           />
         </div>
-        <button onClick={next} aria-label="Image suivante" className="absolute right-2 z-20 flex items-center justify-center rounded-full bg-card border border-border shadow-md p-2 text-primary hover:bg-primary hover:text-primary-foreground active:bg-primary active:text-primary-foreground focus-visible:bg-primary focus-visible:text-primary-foreground transition-colors duration-200 cursor-pointer">
+        <button onClick={next} aria-label="Image suivante" className="absolute right-2 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-card border border-border shadow-md text-primary hover:bg-primary hover:text-primary-foreground active:bg-primary active:text-primary-foreground focus-visible:bg-primary focus-visible:text-primary-foreground transition-colors duration-200 cursor-pointer">
           <span className="sr-only">Image suivante</span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />

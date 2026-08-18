@@ -22,8 +22,8 @@ export const Filter: React.FC<FilterProps> = ({ options, activeFilter, onFilterC
             aria-pressed={isActive}
             onClick={() => onFilterChange(option)}
             className={`
-              group inline-flex shrink-0 items-center gap-2.5 
-              rounded-full border px-4 py-2 text-sm font-medium 
+              group inline-flex shrink-0 items-center gap-2.5
+              rounded-full border px-4 py-3 text-sm font-medium
               transition-all
               focus:outline-none focus-visible:ring-2 
               focus-visible:ring-primary focus-visible:ring-offset-2

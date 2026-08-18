@@ -17,14 +17,14 @@ const LegalModal: React.FC<LegalModalProps> = ({ onClose }) => {
           pas de backdrop puisqu'il n'y a rien de visible derrière). À partir
           de sm, on retrouve la carte centrée classique. */}
       <div ref={dialogRef} className="relative w-full h-full sm:h-auto sm:max-w-5xl max-h-none sm:max-h-[90vh] rounded-none sm:rounded-2xl border-0 sm:border sm:border-border bg-card p-0 shadow-none sm:shadow-2xl flex flex-col overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-        {/* Barre fixe, même correctif que project-modal.tsx : un bouton de
-            fermeture absolu à l'intérieur d'un conteneur overflow-y-auto
-            défile hors champ avec le reste du contenu. */}
+        {/* Barre fixe : reste au sommet pendant le défilement du contenu
+            (un bouton de fermeture positionné en absolu à l'intérieur d'un
+            conteneur overflow-y-auto défilerait hors champ avec le reste). */}
         <div className="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-border bg-card/95 px-4 py-3 backdrop-blur-sm sm:px-6">
           <p className="truncate text-sm font-semibold text-foreground sm:text-base" aria-hidden="true">
             Mentions légales
           </p>
-          <button onClick={onClose} className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground hover:bg-muted cursor-pointer" aria-label="Fermer">
+          <button onClick={onClose} className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground hover:bg-muted cursor-pointer" aria-label="Fermer">
             <span className="h-4 w-4 flex items-center justify-center">✕</span>
           </button>
         </div>

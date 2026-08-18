@@ -29,8 +29,9 @@ const variantClasses: Record<ButtonVariant, string> = {
   // CTA — seulement le soulignement (plus le curseur et une icône, le cas
   // échéant). On garde quand même le tassement au clic (sans ombre) : c'est
   // un retour tactile cohérent avec les autres boutons, pas un effet visuel
-  // "carte" comme le hover de btn-cta.
-  tertiary: "px-1 py-2 bg-transparent text-primary hover:underline underline-offset-4 active:text-primary/70 active:scale-95 cursor-pointer",
+  // "carte" comme le hover de btn-cta. py-3 (plutôt que py-2) pour atteindre
+  // les 44px de hauteur de cible tactile malgré l'absence de fond visible.
+  tertiary: "px-1 py-3 bg-transparent text-primary hover:underline underline-offset-4 active:text-primary/70 active:scale-95 cursor-pointer",
 };
 
 const baseClasses = "inline-flex items-center justify-center gap-2 rounded-lg text-sm font-medium transition-[background-color,box-shadow,transform,color] duration-200";
