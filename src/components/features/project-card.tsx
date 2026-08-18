@@ -1,5 +1,5 @@
 import React from "react";
-import { Project } from "../utils/project-utils";
+import { Project, projectTypeBadgeStyles, projectTypeEmoji } from "../utils/project-utils";
 import { Github } from "../utils/icons";
 import { getTagVisual } from "../utils/tag-visuals";
 import { TagPill } from "../ui/tag-pill";
@@ -52,22 +52,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) =>
                 <TagPill key={tag} name={tag} />
               ))}
           </div>
-          <span className="inline-flex shrink-0 items-center gap-1 rounded-md border border-border bg-secondary px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
-            {project.type === "pédagogique" && (
-              <span className="text-sm text-primary" title="Projet pédagogique">
-                🎓
-              </span>
-            )}
-            {project.type === "professionnel" && (
-              <span className="text-sm text-secondary" title="Projet professionnel">
-                💼
-              </span>
-            )}
-            {project.type === "personnel" && (
-              <span className="text-sm text-accent" title="Projet personnel">
-                🌟
-              </span>
-            )}
+          <span className={`inline-flex shrink-0 items-center gap-1 rounded-md border px-2 py-0.5 text-[10px] font-medium text-muted-foreground ${projectTypeBadgeStyles[project.type]}`}>
+            <span className="text-sm" title={`Projet ${project.type}`}>
+              {projectTypeEmoji[project.type]}
+            </span>
             {project.year}
           </span>
         </div>
