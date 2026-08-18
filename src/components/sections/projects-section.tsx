@@ -3,7 +3,7 @@ import { FadeIn } from "@/components/ui/fade-in";
 import { Project, projects } from "@/components/utils/project-utils";
 import { ProjectCard } from "../features/project-card";
 import { Button } from "../ui/button";
-import { ArrowDown, ArrowUp } from "../utils/icons";
+import { ArrowDown } from "../utils/icons";
 
 const ProjectModal = lazy(() => import("../features/project-modal").then((m) => ({ default: m.ProjectModal })));
 const ProjectsGridFull = lazy(() => import("../features/projects-grid-full"));
@@ -39,7 +39,11 @@ export function ProjectsSection() {
             <h2 className="text-balance text-center text-3xl font-bold tracking-tight text-foreground sm:text-left md:text-4xl lg:text-5xl">Travaux réalisés</h2>
             <Button type="button" variant="tertiary" onClick={toggleShowAll}>
               {showAll ? "Voir moins de projets" : "Voir tous les projets"}
-              {showAll ? <ArrowUp className="h-3.5 w-3.5" aria-hidden="true" /> : <ArrowDown className="h-3.5 w-3.5" aria-hidden="true" />}
+              {/* Une seule icône qu'on fait pivoter plutôt que deux composants
+                  distincts (ArrowDown/ArrowUp) : des éléments différents ne
+                  peuvent pas se transitionner entre eux en CSS, la rotation
+                  permet un changement fluide. */}
+              <ArrowDown className={`h-3.5 w-3.5 transition-transform duration-300 ${showAll ? "rotate-180" : ""}`} aria-hidden="true" />
             </Button>
           </div>
         </FadeIn>
