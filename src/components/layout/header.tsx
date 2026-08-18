@@ -82,8 +82,13 @@ export function Header() {
           <ThemeToggle />
         </div>
 
-        {/* Mobile menu button */}
+        {/* Mobile/tablette : CV compact (icône seule, toujours visible) +
+            thème + burger. Le CV reste aussi dans le menu déplié ci-dessous
+            en version texte complète, pour ceux qui l'y cherchent. */}
         <div className="flex items-center gap-3 xl:hidden">
+          <button onClick={() => downloadCv()} className="flex h-9 w-9 items-center justify-center rounded-lg border border-primary text-foreground sm:h-8 sm:w-8 cursor-pointer" aria-label="Télécharger mon CV">
+            <Download className="h-3.5 w-3.5" />
+          </button>
           <ThemeToggle />
           <button onClick={() => setMobileOpen(!mobileOpen)} className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-foreground font-sans sm:h-8 sm:w-8 cursor-pointer" aria-expanded={mobileOpen} aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}>
             {mobileOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
