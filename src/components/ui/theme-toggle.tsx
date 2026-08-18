@@ -11,7 +11,7 @@ export function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <button className="flex h-9 items-center gap-1 rounded-lg border border-border bg-secondary px-2.5 text-muted-foreground cursor-pointer" aria-label="Changer le theme">
+      <button className="flex h-9 items-center gap-1 rounded-lg border border-border bg-secondary px-2.5 text-muted-foreground cursor-pointer" aria-label="Changer le thème">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="5" />
           <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
@@ -25,7 +25,7 @@ export function ThemeToggle() {
   }
 
   return (
-    <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")} className="flex h-9 items-center gap-1 rounded-lg border border-border bg-secondary px-2.5 text-foreground transition-colors hover:bg-muted cursor-pointer" aria-label={theme === "dark" ? "Passer au theme clair" : "Passer au theme sombre"}>
+    <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")} className="flex h-9 items-center gap-1 rounded-lg border border-border bg-secondary px-2.5 text-foreground transition-colors hover:bg-muted cursor-pointer" aria-label={theme === "dark" ? "Passer au thème clair" : "Passer au thème sombre"}>
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={theme === "light" ? "text-primary" : "text-muted-foreground"}>
         <circle cx="12" cy="12" r="5" />
         <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
