@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { ThemeToggle } from "../ui/theme-toggle";
+import { Button } from "../ui/button";
 import { FaBars as Menu, FaTimes as X, FaDownload as Download } from "react-icons/fa";
 import { scrollToSection } from "../utils/shared-utils";
 import { useCvDownload } from "../utils/use-cv-download";
+import { SITE_NAME } from "@/config/site";
 
 // Le logo (lien vers #accueil) fait déjà office de retour à l'accueil dans le
 // header desktop : "Accueil" y serait redondant. Le menu burger mobile garde
@@ -53,7 +55,7 @@ export function Header() {
             }
           }}
         >
-          Thibaud Rocipon
+          {SITE_NAME}
         </a>
         <ul className="hidden items-center gap-5 xl:flex" role="list">
           {desktopNavLinks.map((link) => (
@@ -75,25 +77,30 @@ export function Header() {
         </ul>
 
         <div className="hidden items-center gap-3 xl:flex">
-          <button onClick={() => downloadCv()} className="inline-flex items-center gap-2 rounded-lg border border-primary bg-transparent px-3.5 py-2 text-sm font-medium text-foreground transition-colors hover:bg-primary/10 active:bg-primary/20 cursor-pointer" aria-label="Télécharger mon CV">
+          <Button variant="secondary" onClick={() => downloadCv()} aria-label="Télécharger mon CV">
             <Download className="h-3.5 w-3.5" />
             CV
-          </button>
+          </Button>
           <ThemeToggle />
         </div>
 
-        {/* Mobile/tablette : CV compact (icône seule, toujours visible) +
-            thème + burger. Le CV reste aussi dans le menu déplié ci-dessous
-            en version texte complète, pour ceux qui l'y cherchent. */}
+        {/* Mobile/tablette : thème + burger toujours visibles ; CV compact
+            (icône seule) réservé à partir de sm — en dessous, le nom
+            "Thibaud Rocipon" laisse trop peu de place à trois cibles
+            tactiles de 44px pour rester lisible, le menu déplié ci-dessous
+            (version texte complète du CV) prend le relais sur ce segment. */}
         <div className="flex items-center gap-3 xl:hidden">
-          {/* h-11 w-11 (44px) sur mobile ET tablette : cible tactile minimale
-              recommandée, pas seulement sur mobile — un rétrécissement au
-              breakpoint sm allait à l'encontre de ce principe. */}
-          <button onClick={() => downloadCv()} className="flex h-11 w-11 items-center justify-center rounded-lg border border-primary text-foreground transition-colors hover:bg-primary/10 active:bg-primary/20 cursor-pointer" aria-label="Télécharger mon CV">
-            <Download className="h-3.5 w-3.5" />
-          </button>
+          <div className="hidden sm:inline-flex">
+            <Button variant="secondary" size="icon" onClick={() => downloadCv()} aria-label="Télécharger mon CV">
+              <Download className="h-3.5 w-3.5" />
+            </Button>
+          </div>
           <ThemeToggle />
-          <button onClick={() => setMobileOpen(!mobileOpen)} className="flex h-11 w-11 items-center justify-center rounded-lg border border-border text-foreground font-sans transition-colors hover:bg-muted cursor-pointer" aria-expanded={mobileOpen} aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}>
+          {/* Même traitement que le bouton CV et le bouton thème juste à côté
+              (bordure primary, survol teinté, ombre btn-cta) : les trois
+              cibles de cette rangée partagent maintenant un seul langage
+              visuel plutôt que le burger isolé sur un style neutre. */}
+          <button onClick={() => setMobileOpen(!mobileOpen)} className="btn-cta flex h-11 w-11 items-center justify-center rounded-lg border border-primary text-foreground font-sans transition-[background-color,box-shadow,transform,color] duration-200 hover:bg-primary/10 active:bg-primary/20 cursor-pointer" aria-expanded={mobileOpen} aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}>
             {mobileOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </button>
         </div>
