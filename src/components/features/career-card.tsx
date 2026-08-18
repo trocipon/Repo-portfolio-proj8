@@ -1,6 +1,18 @@
 import { Briefcase, GraduationCap } from "../utils/icons";
+import { TagPill } from "../ui/tag-pill";
 
-export function CareerCard({ item }: { item: any }) {
+export interface CareerItem {
+  type: "work" | "education";
+  title: string;
+  organization: string;
+  period: string;
+  description: string;
+  tags: string[];
+  image: string;
+  imagePosition?: "top";
+}
+
+export function CareerCard({ item }: { item: CareerItem }) {
   return (
     <div className="flex-1 md:w-2/5">
       <div className="rounded-xl border border-border bg-card p-6">
@@ -15,10 +27,8 @@ export function CareerCard({ item }: { item: any }) {
         <p className="text-sm text-primary">{item.organization}</p>
         <p className="mt-2 text-sm leading-relaxed text-foreground/80">{item.description}</p>
         <div className="mt-3 flex flex-wrap gap-1.5">
-          {item.tags.map((tag: string) => (
-            <span key={tag} className="rounded bg-muted px-2 py-0.5 text-[11px] font-medium text-muted-foreground">
-              {tag}
-            </span>
+          {item.tags.map((tag) => (
+            <TagPill key={tag} name={tag} />
           ))}
         </div>
       </div>

@@ -1,12 +1,13 @@
 import { ThemeProvider } from "./components/ui/theme-provider";
 import { Suspense, lazy } from "react";
+import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 import { Header } from "./components/layout/header";
 import { HeroSection } from "./components/sections/hero-section";
 import { AboutSection } from "./components/sections/about-section";
 import { SkillsSection } from "./components/sections/skills-section";
 import { Footer } from "./components/layout/footer";
-import { BackgroundPattern } from "./components/ui/background-pattern";
 import { SectionLoader } from "./components/ui/section-loader";
+import { RECAPTCHA_V3_SITE_KEY } from "./config/recaptcha";
 
 // Lazy load les sections volumineuses pour réduire la chaîne critique
 const LazyProjectsSection = lazy(() => import("./components/sections/projects-section").then((m) => ({ default: m.ProjectsSection })));
@@ -17,17 +18,19 @@ const LazyContactSection = lazy(() => import("./components/sections/contact-sect
 export default function App() {
   return (
     <div className="font-sans antialiased">
-      <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
-        <Header />
-        <main>
-          <HeroSection />
-          <div style={{ position: "relative" }}>
-            <BackgroundPattern />
+      <GoogleReCaptchaProvider reCaptchaKey={RECAPTCHA_V3_SITE_KEY}>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+          <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-primary-foreground">
+            Aller au contenu principal
+          </a>
+          <Header />
+          <main id="main-content">
+            <HeroSection />
             <AboutSection />
-            <SkillsSection />
             <Suspense fallback={<SectionLoader />}>
               <LazyProjectsSection />
             </Suspense>
+            <SkillsSection />
             <Suspense fallback={<SectionLoader />}>
               <LazyCareerSection />
             </Suspense>
@@ -37,10 +40,10 @@ export default function App() {
             <Suspense fallback={<SectionLoader />}>
               <LazyContactSection />
             </Suspense>
-          </div>
-        </main>
-        <Footer />
-      </ThemeProvider>
+          </main>
+          <Footer />
+        </ThemeProvider>
+      </GoogleReCaptchaProvider>
     </div>
   );
 }

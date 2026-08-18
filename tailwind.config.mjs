@@ -40,8 +40,8 @@ export default {
         ring: "var(--ring)",
       },
       fontFamily: {
-        sans: ["Montserrat", "Arial", "sans-serif"],
-        serif: ["Georgia", "serif"],
+        sans: ["Open Sans", "Arial", "sans-serif"],
+        heading: ["Neue Machina", "Space Grotesk", "Open Sans", "sans-serif"],
       },
       fontSize: {
         xs: ["0.75rem", { lineHeight: "1.15", fontWeight: "400" }],

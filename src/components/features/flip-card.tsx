@@ -1,51 +1,40 @@
-import { useState } from "react";
-import { Monitor, Zap, Server, Gauge, Rocket, Kanban } from "../utils/icons";
-import "../../styles/flip-card.css";
+import { DesignServices, Insights, Monitor, Search } from "../utils/icons";
+import { TagPill } from "../ui/tag-pill";
 
 interface FlipCardProps {
   title: string;
   description: string;
+  techBadges?: string[];
   className?: string;
 }
 
-export function FlipCard({ title, description, className = "" }: FlipCardProps) {
-  const [flipped, setFlipped] = useState(false);
+const iconByTitle = {
+  "UX — Recherche & structuration": Search,
+  "UI — Design & prototypage": DesignServices,
+  "Culture produit & business": Insights,
+  "Culture technique & développement": Monitor,
+};
 
-  const Icon = {
-    "Développement Front-End moderne": Monitor,
-    "Interactivité et API": Zap,
-    "Développement Back-End sécurisé": Server,
-    "Performance, accessibilité et qualité": Gauge,
-    "Déploiement & environnement": Rocket,
-    "Méthodologie et gestion de projet": Kanban,
-  }[title];
+export function FlipCard({ title, description, techBadges = [], className = "" }: FlipCardProps) {
+  const Icon = iconByTitle[title as keyof typeof iconByTitle];
 
   return (
-    <div
-      className={`flip-card ${className}`}
-      onClick={() => setFlipped((f) => !f)}
-      onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          setFlipped((f) => !f);
-        }
-      }}
-      tabIndex={0}
-      role="button"
-      style={{ perspective: "1000px" }}
-    >
-      <div className={`flip-card-inner${flipped ? " flipped" : ""}`}>
-        <div className="flip-card-face flip-card-front">
-          {Icon && (
-            <div className="flex h-12 w-12 mb-4 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-              <Icon className="h-6 w-6" />
-            </div>
-          )}
-          <h3 className="text-sm font-semibold text-foreground text-center">{title}</h3>
+    <div className={`flex flex-col items-center rounded-xl border border-border bg-card p-6 text-center ${className}`}>
+      {Icon && (
+        <div className="flex h-12 w-12 mb-4 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+          <Icon className="h-6 w-6" />
         </div>
-        <div className="flip-card-face flip-card-back">
-          <p className="text-sm leading-relaxed text-foreground/80 text-center">{description}</p>
+      )}
+      <h3 className="text-base font-semibold text-foreground">{title}</h3>
+      <p className="mt-3 text-sm leading-relaxed text-foreground/80">{description}</p>
+
+      {techBadges.length > 0 && (
+        <div className="mt-4 flex flex-wrap justify-center gap-1.5">
+          {techBadges.map((name) => (
+            <TagPill key={name} name={name} />
+          ))}
         </div>
-      </div>
+      )}
     </div>
   );
 }
