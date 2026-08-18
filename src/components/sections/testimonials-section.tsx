@@ -1,12 +1,12 @@
 import { FadeIn } from "@/components/ui/fade-in";
 import data from "@/data/data.json";
-import { TestimonialCard } from "@/components/ui/testimonial-card";
+import { TestimonialCard, Testimonial } from "@/components/ui/testimonial-card";
 
 export function TestimonialsSection() {
-  const testimonials = (data as any).testimonials;
+  const testimonials = data.testimonials as Testimonial[];
 
   return (
-    <section id="temoignages" tabIndex={-1} className="px-4 py-8 sm:px-6 md:py-12 lg:py-16" aria-label="Temoignages">
+    <section id="temoignages" tabIndex={-1} className="px-4 py-8 sm:px-6 md:py-12 lg:py-16" aria-label="Témoignages">
       <div className="mx-auto max-w-6xl">
         <FadeIn>
           <div className="mb-4 flex justify-center sm:justify-start">
@@ -17,7 +17,7 @@ export function TestimonialsSection() {
 
         <FadeIn delay={200}>
           <div className="mt-12 grid gap-8 md:grid-cols-2">
-            {testimonials.map((testimonial: any) => (
+            {testimonials.map((testimonial) => (
               <TestimonialCard key={testimonial.author} testimonial={testimonial} />
             ))}
           </div>
