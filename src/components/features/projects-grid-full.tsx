@@ -25,11 +25,24 @@ export default function ProjectsGridFull({ onSelectProject }: ProjectsGridFullPr
       <div className="flex flex-wrap gap-2">
         <Filter options={filterOptions} activeFilter={activeFilter} onFilterChange={setActiveFilter} />
       </div>
-      <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {filtered.map((project) => (
-          <ProjectCard key={project.title} project={project} onClick={() => onSelectProject(project)} />
-        ))}
-      </div>
+      {/* Le filtre ne réordonne jamais les projets restants (seulement un
+          retrait), donc le même projet peut rester en tête d'une liste à
+          l'autre selon ses tags : ce rappel du nombre de résultats confirme
+          que le filtre a bien été pris en compte, sans changer d'ordre. */}
+      {activeFilter && activeFilter !== "Tous" && (
+        <p className="mt-4 text-xs text-muted-foreground">
+          {filtered.length} {filtered.length > 1 ? "projets trouvés" : "projet trouvé"}
+        </p>
+      )}
+      {filtered.length > 0 ? (
+        <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {filtered.map((project) => (
+            <ProjectCard key={project.title} project={project} onClick={() => onSelectProject(project)} />
+          ))}
+        </div>
+      ) : (
+        <p className="mt-6 text-sm text-muted-foreground">Aucun projet ne correspond à ce filtre pour le moment.</p>
+      )}
     </>
   );
 }
