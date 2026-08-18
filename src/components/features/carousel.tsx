@@ -8,22 +8,38 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    if (images.length > 1) {
-      const nextIndex = (current + 1) % images.length;
-      const img = new window.Image();
-      img.src = images[nextIndex];
-    }
-  }, [current, images]);
+    // Disable background scroll when the project modal is open
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      // Re-enable background scroll when the project modal is closed
+      document.body.style.overflow = "";
+    };
+  }, []); // Run only once when the component is mounted
 
   const next = () => setCurrent((prev) => (prev + 1) % images.length);
   const prev = () => setCurrent((prev) => (prev - 1 + images.length) % images.length);
+
+  // Précharge l'image suivante et précédente pendant que l'actuelle est
+  // affichée : sans ça, chaque clic déclenche un fetch + décodage à froid
+  // (les captures sources font jusqu'à ~5 Mpx), ce qui donne une impression
+  // de lenteur à la navigation dans le carrousel.
+  useEffect(() => {
+    if (!images || images.length <= 1) return;
+    const nextIndex = (current + 1) % images.length;
+    const prevIndex = (current - 1 + images.length) % images.length;
+    [nextIndex, prevIndex].forEach((i) => {
+      const preload = new Image();
+      preload.src = images[i];
+    });
+  }, [current, images]);
 
   if (!images || images.length === 0) return null;
 
   return (
     <div className="relative flex flex-col items-center justify-center w-full py-4">
       <div className="relative flex items-center justify-center w-full">
-        <button onClick={prev} aria-label="Image précédente" className="absolute left-2 z-10 flex items-center justify-center rounded-full bg-card border border-border shadow-md p-2 text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-200 cursor-pointer">
+        <button onClick={prev} aria-label="Image précédente" className="absolute left-2 z-20 flex items-center justify-center rounded-full bg-card border border-border shadow-md p-2 text-primary hover:bg-primary hover:text-primary-foreground active:bg-primary active:text-primary-foreground focus-visible:bg-primary focus-visible:text-primary-foreground transition-colors duration-200 cursor-pointer">
           <span className="sr-only">Image précédente</span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -41,8 +57,8 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
             src={images[current]}
             alt={`Projet image ${current + 1}`}
             width="700"
-            height="700"
-            loading="lazy"
+            height="394"
+            loading="eager"
             decoding="async"
             className="rounded-xl border border-border object-contain bg-card shadow-lg"
             style={{
@@ -53,11 +69,11 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
               display: "block",
               contain: "content",
               willChange: "contents",
-              aspectRatio: "1" ,
+              aspectRatio: "16/9",
             }}
           />
         </div>
-        <button onClick={next} aria-label="Image suivante" className="carousel-arrow absolute right-2 z-10 flex items-center justify-center rounded-full bg-card border border-border shadow-md p-2 text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-200 cursor-pointer">
+        <button onClick={next} aria-label="Image suivante" className="absolute right-2 z-20 flex items-center justify-center rounded-full bg-card border border-border shadow-md p-2 text-primary hover:bg-primary hover:text-primary-foreground active:bg-primary active:text-primary-foreground focus-visible:bg-primary focus-visible:text-primary-foreground transition-colors duration-200 cursor-pointer">
           <span className="sr-only">Image suivante</span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -67,13 +83,6 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
       <div className="mt-2 text-sm text-foreground/80 font-medium">
         {current + 1} / {images.length}
       </div>
-      <style>{`
-        @media (max-width: 1024px) {
-          .carousel-container {
-            max-height: 60vh; /* Adjusted for tablet screens */
-          }
-        }
-      `}</style>
     </div>
   );
 };

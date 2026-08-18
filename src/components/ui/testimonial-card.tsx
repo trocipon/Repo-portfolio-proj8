@@ -1,6 +1,6 @@
 import { Quote } from "../utils/icons";
 
-interface Testimonial {
+export interface Testimonial {
   author: string;
   quote: string;
   role: string;

@@ -9,7 +9,7 @@ export function SectionLoader() {
           {[0, 1, 2].map((i) => (
             <div
               key={i}
-              className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 animate-bounce"
+              className="w-2 h-2 rounded-full bg-primary animate-bounce"
               style={{
                 animationDelay: `${i * 0.2}s`,
                 animation: `pulse 1.5s ease-in-out infinite`,
@@ -17,7 +17,7 @@ export function SectionLoader() {
             />
           ))}
         </div>
-        <p className="text-sm text-gray-500 dark:text-gray-400">Chargement...</p>
+        <p className="text-sm text-muted-foreground">Chargement...</p>
       </div>
     </div>
   );

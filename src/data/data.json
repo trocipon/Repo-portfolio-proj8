@@ -1,113 +1,392 @@
 {
   "skills": {
-    "techBadges": [{ "name": "HTML5" }, { "name": "CSS3" }, { "name": "JavaScript" }, { "name": "TypeScript" }, { "name": "React" }, { "name": "Vite" }, { "name": "Sass" }, { "name": "Tailwind" }, { "name": "Node.js" }, { "name": "Express" }, { "name": "MongoDB" }, { "name": "Git" }, { "name": "Figma" }, { "name": "Lighthouse" }],
+    "techBadges": [{ "name": "Figma" }, { "name": "Notion" }, { "name": "Canva" }, { "name": "Miro" }, { "name": "V0" }, { "name": "Lovable" }, { "name": "HTML5" }, { "name": "CSS3" }, { "name": "JavaScript" }, { "name": "TypeScript" }, { "name": "React" }, { "name": "Vite" }, { "name": "Sass" }, { "name": "Node.js" }, { "name": "Express" }, { "name": "MongoDB" }, { "name": "Git" }, { "name": "GIMP" }, { "name": "Lighthouse" }, { "name": "Google Search Console" }, { "name": "Google Analytics" }, { "name": "Claude" }, { "name": "ChatGPT" }, { "name": "GitHub Copilot" }, { "name": "Mistral" }, { "name": "Vercel" }],
 
     "services": [
       {
-        "title": "Développement Front-End moderne",
-        "description": "Je conçois et développe des applications web modernes, dynamiques et responsives. J’intègre des maquettes avec précision et je construis des interfaces avec une architecture claire et maintenable."
+        "title": "UX — Recherche & structuration",
+        "description": "Je mène des recherches utilisateurs et je structure la réflexion produit avant de concevoir : personas, customer journey map, service blueprint, wireframes basse fidélité.",
+        "techBadges": ["Miro", "Figma", "Lighthouse"]
       },
       {
-        "title": "Interactivité et API",
-        "description": "Je construis des fonctionnalités interactives qui améliorent l'expérience de l'utilisateur. Je gère les événements, les formulaires et j’intègre des API REST pour afficher des données dynamiques en temps réel."
+        "title": "UI — Design & prototypage",
+        "description": "Je traduis ces constats en maquettes Figma à haute fidélité, jusqu'au prototypage interactif testable, avec une attention portée à la cohérence visuelle et au design system.",
+        "techBadges": ["Figma", "Canva", "GIMP", "V0", "Lovable"]
       },
       {
-        "title": "Développement Back-End sécurisé",
-        "description": "Je mets en place des serveurs Node.js avec Express, et des API sécurisées. Je modélise les données, j’implémente des opérations CRUD avec authentification et je structure des bases MongoDB fiables et sécurisées."
+        "title": "Culture produit & business",
+        "description": "J'analyse les données existantes (Analytics, CRM, retours utilisateurs et client) pour cadrer les problématiques, je benchmark et je priorise les pistes d'amélioration, et je relie mes recommandations à des indicateurs concrets : OKR, projections KPI, impact business, ROI.",
+        "techBadges": ["Google Search Console", "Google Analytics", "Notion", "Claude", "ChatGPT", "Mistral"]
       },
       {
-        "title": "Performance, accessibilité et qualité",
-        "description": "J’optimise les performances et la qualité des applications web. Je réalise des audits Lighthouse/Wave et j’améliore l’accessibilité à-travers les bonnes pratiques WCAG."
-      },
-      {
-        "title": "Déploiement & environnement",
-        "description": "Je configure les environnements, je versionne avec Git et je déploie des applications prêtes à être utilisées."
-      },
-      {
-        "title": "Méthodologie et gestion de projet",
-        "description": "Je structure les projets web avec la méthodologie agile pour assurer flexibilité, suivi et efficacité. Je rédige les spécifications techniques, j’organise le suivi via des outils Kanban et j’assure une veille technologique."
+        "title": "Culture technique & développement",
+        "description": "Mes bases certifiées en développement web (HTML, CSS, JavaScript, React, API REST) me permettent de collaborer avec les équipes techniques, d'anticiper la faisabilité de mes conceptions et de prototyper rapidement avec des outils comme V0.",
+        "techBadges": ["HTML5", "CSS3", "Sass", "JavaScript", "TypeScript", "React", "Vite", "Node.js", "Express", "MongoDB", "Git", "GitHub Copilot", "Vercel"]
       }
     ]
   },
 
   "projects": [
     {
-      "title": "Booki",
+      "title": "Les Cordons Bleus",
+      "type": "pédagogique",
+      "introduction": "Refonte UX du site d'une école de cuisine traditionnelle marseillaise : audit, recherche utilisateur et prototype avec projections d'impact business.",
+      "year": 2026,
       "description": {
-        "context": "Intégration d’un site vitrine pour une agence de voyage à partir d’une maquette Figma, dans un cadre pédagogique exigeant une rigueur technique et une gestion de version.",
-        "objectives": "Recréer fidèlement la maquette en HTML/CSS en full responsive. Site fonctionnel sur tous les écrans, livrable validé, repo GitHub structuré.",
-        "results": "Site fonctionnel sur tous les écrans, livrable validé, repo GitHub structuré.",
-        "improvements": "Les commits auraient pu être optimisés pour une meilleure lisibilité de l’historique.",
-        "skillsDeveloped": "Intégration front-end, responsive design, gestion de projet avec Git."
+        "context": "Projet pédagogique mené dans le cadre du parcours Product Designer chez OpenClassrooms, sur le site d'une école de cuisine traditionnelle marseillaise.",
+        "objectives": [
+          "Analyser les données existantes (Analytics, CRM, retours utilisateurs et client) et benchmarker la concurrence pour identifier les problématiques UX du site actuel.",
+          "Réaliser un audit à froid et un questionnaire client pour objectiver les points de friction.",
+          "Construire des personas et un service blueprint pour cartographier le parcours client.",
+          "Proposer une refonte du catalogue de cours et un nouveau funnel de réservation.",
+          "Prototyper une version responsive intégrant une fonctionnalité IA, une refonte du catalogue et des contenus enrichis.",
+          "Chiffrer l'impact business des recommandations avant de les prioriser."
+        ],
+        "skillsDeveloped": ["Recherche utilisateur", "Personas", "Service Blueprint", "Audit UX", "Priorisation", "Analyse KPI/ROI"],
+        "improvements": "Le funnel proposé pourrait encore être testé auprès d'utilisateurs réels pour valider les hypothèses avant une mise en production.",
+        "results": [
+          "Livraison d'un audit à froid, d'un questionnaire client et d'un brief UX complet.",
+          "Recommandations priorisées avec projections KPI à 6 et 12 mois.",
+          "Impact business estimé : +120K€ de chiffre d'affaires projeté."
+        ]
       },
-      "tags": ["HTML5", "CSS3", "Figma", "Git", "GitHub", "Intégration front-end", "Responsive design", "Gestion de projet avec Git"],
+      "tags": ["UX", "UI", "Stratégie produit", "Recherche utilisateur", "Personas", "Service Blueprint", "Figma", "Priorisation", "KPI"],
+      "githubUrl": "#",
+      "beforeUrl": "https://v0-cordon-bleu-school.vercel.app/",
+      "liveDemoUrl": "https://les-cordons-bleus-prototype-r8imk0zox-trocipons-projects.vercel.app/",
+      "documents": [
+        { "label": "Audit à froid", "url": "/documents/projects/cordons-bleus/Thibaud_Rocipon_1_auditsilencieux_052026.pdf" },
+        { "label": "Brief UX", "url": "/documents/projects/cordons-bleus/Thibaud_Rocipon_3_brief_UX_052026.pdf" },
+        { "label": "Questionnaire client", "url": "https://trocipon.limesurvey.net/119169?lang=fr&newtest=Y" }
+      ],
+      "images": ["/images/projects/les_cordons_bleus/cordons-bleus-1.webp", "/images/projects/les_cordons_bleus/cordons-bleus-2.webp", "/images/projects/les_cordons_bleus/cordons-bleus-3.webp", "/images/projects/les_cordons_bleus/cordons-bleus-4.webp"],
+      "featured": true
+    },
+    {
+      "title": "E-Moving",
+      "type": "pédagogique",
+      "introduction": "Design d'interface d'un site de vente de vélos et trottinettes électriques, des user flows au prototype interactif.",
+      "year": 2026,
+      "description": {
+        "context": "Projet pédagogique mené dans le cadre du parcours Product Designer chez OpenClassrooms, sur un site de vente de vélos et trottinettes électriques, en s'appuyant sur des retours utilisateurs.",
+        "objectives": [
+          "Définir les besoins utilisateurs à partir de customer journey maps.",
+          "Améliorer les user flows existants.",
+          "Structurer un système de composants UI cohérent pour mobile et desktop.",
+          "Créer des wireframes papier basse fidélité, puis des maquettes Figma en autolayout, pour mobile et desktop.",
+          "Prototyper les parcours clés de façon interactive."
+        ],
+        "skillsDeveloped": ["Customer Journey Map", "User flows", "Wireframing", "Design system / composants UI", "Organisation d'un fichier Figma (composants, auto-layout)", "Prototypage interactif"],
+        "improvements": "Les composants pourraient être formalisés dans une librairie Figma partagée pour faciliter les futures itérations.",
+        "results": [
+          "Wireframes papier et maquettes Figma autolayout livrés pour mobile et desktop.",
+          "Fichier Figma structuré avec composants réutilisables, auto-layout et calques nommés.",
+          "Prototype interactif navigable."
+        ]
+      },
+      "tags": ["UX", "UI", "Figma", "User flows", "Customer Journey Map", "Wireframing", "Prototypage"],
+      "githubUrl": "#",
+      "beforeUrl": "https://www.figma.com/proto/9OBmOrfjQXYh7wlsLKHcDZ/E-moving-P3?node-id=19910-2659&p=f&viewport=25%2C35%2C0.06&t=ZBTVzZBkWHxJOE2G-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
+      "liveDemoUrl": "https://www.figma.com/proto/9OBmOrfjQXYh7wlsLKHcDZ/E-moving-P3?node-id=19844-8639&p=f&viewport=147%2C175%2C0.04&t=p3me6y857ZXkwanJ-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=19844%3A8639&page-id=19841%3A3927",
+      "documents": [
+        { "label": "Support de présentation", "url": "/documents/projects/emoving/Rocipon_Thibaud_1_support_042026.pdf" },
+        { "label": "Wireframes papier (desktop)", "url": "/documents/projects/emoving/Rocipon_Thibaud_2_wireframe_papier_desktop_042026.pdf" },
+        { "label": "Wireframes papier (mobile)", "url": "/documents/projects/emoving/Rocipon_Thibaud_2_wireframe_papier_mobile_042026.pdf" },
+        { "label": "Maquette Figma", "url": "https://www.figma.com/design/9OBmOrfjQXYh7wlsLKHcDZ/E-moving-P3?node-id=19841-3927&t=dPk2YwcZtBsX9XRv-1" }
+      ],
+      "images": ["/images/projects/emoving/emoving-1.webp", "/images/projects/emoving/emoving-2.webp", "/images/projects/emoving/emoving-3.webp", "/images/projects/emoving/emoving-4.webp", "/images/projects/emoving/emoving-5.webp", "/images/projects/emoving/emoving-6.webp"]
+    },
+    {
+      "title": "Booki",
+      "type": "pédagogique",
+      "introduction": "Intégration d'un site vitrine pour une agence de voyage à partir d'une maquette Figma.",
+      "year": 2025,
+      "description": {
+        "context": "Mon premier projet de développement web : j'ai intégré ce site en HTML et CSS à partir d'une maquette Figma fournie, dans le cadre de ma formation chez OpenClassrooms.",
+        "objectives": ["Transformer une maquette Figma en un site fonctionnel avec HTML et CSS.", "Rendre le site entièrement responsive.", "Structurer le code, adopter de bonnes pratiques d'intégration et de gestion de version avec Git."],
+        "skillsDeveloped": ["Intégration front-end : HTML5 et CSS3 natifs, sans librairie tierce", "Maquette : découverte de Figma et réalisation d'un zoning avant le codage", "Structuration du code : isolation des responsabilités, organisation et factorisation", "Responsive design : utilisation des media queries pour tous les écrans", "Versioning : Git et GitHub pour suivre l'évolution du projet"],
+        "improvements": "S'agissant de mon premier projet de développement, l'historique des commits aurait pu être optimisé pour améliorer la lisibilité des étapes de construction du site ; le CSS gagnerait aussi à être scindé en plusieurs fichiers (mobile, desktop) pour une meilleure organisation du code.",
+        "results": ["Fidélité à la maquette : le projet respecte entièrement la maquette de référence.", "Responsive design : le site s'adapte aux écrans desktop, tablette et mobile.", "Livraison : dépôt GitHub structuré, avec des commits multiples et des messages clairs.", "Validation : projet validé lors de la soutenance, salué pour la qualité du livrable."]
+      },
+      "tags": ["Bases techniques", "HTML5", "CSS3", "Figma", "Git"],
       "githubUrl": "https://github.com/trocipon/Repo-booki-proj2.git",
-      "images": ["/images/projects/project-booki-1.webp", "/images/projects/project-booki-2.webp"]
+      "liveDemoUrl": "https://trocipon.github.io/Repo-booki-proj2/",
+      "documents": [{ "label": "Maquette Figma", "url": "https://www.figma.com/design/c2eWtHIAnaPTLCqpsvcAKV/Maquettes-Booki--desktop--mobile--tablette---copie-?node-id=3-0&t=rqaQtQ1UCDyV662B-1" }],
+      "images": ["/images/projects/booki/project-booki-1.webp", "/images/projects/booki/project-booki-2.webp", "/images/projects/booki/project-booki-3.webp", "/images/projects/booki/project-booki-4.webp", "/images/projects/booki/project-booki-5.webp"]
     },
     {
       "title": "Sophie Bluel",
+      "type": "pédagogique",
+      "year": 2025,
+      "introduction": "Développement d’un site web dynamique pour une architecte d'intérieur, dans le cadre d’un projet de formation orienté vers l’interactivité côté client.",
       "description": {
-        "context": "Développement d’un site dynamique pour une architecte, avec gestion de formulaires, événements utilisateurs et appel à une API.",
-        "objectives": "Rendre le site interactif via JavaScript, mettre en place une modale, afficher dynamiquement le contenu, gérer des événements.",
-        "results": "Site fonctionnel, données affichées dynamiquement, authentification, validation côté client.",
-        "improvements": "Optimiser le nombre de requêtes.",
-        "skillsDeveloped": "JavaScript, consommation d'API REST, gestion des événements, manipulation du DOM, validation de formulaires."
+        "context": "J'ai développé le front-end de ce site à partir d'une maquette Figma et d'une API backend fournies, dans le cadre de ma formation chez OpenClassrooms.",
+        "objectives": [
+          "Rendre le site interactif en JavaScript vanilla, sans framework.",
+          "Afficher dynamiquement les projets de l'architecte à partir d'une API REST.",
+          "Mettre en place une authentification et un mode édition réservé à l'administratrice du site.",
+          "Valider les formulaires côté client avant envoi."
+        ],
+        "skillsDeveloped": [
+          "Manipulation dynamique du DOM en JavaScript vanilla",
+          "Consommation d'une API REST à partir de la documentation Swagger",
+          "Gestion des événements utilisateurs et des modales interactives",
+          "Validation de formulaires côté client avec des expressions régulières (Regex)",
+          "Authentification utilisateur et gestion des droits d'édition",
+          "Versioning avec Git et GitHub"
+        ],
+        "improvements": "Certaines interactions pourraient s'appuyer davantage sur la manipulation directe du DOM plutôt que sur des appels systématiques à l'API : par exemple utiliser remove() pour une suppression côté client, ou basculer l'affichage des filtres via display: block/none plutôt que de recharger les données.",
+        "results": [
+          "Affichage dynamique des projets de l'architecte depuis l'API.",
+          "Interface d'administration avec authentification fonctionnelle.",
+          "Fonctionnalités interactives opérationnelles : modale, filtres, formulaires.",
+          "Code salué pour sa clarté, avec une gestion des appels API en async/await et try/catch."
+        ]
       },
-      "tags": ["JavaScript", "API REST", "Figma", "Git", "Gestion des événements", "Manipulation du DOM", "Validation de formulaires"],
+      "tags": ["Bases techniques", "JavaScript", "API REST", "Figma", "Git", "Gestion des événements", "Manipulation du DOM", "Validation de formulaires"],
       "githubUrl": "https://github.com/trocipon/Repo-Bluel-proj3.git",
-      "images": ["/images/projects/project-sophiebluel-1.webp", "/images/projects/project-sophiebluel-2.webp", "/images/projects/project-sophiebluel-3.webp", "/images/projects/project-sophiebluel-4.webp", "/images/projects/project-sophiebluel-5.webp"]
+      "liveDemoUrl": "https://repo-bluel-proj3.vercel.app/",
+      "documents": [{ "label": "Maquette Figma", "url": "https://www.figma.com/design/JJbFJgT4XjAhq7wVfGyA1K/Sophie-Bluel---Desktop--copie-?node-id=0-1&t=mNfVQogP0pPYMK0C-1" }],
+      "images": ["/images/projects/sophie_bluel/project-sophiebluel-1.webp", "/images/projects/sophie_bluel/project-sophiebluel-2.webp", "/images/projects/sophie_bluel/project-sophiebluel-3.webp", "/images/projects/sophie_bluel/project-sophiebluel-4.webp", "/images/projects/sophie_bluel/project-sophiebluel-5.webp"]
     },
     {
       "title": "Kasa",
+      "type": "pédagogique",
+      "year": 2025,
+      "introduction": "Développement front-end d'une application de location immobilière entre particuliers avec React, à partir d'une maquette Figma.",
       "description": {
-        "context": "Développement du front-end d’une application de location immobilière, avec une architecture composants et une navigation dynamique.",
-        "objectives": "Créer une interface avec React, utiliser des composants réutilisables, gérer la navigation entre pages via React Router, et styliser avec Sass.",
-        "results": "Application single page fonctionnelle, navigation fluide, interface modulaire.",
-        "improvements": "Optimiser les fonctionnalités de Sass.",
-        "skillsDeveloped": "React, architecture composants, React Router, Sass."
+        "context": "Développement du front-end d'une application de location immobilière entre particuliers, à partir d'une maquette Figma, avec une architecture à base de composants réutilisables.",
+        "objectives": [
+          "Construire l'interface avec React à partir de la maquette Figma.",
+          "Mettre en place la navigation entre les pages (accueil, logement, à propos, erreur 404) avec React Router.",
+          "Concevoir des composants réutilisables (bannière, carte, tag, accordéon) alimentés par des données JSON.",
+          "Styliser l'interface avec Sass et des variables de design cohérentes, avec des animations CSS fluides."
+        ],
+        "skillsDeveloped": [
+          "Architecture par composants React",
+          "Routage multi-pages avec React Router",
+          "Props et réutilisabilité des composants",
+          "Préprocesseur Sass (variables, mixins, nesting)",
+          "Gestion d'état local (accordéons, galerie d'images)",
+          "Animations CSS"
+        ],
+        "improvements": "Les fonctionnalités de Sass (mixins, variables partagées) pourraient être davantage mutualisées entre composants, et certains états pourraient être gérés via un contexte React plutôt qu'en local.",
+        "results": [
+          "Application single page fonctionnelle avec navigation fluide entre les logements, gestion d'une page 404 pour les routes inexistantes.",
+          "Composants modulaires et réutilisables (bannière, accordéon, tag).",
+          "Interface fidèle à la maquette Figma, responsive desktop et mobile, avec des animations CSS conformes à la maquette."
+        ]
       },
-      "tags": ["React", "Vite", "Sass", "Figma", "Git"],
+      "tags": ["Bases techniques", "React", "Vite", "Sass", "Figma", "Git"],
       "githubUrl": "https://github.com/trocipon/Repo-Kasa-proj5.git",
-      "images": ["/images/projects/project-kasa-1.webp", "/images/projects/project-kasa-2.webp"]
+      "liveDemoUrl": "https://repo-kasa-proj5.vercel.app/",
+      "documents": [{ "label": "Maquette Figma", "url": "https://www.figma.com/design/BEHh0vjbMrJLGA2Se3QWxf/Kasa_FR--copie-?node-id=0-1&t=VOhNNhoHiUMgUoot-1" }],
+      "images": ["/images/projects/kasa/project-kasa-1.webp", "/images/projects/kasa/project-kasa-2.webp"]
     },
     {
       "title": "Nina Carducci",
+      "type": "pédagogique",
+      "year": 2025,
+      "introduction": "Audit et optimisation d'un site vitrine de photographe : accessibilité, performance et référencement naturel.",
       "description": {
-        "context": "Audit d’un site de photographe présentant des problèmes de SEO, accessibilité et performance, avec un besoin d’optimisation technique.",
-        "objectives": "Corriger les erreurs techniques, améliorer l’accessibilité (WCAG), et optimiser les performances pour le référencement.",
-        "results": " Amélioration des performances, de l'accessibilité (score 70 à 100), et du référencement (score 73 à 100).",
-        "improvements": "Optimisation de la version mobile avec focus sur la taille des images, minification des fichiers css.",
-        "skillsDeveloped": "Audit technique, optimisation SEO, accessibilité web, performance web."
+        "context": "Mission de développeur freelance : audit d'un site de photographe présentant des problèmes de SEO, d'accessibilité et de performance, avec un besoin d'optimisation technique.",
+        "objectives": [
+          "Corriger les erreurs techniques bloquantes identifiées par l'audit initial.",
+          "Améliorer l'accessibilité du site selon les critères WCAG.",
+          "Optimiser les performances et le référencement naturel (SEO)."
+        ],
+        "skillsDeveloped": [
+          "Audit technique avec Lighthouse et Wave",
+          "Débogage avec les Chrome DevTools",
+          "Optimisation des images (poids, formats, attributs alt)",
+          "Amélioration du HTML sémantique et des contrastes",
+          "Minification CSS et réduction des requêtes bloquantes",
+          "Bonnes pratiques SEO on-page (balises meta, structure des titres)",
+          "Rédaction d'un cahier de recette de tests"
+        ],
+        "improvements": "Améliorer le minutage et le support de présentation à l'oral en soutenance, par exemple en reprenant la charte graphique du client pour davantage immerger l'auditoire.",
+        "results": [
+          "Score de performance et d'accessibilité passé de 70 à 100 sur Lighthouse.",
+          "Score de référencement (SEO) passé de 73 à 100.",
+          "Site conforme aux principaux critères d'accessibilité WCAG.",
+          "Corrections livrées en 48h : version minifiée de Bootstrap mise en place, warnings du validateur W3C corrigés, balises de titres mal utilisées et attributs src d'images erronés corrigés."
+        ]
       },
-      "tags": ["Lighthouse", "Wave", "Git", "Optimisation SEO", "Accessibilité", "Performance"],
+      "tags": ["UX", "Bases techniques", "Lighthouse", "Wave", "Git", "Optimisation SEO", "Accessibilité", "Performance"],
       "githubUrl": "https://github.com/trocipon/Repo-Carducci-proj4.git",
-      "images": ["/images/projects/project-ninacarducci-1.webp", "/images/projects/project-ninacarducci-2.webp", "/images/projects/project-ninacarducci-3.webp"]
+      "beforeUrl": "https://nina-carducci.github.io/",
+      "liveDemoUrl": "https://trocipon.github.io/Repo-Carducci-proj4/",
+      "documents": [
+        { "label": "Rapport d'intervention", "url": "/documents/projects/nina_carducci/Rocipon_Thibaud_2_Rapport_d'intervention_112025.pdf" },
+        { "label": "Audit Lighthouse", "url": "/documents/projects/nina_carducci/Rocipon_Thibaud_3_Audit_Lighthouse_112025.pdf" },
+        { "label": "Présentation soutenance", "url": "/documents/projects/nina_carducci/Presentation_soutenance.pdf" }
+      ],
+      "images": ["/images/projects/nina_carducci/project-ninacarducci-1.webp", "/images/projects/nina_carducci/project-ninacarducci-2.webp", "/images/projects/nina_carducci/project-ninacarducci-3.webp"]
     },
     {
       "title": "Mon Vieux Grimoire",
+      "type": "pédagogique",
+      "year": 2026,
+      "introduction": "Conception d'une API REST sécurisée pour un site de notation de livres, avec Node.js, Express et MongoDB.",
       "description": {
-        "context": "Développement du back-end d’un site de notation de livres, avec gestion des données et sécurisation des opérations CRUD.",
-        "objectives": "Mettre en place un serveur Node.js avec Express, modéliser les données, et sécuriser les accès via MongoDB.",
-        "results": "API fonctionnelle avec endpoints CRUD, base de données structurée, sécurité des données.",
-        "improvements": "Tests d’API, déploiement sur un serveur.",
-        "skillsDeveloped": "Lien back-end/front-end, mise en place d'une base de données, modélisation de données, sécurité web."
+        "context": "Développement du back-end d'un site de notation de livres, avec gestion des données et sécurisation des opérations CRUD.",
+        "objectives": [
+          "Concevoir une API REST sécurisée avec Node.js et Express.",
+          "Modéliser les données des livres et des utilisateurs dans une base MongoDB.",
+          "Mettre en place l'authentification des utilisateurs et la gestion des droits.",
+          "Gérer l'upload et l'optimisation des images de couverture."
+        ],
+        "skillsDeveloped": [
+          "Conception d'API REST avec Express, architecture MVC",
+          "Modélisation de données avec Mongoose / MongoDB",
+          "Authentification par token (JWT) et hashage des mots de passe",
+          "Upload et traitement d'images côté serveur, principes du Green Code",
+          "Bonnes pratiques de sécurité web (validation des entrées, protection contre les failles courantes)"
+        ],
+        "improvements": "Ajouter un rate limiter renforcerait davantage la sécurité de l'API contre les tentatives d'abus.",
+        "results": [
+          "API fonctionnelle avec endpoints CRUD complets pour les livres et les notations.",
+          "Base de données structurée et sécurisée.",
+          "Authentification et gestion des droits opérationnelles.",
+          "Optimisation des images côté back-end conforme aux principes du Green Code."
+        ]
       },
-      "tags": ["Node.js", "Express", "MongoDB", "Git", "Modélisation de données", "OWASP", "Sécurité"],
+      "tags": ["Bases techniques", "Node.js", "Express", "MongoDB", "Git", "Modélisation de données", "OWASP", "Sécurité"],
       "githubUrl": "https://github.com/trocipon/Repo-MonVieuxGrimoire-proj6.git",
-      "images": ["/images/projects/project-mvg-1.webp", "/images/projects/project-mvg-2.webp", "/images/projects/project-mvg-3.webp", "/images/projects/project-mvg-4.webp", "/images/projects/project-mvg-5.webp"]
+      "images": ["/images/projects/mon_vieux_grimoire/project-mvg-1.webp", "/images/projects/mon_vieux_grimoire/project-mvg-2.webp", "/images/projects/mon_vieux_grimoire/project-mvg-3.webp", "/images/projects/mon_vieux_grimoire/project-mvg-4.webp", "/images/projects/mon_vieux_grimoire/project-mvg-5.webp"]
     },
     {
       "title": "Menu Maker by Qwenta",
+      "type": "pédagogique",
+      "year": 2026,
+      "introduction": "Cadrage produit et spécifications techniques d'un outil de création de menus pour restaurateurs, suivi en méthode Agile.",
       "description": {
-        "context": "Planification d’un projet de création de menus pour restaurateurs, avec besoin de spécifications techniques et suivi agile.",
-        "objectives": "Découper les fonctionnalités en tâches, rédiger les spécifications, et suivre le projet via un outil Kanban.",
-        "results": "Présentation claire au client, tableau de suivi mis à jour, méthode de veille établie.",
-        "improvements": "Complétion des spécifications techniques et documentation du projet. Maitrise du stack SQL.",
-        "skillsDeveloped": "Méthodologie agile, gestion de projet, rédaction de spécifications techniques, veille technologique."
+        "context": "Planification d'un projet de création de menus pour restaurateurs, avec besoin de spécifications techniques et suivi agile.",
+        "objectives": [
+          "Découper les fonctionnalités attendues en tâches priorisées.",
+          "Rédiger des spécifications techniques claires pour l'équipe de développement.",
+          "Suivre l'avancement du projet via un tableau Kanban."
+        ],
+        "skillsDeveloped": [
+          "Rédaction de spécifications fonctionnelles et techniques",
+          "Découpage et priorisation des tâches (méthode Agile)",
+          "Suivi de projet avec un outil Kanban",
+          "Modélisation de données avec le stack SQL",
+          "Veille technologique"
+        ],
+        "improvements": "Le projet s'arrêtant à la phase de cadrage, la suite logique serait de confronter les spécifications à un prototype ou à des tests utilisateurs avant le lancement du développement.",
+        "results": [
+          "Spécifications techniques conformes à l'ensemble des contraintes client (maquette, navigateurs, accessibilité, SEO) et intégrant les User Stories.",
+          "Découpage en tâches chronologiquement logique, réparti par charge de travail, avec suivi Kanban tenu à jour tout au long du projet.",
+          "Présentation claire de la solution technique auprès du client, appuyée de schémas.",
+          "Veille technologique structurée, appuyée sur 3 à 5 sources fiables par thématique."
+        ]
       },
-      "tags": ["Agile & Scrum", "Gestion de projet", "Veille technologique", "Kanban"],
+      "tags": ["Stratégie produit", "Agile & Scrum", "Gestion de projet", "Veille technologique", "Kanban", "Priorisation"],
       "githubUrl": "#",
-      "images": ["/images/projects/project-qwenta-1.webp", "/images/projects/project-qwenta-2.webp", "/images/projects/project-qwenta-3.webp"]
+      "documents": [
+        { "label": "Tableau Kanban", "url": "https://app.notion.com/p/304e5417019881688c9add7e516c9961?v=304e5417019881c0a7cf000c7320ade3&source=copy_link" },
+        { "label": "Spécifications techniques", "url": "/documents/projects/qwenta/Rocipon_Thibaud_1_specifications_techniques_022026.pdf" },
+        { "label": "Présentation", "url": "/documents/projects/qwenta/Rocipon_Thibaud_4_presentation_022026.pdf" }
+      ],
+      "images": ["/images/projects/qwenta/project-qwenta-1.webp", "/images/projects/qwenta/project-qwenta-2.webp", "/images/projects/qwenta/project-qwenta-3.webp"]
+    },
+    {
+      "title": "Les Bambinets",
+      "type": "pédagogique",
+      "year": 2026,
+      "introduction": "Conception d'une application mobile pour apprendre la langue des signes aux jeunes parents et aux professionnels de la petite enfance, de l'arborescence au design system.",
+      "description": {
+        "context": "Projet pédagogique mené dans le cadre du parcours Product Designer chez OpenClassrooms : conception d'une application mobile d'apprentissage de la langue des signes destinée aux jeunes parents et aux professionnels de la petite enfance.",
+        "objectives": [
+          "Structurer l'arborescence et les parcours utilisateurs (apprendre, rechercher, réviser, quiz, questions/réponses).",
+          "Définir une direction artistique rassurante et ludique, adaptée à un public de jeunes parents.",
+          "Construire un moodboard et un design system (couleurs, typographies, composants) cohérents avec cette identité.",
+          "Concevoir des wireframes mobile-first respectant les bonnes pratiques d'accessibilité (contrastes, tailles de cible tactile)."
+        ],
+        "skillsDeveloped": ["User flow", "Moodboard", "Design system", "Personnalisation de composants shadcn/ui", "Accessibilité mobile", "Direction artistique"],
+        "improvements": "Corriger les quelques glitchs observés dans le prototype et déplacer certaines interactions au niveau des composants eux-mêmes, pour gagner du temps sur les évolutions futures.",
+        "results": [
+          "Arborescence complète et user flows validés pour les parcours clés (apprendre, rechercher, réviser, quiz).",
+          "Moodboard et design system livrés : palette, typographies, composants UI, iconographie.",
+          "Wireframes mobile conformes aux critères d'accessibilité (contrastes AA, cibles tactiles suffisantes).",
+          "Design system construit avec des collections et variables sémantiques Figma, permettant de gagner un temps significatif sur la génération d'interfaces."
+        ]
+      },
+      "tags": ["UX", "UI", "Figma", "Accessibilité"],
+      "githubUrl": "#",
+      "liveDemoUrl": "https://www.figma.com/proto/4pKPRlK92uvIJfQNi6Oo3h/WF--maquette-et-proto-%22Les-bambinets%22?node-id=4075-6&p=f&viewport=25%2C207%2C0.32&t=ntQHiyRbWMLpksWO-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=4075%3A6&page-id=4075%3A5",
+      "documents": [
+        { "label": "User flow", "url": "/documents/projects/les_bambinets/Rocipon_Thibaud_1_UserFlow_072026.pdf" },
+        { "label": "Moodboard", "url": "/documents/projects/les_bambinets/Rocipon_Thibaud_2_Moodboard_072026.pdf" },
+        { "label": "Maquette Figma", "url": "https://www.figma.com/design/4pKPRlK92uvIJfQNi6Oo3h/WF--maquette-et-proto-%22Les-bambinets%22?node-id=4075-5&t=orzBMrVFYKilOber-1" },
+        { "label": "Design system", "url": "https://www.figma.com/design/pvfhmmAlfvmdAjJB7sbqbX/Design-System-%22Les-Bambinets%22?node-id=0-748&t=SOH3ONen9EPcfn4a-1" }
+      ],
+      "images": ["/images/projects/les_bambinets/bambinets-1.webp", "/images/projects/les_bambinets/bambinets-2.webp", "/images/projects/les_bambinets/bambinets-3.webp", "/images/projects/les_bambinets/bambinets-4.webp"],
+      "featured": true
+    },
+    {
+      "title": "Flowrate",
+      "type": "pédagogique",
+      "year": 2026,
+      "introduction": "Audit UX croisant analyse qualitative (heuristiques) et données comportementales quantitatives pour prioriser les problèmes d'onboarding d'un SaaS de gestion du temps.",
+      "description": {
+        "context": "Projet pédagogique mené dans le cadre du parcours Product Designer chez OpenClassrooms : audit UX d'un SaaS de gestion du temps et de planification de ressources, destiné aux freelances, agences et dirigeants.",
+        "objectives": [
+          "Réaliser un audit heuristique de l'onboarding selon les 10 heuristiques de Nielsen.",
+          "Croiser ces constats qualitatifs avec des données comportementales quantitatives (taux d'abandon, comportements de session).",
+          "Prioriser les problèmes identifiés selon leur sévérité et leur confirmation par les deux sources.",
+          "Formuler des recommandations actionnables pour réduire l'abandon en onboarding."
+        ],
+        "skillsDeveloped": ["Audit heuristique", "Analyse de données quantitatives", "Priorisation", "Recommandations UX"],
+        "improvements": "Les recommandations gagneraient à être testées via des tests utilisateurs ou de l'A/B testing pour valider leur impact réel sur le taux de conversion.",
+        "results": [
+          "12 problèmes UX identifiés et priorisés selon leur sévérité et leur confirmation qualitative/quantitative.",
+          "Funnel d'onboarding cartographié : abandon de 46% à la création de compte, 31% à la configuration de l'espace de travail, 19% à la formation.",
+          "Recommandations priorisées livrées : indicateur de progression, gestion des erreurs de formulaire, simplification du jargon technique."
+        ]
+      },
+      "tags": ["UX", "Stratégie produit", "Priorisation"],
+      "githubUrl": "#",
+      "documents": [
+        { "label": "Audit qualitatif et quantitatif", "url": "https://app.notion.com/p/P6-Product-Designer-Audit-Flowrate-3b7e5417019880d6b91ffc7911a89320?source=copy_link" },
+        { "label": "Croisement des données", "url": "/documents/projects/flowrate/Croisement%20donn%C3%A9es%20audit%20Flowrate.pdf" },
+        { "label": "Roadmap produit", "url": "https://app.notion.com/p/6aae541701988379b08e812abbb2e71d?v=345e5417019883b885a6880f7bfd8ce6&source=copy_link" }
+      ],
+      "images": ["/images/projects/flowrate/flowrate-1.webp", "/images/projects/flowrate/flowrate-2.webp", "/images/projects/flowrate/flowrate-3.webp"],
+      "featured": true
+    },
+    {
+      "title": "SNCF Connect",
+      "type": "pédagogique",
+      "year": 2026,
+      "introduction": "Recherche utilisateur qualitative sur le parcours de réservation de billet de l'application SNCF Connect : protocole de test, entretiens et synthèse des irritants.",
+      "description": {
+        "context": "Projet pédagogique mené dans le cadre du parcours Product Designer chez OpenClassrooms : audit UX indépendant du parcours de réservation de billet de l'application SNCF Connect, via des tests utilisateurs qualitatifs.",
+        "objectives": [
+          "Concevoir un protocole de test utilisateur (recrutement, tâches, critères de réussite).",
+          "Mener des entretiens et observer des utilisateurs en situation de réservation.",
+          "Cartographier le parcours utilisateur et identifier les points de friction.",
+          "Synthétiser les résultats et formuler des recommandations priorisées."
+        ],
+        "skillsDeveloped": ["Protocole de test utilisateur", "Conduite d'entretiens", "Cartographie de parcours", "Synthèse et restitution"],
+        "improvements": "Mieux distinguer constats et hypothèses, regrouper ces dernières par grandes catégories plutôt qu'au cas par cas, et s'appuyer davantage sur des critères ergonomiques reconnus (par exemple ceux de Bastien et Scapin).",
+        "results": [
+          "Protocole de test et grille d'entretien livrés.",
+          "Parcours utilisateur cartographié avec les points de friction identifiés (filtres peu visibles, sélection de siège peu claire, confirmation ambiguë).",
+          "Scores de facilité perçue recueillis par tâche et recommandations priorisées.",
+          "Restitution structurée (objectifs → moyens → synthèses → solution), avec 4 scénarios couvrant chaque persona."
+        ]
+      },
+      "tags": ["UX", "Recherche utilisateur"],
+      "githubUrl": "#",
+      "documents": [
+        { "label": "Protocole de test", "url": "/documents/projects/sncf_connect/Rocipon_Thibaud_1_protocole_032026.pdf" },
+        { "label": "Retranscriptions", "url": "/documents/projects/sncf_connect/Rocipon_Thibaud_2_retranscriptions_032026.pdf" },
+        { "label": "Parcours utilisateur", "url": "/documents/projects/sncf_connect/Rocipon_Thibaud_3_parcours_032026.pdf" },
+        { "label": "Présentation", "url": "/documents/projects/sncf_connect/Rocipon_Thibaud_4_pr%C3%A9sentation_032026.pdf" }
+      ],
+      "images": ["/images/projects/sncf_connect/sncf-connect-1.webp", "/images/projects/sncf_connect/sncf-connect-2.webp", "/images/projects/sncf_connect/sncf-connect-3.webp"]
     }
   ],
 
@@ -115,21 +394,30 @@
     "timeline": [
       {
         "type": "education",
+        "title": "Formation Product Designer",
+        "organization": "OpenClassrooms",
+        "period": "2026 - en cours",
+        "description": "Parcours Product Designer, spécialisation UX/UI Designer. Recherche utilisateur, personas, customer journey map, service blueprint, wireframing, maquettes Figma et prototypage interactif, à travers des projets professionnalisants avec mentorat.",
+        "tags": ["Recherche utilisateur", "Figma", "Prototypage", "Service Blueprint"],
+        "image": "/images/ravi-palwe-I3urDa6z2_4-unsplash.webp"
+      },
+      {
+        "type": "education",
         "title": "Formation Développeur Web",
         "organization": "OpenClassrooms",
         "period": "2025 - 2026",
         "description": "Formation intensive en développement web. 7 projets professionalisants avec mentorats. Acquisition de compétences techniques solides en HTML/CSS, JavaScript, React, Node.js, et méthodologie agile.",
-        "tags": ["HTML/CSS", "JavaScript", "React", "Node.js"],
-        "image": "/images/career-school.webp"
+        "tags": ["HTML5", "CSS3", "JavaScript", "React", "Node.js"],
+        "image": "/images/rahul-mishra-JpF58ANavoc-unsplash.webp"
       },
       {
         "type": "work",
-        "title": "Technicien de police scientifique",
+        "title": "Technicien de Police Scientifique",
         "organization": "Police Nationale",
         "period": "2014 - 2026",
-        "description": "Actes techniques dans le domaine de la police scientifique. Travail en équipe, rigueur et souci du détail. Cette expérience m'a permis de développer des compétences en communication et en résolution de problèmes.",
-        "tags": ["Adaptabilité", "Amélioration continue", "Méthode", "Collaboration"],
-        "image": "/images/career-agency.webp"
+        "description": "Douze ans de police scientifique avec intervention sur scènes d'infraction et analyses en laboratoire (accrédité ISO 17025). Correspondant qualité et ambassadeur d'un outil de traçabilité métier, à l'interface entre utilisateurs et équipe technique. Astreintes terrain 24/7, jusqu'à 12 semaines par an. J'ai appris à communiquer avec des interlocuteurs variés, à m'adapter en permanence et à gérer mon stress.",
+        "tags": ["Résolution de problèmes", "Amélioration continue", "Discrétion", "Conseil à la décision"],
+        "image": "/images/sasun-bughdaryan-pCwb5OuObls-unsplash.webp"
       },
       {
         "type": "education",
@@ -138,16 +426,7 @@
         "period": "2010 - 2013",
         "description": "Ce parcours m'a notamment permis de m'initier à la gestion et la planification de projet en équipe, à l'analyse de marché et au marketing digital. Stage de 3 mois dans une entreprise de services numériques, où j'ai découvert le développement web et son potentiel créatif.",
         "tags": ["Gestion de projet", "Marketing digital", "Stratégie d'entreprise"],
-        "image": "/images/career-school.webp"
-      },
-      {
-        "type": "education",
-        "title": "Baccalauréat",
-        "organization": "Lycée du Granier, Chambéry",
-        "period": "2010",
-        "description": "Baccalauréat économique et social avec mention Bien.",
-        "tags": [],
-        "image": "/images/career-bac.webp"
+        "image": "/images/arturo-anez-RxbkUG80Rag-unsplash.webp"
       }
     ]
   },
@@ -155,7 +434,7 @@
   "testimonials": [
     {
       "quote": "Thibaud est un élément qui a démontré l'étendue de ses compétences, en les appliquant avec rigueur et intelligence, dans chacune des missions qui lui ont été confiées à la Division de Police Scientifique de Toulouse. Son investissement a toujours été reconnu par ses pairs et s'est avéré d'un grand soutien dans les périodes de forte activité.",
-      "author": "David Ferran",
+      "author": "David F.",
       "role": "Technicien en chef de police scientifique",
       "company": "Police Nationale"
     }

@@ -1,101 +1,143 @@
-import React, { Suspense } from "react";
 import { Project } from "../utils/project-utils";
-import { techBadgesWithIcons } from "../utils/techbadges";
-const Carousel = React.lazy(() => import("./carousel"));
+import { getTagVisual } from "../utils/tag-visuals";
+import { TagPill } from "../ui/tag-pill";
+import { FaGithub as Github, FaExternalLinkAlt, FaFileDownload } from "react-icons/fa";
+import Carousel from "./carousel";
+import Collapse from "../ui/collapse";
+import { useModalA11y } from "../utils/use-modal-a11y";
+import { Button } from "../ui/button";
 
 export function ProjectModal({ project, onClose }: { project: Project; onClose: () => void }) {
+  const dialogRef = useModalA11y(onClose);
+
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-foreground/60 backdrop-blur-sm p-4 sm:p-6" onClick={onClose} role="dialog" aria-modal="true" aria-label={`Details du projet ${project.title}`}>
-      <div className="relative w-full max-w-lg sm:max-w-5xl max-h-[95vh] sm:max-h-[90vh] rounded-2xl border border-border bg-card p-0 shadow-2xl flex flex-col overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-        <button onClick={onClose} className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground hover:bg-muted z-10 cursor-pointer" aria-label="Fermer" tabIndex={0} autoFocus>
-          <span className="h-4 w-4 flex items-center justify-center">✕</span>
-        </button>
-        {/* Contenu avec scroll unique */}
-        <div className="w-full flex flex-col gap-6 p-6 sm:p-10">
-          {/* Texte */}
-          <div>
-            <h3 className="text-xl font-bold text-foreground text-center">{project.title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-foreground/80 text-justify">
-              {typeof project.description === "string" ? (
-                project.description
-              ) : (
-                <>
-                  {(project.description as Record<string, string | undefined>).context && (
-                    <span>
-                      <strong>Contexte :</strong> {(project.description as Record<string, string | undefined>).context}
-                    </span>
+    <div className="fixed inset-0 z-[100] flex items-center justify-center sm:bg-foreground/60 sm:backdrop-blur-sm sm:p-6" onClick={onClose} role="dialog" aria-modal="true" aria-label={`Details du projet ${project.title}`}>
+      {/* Plein écran sur mobile plutôt qu'une carte flottante avec fond
+          assombri : sur petit écran une carte "flottante" occupe de toute
+          façon presque tout l'espace, autant l'assumer comme un vrai écran
+          (pas d'arrondi/bordure/backdrop). Carte centrée classique dès sm. */}
+      <div ref={dialogRef} className="relative w-full h-full sm:h-auto sm:max-w-5xl max-h-none sm:max-h-[90vh] rounded-none sm:rounded-2xl border-0 sm:border sm:border-border bg-card p-0 shadow-none sm:shadow-2xl flex flex-col overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+        {/* Barre fixe : reste au sommet pendant le défilement du contenu
+            (contrairement au bouton de fermeture ex-absolu, qui défilait hors
+            champ avec le reste). Ne reprend que le titre, pas l'accroche
+            complète, pour ne pas rogner l'espace de lecture. */}
+        <div className="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-border bg-card/95 px-4 py-3 backdrop-blur-sm sm:px-6">
+          <p className="truncate text-sm font-semibold text-foreground sm:text-base" aria-hidden="true">
+            {project.title}
+          </p>
+          <button onClick={onClose} className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground hover:bg-muted cursor-pointer" aria-label="Fermer">
+            <span className="h-4 w-4 flex items-center justify-center">✕</span>
+          </button>
+        </div>
+
+        {/* Zone d'accroche */}
+        <div className="w-full p-6 sm:p-10 text-center">
+          <h2 className="text-2xl font-bold text-foreground">{project.title}</h2>
+          <p className="text-sm text-muted-foreground mt-2">{project.introduction}</p>
+          <div className="flex flex-wrap justify-center gap-2 mt-4">
+            {project.tags
+              .filter((tag) => getTagVisual(tag).kind !== "none")
+              .map((tag) => (
+                <TagPill key={tag} name={tag} size="lg" />
+              ))}
+          </div>
+        </div>
+
+        {/* Contenu principal */}
+        <div className="flex flex-col sm:flex-row gap-6 p-6 sm:p-10">
+          {/* Colonne gauche */}
+          <div className="flex-1 sticky top-0 h-fit">
+            <Carousel images={project.images} />
+          </div>
+
+          {/* Colonne droite */}
+          <div className="flex-1">
+            <Collapse title="Contexte">
+                <p className="text-sm text-white/90">{project.description.context}</p>
+              </Collapse>
+              <Collapse title="Objectifs">
+                <ul className="list-disc pl-5">
+                  {Array.isArray(project.description.objectives) ? (
+                    project.description.objectives.map((objective, index) => (
+                      <li key={index} className="text-sm text-white/90">
+                        {objective}
+                      </li>
+                    ))
+                  ) : (
+                    <li className="text-sm text-white/90">{project.description.objectives}</li>
                   )}
-                  <br />
-                  {(project.description as Record<string, string | undefined>).objectives && (
-                    <span>
-                      <strong>Objectifs :</strong> {(project.description as Record<string, string | undefined>).objectives}
-                    </span>
+                </ul>
+              </Collapse>
+              <Collapse title="Compétences développées">
+                <ul className="list-disc pl-5">
+                  {Array.isArray(project.description.skillsDeveloped) ? (
+                    project.description.skillsDeveloped.map((skill, index) => (
+                      <li key={index} className="text-sm text-white/90">
+                        {skill}
+                      </li>
+                    ))
+                  ) : (
+                    <li className="text-sm text-white/90">{project.description.skillsDeveloped}</li>
                   )}
-                  <br />
-                  {(project.description as Record<string, string | undefined>).results && (
-                    <span>
-                      <strong>Résultats :</strong> {(project.description as Record<string, string | undefined>).results}
-                    </span>
+                </ul>
+              </Collapse>
+              <Collapse title="Perspectives d'amélioration">
+                <p className="text-sm text-white/90">{project.description.improvements}</p>
+              </Collapse>
+              <Collapse title="Résultats">
+                <ul className="list-disc pl-5">
+                  {Array.isArray(project.description.results) ? (
+                    project.description.results.map((result, index) => (
+                      <li key={index} className="text-sm text-white/90">
+                        {result}
+                      </li>
+                    ))
+                  ) : (
+                    <li className="text-sm text-white/90">{project.description.results}</li>
                   )}
-                  <br />
-                  {(project.description as Record<string, string | undefined>).improvements && (
-                    <span>
-                      <strong>Améliorations :</strong> {(project.description as Record<string, string | undefined>).improvements}
-                    </span>
-                  )}
-                  <br />
-                  {(project.description as Record<string, string | undefined>)["skillsDeveloped"] && (
-                    <span>
-                      <strong>Compétences développées :</strong> {(project.description as Record<string, string | undefined>)["skillsDeveloped"]}
-                    </span>
-                  )}
-                </>
-              )}
-            </p>
-            <div className="mt-6 flex flex-wrap gap-1.5">
-              {techBadgesWithIcons
-                .filter((badge) => project.tags.includes(badge.name))
-                .map((badge) => (
-                  <span key={badge.name} className="inline-flex items-center gap-1 rounded-full border border-border bg-secondary px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
-                    {badge.iconUrl && (
-                      <img
-                        src={badge.iconUrl}
-                        alt={`${badge.name} icon`}
-                        width="12"
-                        height="12"
-                        className="h-3 w-3"
-                        onError={(e) => {
-                          (e.currentTarget as HTMLImageElement).style.display = "none";
-                        }}
-                      />
+                </ul>
+              </Collapse>
+              <div className="w-full p-6 sm:p-10 border-t border-border">
+                {/* Deux rangées distinctes plutôt qu'un seul flex-wrap mélangeant
+                    tout : les actions (primary/secondary, gabarit pill) d'un côté,
+                    les documents (tertiary, gabarit lien texte) de l'autre. Sans
+                    ça, le nombre variable de documents par projet (1 à 4+) fait
+                    retomber la ligne de façon imprévisible et mélange deux gabarits
+                    de bouton très différents sur une même rangée centrée. */}
+                {(project.liveDemoUrl || (project.githubUrl && project.githubUrl !== "#") || project.beforeUrl) && (
+                  <div className="flex flex-wrap items-center justify-center gap-3">
+                    {project.liveDemoUrl && (
+                      <Button href={project.liveDemoUrl} target="_blank" rel="noopener noreferrer" variant="primary" onClick={(e) => e.stopPropagation()}>
+                        <FaExternalLinkAlt className="h-4 w-4" />
+                        Voir le prototype
+                      </Button>
                     )}
-                    {badge.name}
-                  </span>
-                ))}
-            </div>
-          </div>
-          {/* Images */}
-          <div className="flex flex-col gap-4">
-            {project.images.length === 1 && <img src={project.images[0]} alt={`Capture d'écran du projet`} className="w-full rounded-lg border border-border block md:hidden" loading="lazy" decoding="async" />}
-            {project.images.length > 1 && (
-              <div className="block md:hidden">
-                {" "}
-                {/* Show all images for mobile */}
-                {project.images.map((image, index) => (
-                  <img key={index} src={image} alt={`Capture d'écran ${index + 1} du projet`} className="w-full rounded-lg border border-border mb-4" loading="lazy" decoding="async" />
-                ))}
+                    {project.githubUrl && project.githubUrl !== "#" ? (
+                      <Button href={project.githubUrl} target="_blank" rel="noopener noreferrer" variant="secondary" onClick={(e) => e.stopPropagation()}>
+                        <Github className="h-4 w-4" />
+                        Code source
+                      </Button>
+                    ) : null}
+                    {project.beforeUrl && (
+                      <Button href={project.beforeUrl} target="_blank" rel="noopener noreferrer" variant="secondary" onClick={(e) => e.stopPropagation()}>
+                        <FaExternalLinkAlt className="h-4 w-4" />
+                        Voir la version initiale
+                      </Button>
+                    )}
+                  </div>
+                )}
+                {project.documents && project.documents.length > 0 && (
+                  <div className="mt-3 flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+                    {project.documents.map((doc) => (
+                      <Button key={doc.url} href={doc.url} target="_blank" rel="noopener noreferrer" variant="tertiary" onClick={(e) => e.stopPropagation()}>
+                        <FaFileDownload className="h-4 w-4" />
+                        {doc.label}
+                      </Button>
+                    ))}
+                  </div>
+                )}
               </div>
-            )}
           </div>
-          {project.images.length > 1 && (
-            <div className="hidden md:block">
-              {" "}
-              {/* Show carousel only for tablet and larger screens */}
-              <Suspense fallback={<div>Chargement...</div>}>
-                <Carousel images={project.images} />
-              </Suspense>
-            </div>
-          )}
         </div>
       </div>
     </div>

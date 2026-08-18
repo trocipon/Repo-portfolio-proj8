@@ -9,7 +9,15 @@ interface ThemeContextValue {
 
 export const ThemeContext = React.createContext<ThemeContextValue | undefined>(undefined);
 
-export function ThemeProvider({ children, attribute, defaultTheme = "light", enableSystem = true }: any) {
+interface ThemeProviderProps {
+  children: React.ReactNode;
+  attribute?: string;
+  defaultTheme?: Theme;
+  enableSystem?: boolean;
+  disableTransitionOnChange?: boolean;
+}
+
+export function ThemeProvider({ children, attribute, defaultTheme = "light", enableSystem = true }: ThemeProviderProps) {
   const [theme, setTheme] = React.useState<string>(() => {
     try {
       const stored = typeof window !== "undefined" ? localStorage.getItem("theme") : null;

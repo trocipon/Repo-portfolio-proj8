@@ -1,6 +1,8 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { Send } from "../utils/icons";
 import { InputField } from "../ui/input-field";
+import { Button } from "../ui/button";
 
 interface FormState {
   name: string;
@@ -16,14 +18,18 @@ interface Errors {
   subject?: string;
   message?: string;
   honeypot?: string;
-  captcha?: string;
 }
 
 const errorMessages = {
   required: "Ce champ est requis.",
   emailInvalid: "Format d'email invalide.",
+  nameTooShort: "Le nom doit contenir au moins 2 caractères.",
+  nameInvalid: "Le nom ne peut contenir que des lettres, espaces, tirets ou apostrophes.",
+  subjectTooShort: "Le sujet doit contenir au moins 3 caractères.",
   messageTooShort: "Le message doit contenir au moins 10 caractères.",
 };
+
+const namePattern = /^[a-zA-ZÀ-ÿ\s'-]+$/;
 
 export function ContactForm() {
   const [formState, setFormState] = useState<FormState>({
@@ -36,17 +42,30 @@ export function ContactForm() {
   const [errors, setErrors] = useState<Errors>({});
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [captchaValue, setCaptchaValue] = useState<string | null>(null);
-  const firstErrorRef = useRef<HTMLInputElement | null>(null);
+  const successHeadingRef = useRef<HTMLHeadingElement | null>(null);
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
+  useEffect(() => {
+    if (submitted) successHeadingRef.current?.focus();
+  }, [submitted]);
 
   function validate(values: FormState): Errors {
     const newErrors: Errors = {};
-    if (!values.name.trim()) newErrors.name = errorMessages.required;
+    const trimmedName = values.name.trim();
+    if (!trimmedName) newErrors.name = errorMessages.required;
+    else if (trimmedName.length < 2) newErrors.name = errorMessages.nameTooShort;
+    else if (!namePattern.test(trimmedName)) newErrors.name = errorMessages.nameInvalid;
+
     if (!values.email.trim()) newErrors.email = errorMessages.required;
     else if (!/^\S+@\S+\.\S+$/.test(values.email)) newErrors.email = errorMessages.emailInvalid;
-    if (!values.subject.trim()) newErrors.subject = errorMessages.required;
+
+    const trimmedSubject = values.subject.trim();
+    if (!trimmedSubject) newErrors.subject = errorMessages.required;
+    else if (trimmedSubject.length < 3) newErrors.subject = errorMessages.subjectTooShort;
+
     if (!values.message.trim()) newErrors.message = errorMessages.required;
-    else if (values.message.length < 10) newErrors.message = errorMessages.messageTooShort;
+    else if (values.message.trim().length < 10) newErrors.message = errorMessages.messageTooShort;
+
     if (values.honeypot) {
       console.warn("Honeypot triggered: potential spam detected.");
       newErrors.honeypot = "Spam détecté.";
@@ -59,12 +78,7 @@ export function ContactForm() {
     setErrors((prev) => ({ ...prev, [e.target.name]: "" }));
   }
 
-  function handleCaptchaChange(value: string | null) {
-    setCaptchaValue(value);
-    setErrors((prev) => ({ ...prev, captcha: "" }));
-  }
-
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const validationErrors = validate(formState);
     setErrors(validationErrors);
@@ -75,9 +89,16 @@ export function ContactForm() {
       return;
     }
     setLoading(true);
+
+    // Vérification invisible en complément du honeypot déjà en place ; comme
+    // pour le téléchargement du CV, le score n'est pas exploitable côté
+    // client (pas de backend pour appeler l'API siteverify avec la clé
+    // secrète), le jeton est transmis à Formspree à titre indicatif.
+    const recaptchaToken = executeRecaptcha ? await executeRecaptcha("contact_form") : null;
+
     fetch("https://formspree.io/f/xbdavaqg", {
       method: "POST",
-      body: JSON.stringify(formState),
+      body: JSON.stringify({ ...formState, recaptchaToken }),
       headers: {
         "Content-Type": "application/json",
       },
@@ -98,25 +119,26 @@ export function ContactForm() {
   return (
     <div className="lg:col-span-2">
       {submitted ? (
-        <div className="flex flex-col items-center justify-center rounded-xl border border-primary/30 bg-primary/5 p-12 text-center">
+        <div className="flex flex-col items-center justify-center rounded-xl border border-primary/30 bg-primary/5 p-12 text-center" role="status" aria-live="polite">
           <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
             <Send className="h-6 w-6 text-primary" />
           </div>
-          <h3 className="mt-4 text-lg font-semibold text-foreground">Message envoyé !</h3>
+          <h3 ref={successHeadingRef} tabIndex={-1} className="mt-4 text-lg font-semibold text-foreground outline-none">
+            Message envoyé !
+          </h3>
           <p className="mt-2 text-sm text-foreground/80">Merci pour votre message. Je vous répondrai dans les meilleurs délais.</p>
           <button
             onClick={() => {
               setSubmitted(false);
               setFormState({ name: "", email: "", subject: "", message: "", honeypot: "" });
-              setCaptchaValue(null);
             }}
-            className="mt-6 text-sm font-medium text-primary hover:underline"
+            className="mt-6 text-sm font-medium text-primary hover:underline cursor-pointer"
           >
             Envoyer un autre message
           </button>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="flex flex-col gap-5" aria-live="polite" noValidate>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-5" noValidate>
           <input type="text" name="honeypot" value={formState.honeypot} onChange={handleChange} style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
           <div className="grid gap-5 sm:grid-cols-2">
             <InputField id="name" label="Nom complet" type="text" value={formState.name} onChange={handleChange} error={errors.name} placeholder="Votre nom" />
@@ -134,18 +156,20 @@ export function ContactForm() {
               </span>
             )}
           </div>
-          <button type="submit" className={`inline-flex w-fit items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-60 disabled:cursor-not-allowed`} disabled={loading} aria-busy={loading}>
-            {loading ? (
-              <svg className="animate-spin h-4 w-4 mr-2 text-primary-foreground" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-                <path d="M4 12a8 8 0 018-8" stroke="currentColor" strokeWidth="4" fill="none" />
-              </svg>
-            ) : (
-              <Send className="h-4 w-4" />
-            )}
-            {loading ? "Envoi..." : "Envoyer le message"}
-          </button>
-          <p className="mt-2 text-xs text-muted-foreground text-left italic">En envoyant ce formulaire, vous acceptez que vos données soient utilisées pour vous répondre, conformément aux mentions légales.</p>
+          <p className="text-xs text-muted-foreground text-left italic">En envoyant ce formulaire, vous acceptez que vos données soient utilisées pour vous répondre, conformément aux mentions légales.</p>
+          <div className="flex justify-center sm:justify-start">
+            <Button type="submit" variant="primary" className="w-fit disabled:opacity-60 disabled:cursor-not-allowed" disabled={loading} aria-busy={loading}>
+              {loading ? (
+                <svg className="animate-spin h-4 w-4 mr-2 text-primary-foreground" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                  <path d="M4 12a8 8 0 018-8" stroke="currentColor" strokeWidth="4" fill="none" />
+                </svg>
+              ) : (
+                <Send className="h-4 w-4" />
+              )}
+              {loading ? "Envoi..." : "Envoyer le message"}
+            </Button>
+          </div>
         </form>
       )}
     </div>
