@@ -1,4 +1,4 @@
-import { ArrowDown } from "../utils/icons";
+import { ArrowDown, MapPin } from "../utils/icons";
 import { FadeIn } from "@/components/ui/fade-in";
 import { Button } from "../ui/button";
 import { scrollToSection } from "../utils/shared-utils";
@@ -42,7 +42,19 @@ export function HeroSection() {
               photo sur mobile, entre les deux blocs de texte sur desktop. */}
           <FadeIn delay={175} className="order-3 lg:order-1 lg:col-start-1 lg:row-start-2">
             <div className="flex flex-wrap items-center justify-center gap-2">
-              <span className="rounded-full border border-foreground/30 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-foreground">Mobile Sud-Ouest / Nord-Ouest</span>
+              {/* Fusionnée avec la localisation de base (retirée du bloc contact
+                  pour éviter la redite) : deux lignes sur mobile où la pastille
+                  serait trop étroite pour tout tenir sur une ligne, une seule
+                  ligne dès sm où la largeur disponible le permet. */}
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-foreground/30 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-foreground text-center sm:py-1">
+                <MapPin className="h-3 w-3 shrink-0" aria-hidden="true" />
+                <span>
+                  Hautes-Pyrénées (65)
+                  <span className="hidden sm:inline"> · </span>
+                  <br className="sm:hidden" />
+                  Mobile Sud-Ouest / Nord-Ouest
+                </span>
+              </span>
               <span className="inline-flex items-center gap-1.5 rounded-full border border-foreground/30 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-foreground">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden="true" />
                 Disponible nov. 2026
