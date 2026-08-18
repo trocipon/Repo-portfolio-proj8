@@ -1,10 +1,11 @@
-import { GraduationCap, Briefcase } from "../utils/icons";
+import { GraduationCap, Briefcase, ExternalLink } from "../utils/icons";
 import { FadeIn } from "../ui/fade-in";
 import data from "../../data/data.json";
-import { CareerCard } from "../features/career-card";
+import { CareerCard, CareerItem } from "../features/career-card";
+import { Button } from "../ui/button";
 
 export function CareerSection() {
-  const timeline = (data as any).career.timeline;
+  const timeline = data.career.timeline as CareerItem[];
 
   return (
     <section id="parcours" tabIndex={-1} className="bg-secondary/50 px-4 py-24" aria-label="Mon parcours">
@@ -18,14 +19,14 @@ export function CareerSection() {
 
         <FadeIn delay={200}>
           <div className="mt-12 flex flex-col gap-10">
-            {timeline.map((item: any, index: number) => {
+            {timeline.map((item, index) => {
               const isEven = index % 2 === 0;
               return (
                 <div key={item.title} className={`flex flex-col gap-6 md:flex-row md:items-center ${isEven ? "" : "md:flex-row-reverse"}`}>
                   {/* Watermark image */}
                   <div className="hidden md:block md:w-2/5">
                     <div className="relative h-48 overflow-hidden rounded-xl opacity-20">
-                      <img src={item.image} alt="" className="absolute inset-0 h-full w-full object-cover" aria-hidden="true" style={{ contain: "content" }} />
+                      <img src={item.image} alt="" className="absolute inset-0 h-full w-full object-cover" aria-hidden="true" style={{ contain: "content", objectPosition: item.imagePosition === "top" ? "center top" : "center" }} />
                     </div>
                   </div>
 
@@ -39,6 +40,12 @@ export function CareerSection() {
                 </div>
               );
             })}
+          </div>
+          <div className="mt-10 flex justify-center sm:justify-end">
+            <Button href="https://linkedin.com/in/thibaudrocipon" variant="tertiary" target="_blank" rel="noopener noreferrer">
+              Voir mon parcours complet sur LinkedIn
+              <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+            </Button>
           </div>
         </FadeIn>
       </div>
