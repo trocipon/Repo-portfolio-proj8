@@ -42,8 +42,9 @@ export function HeroSection() {
               photo sur mobile, entre les deux blocs de texte sur desktop. */}
           <FadeIn delay={175} className="order-3 lg:order-1 lg:col-start-1 lg:row-start-2">
             <div className="flex flex-wrap items-center justify-center gap-2">
-              {/* Fusionnée avec la localisation de base (retirée du bloc contact
-                  pour éviter la redite) : deux lignes sur mobile où la pastille
+              {/* Localisation fusionnée à la mobilité géographique en une seule
+                  pastille (pas de doublon avec la section contact, qui n'affiche
+                  pas cette information) : deux lignes sur mobile où la pastille
                   serait trop étroite pour tout tenir sur une ligne, une seule
                   ligne dès sm où la largeur disponible le permet. */}
               <span className="inline-flex items-center gap-1.5 rounded-full border border-foreground/30 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-foreground text-center sm:py-1">

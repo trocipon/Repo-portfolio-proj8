@@ -45,5 +45,3 @@ export function ThemeProvider({ children, attribute, defaultTheme = "light", ena
 
   return <ThemeContext.Provider value={{ theme, setTheme }}>{children}</ThemeContext.Provider>;
 }
-
-// `useTheme` moved to ./use-theme.tsx to keep one top-level export per file

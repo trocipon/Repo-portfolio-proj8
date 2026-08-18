@@ -28,14 +28,14 @@ export function AboutSection() {
 
           {/* Photo : entre les paragraphes 2 et 3 sur mobile/tablette pour
               aérer la lecture, recadrée en format bannière (large et bas) à
-              ces largeurs plutôt que dans le cadre portrait étroit d'origine,
-              moins encombrant visuellement. Redevient une colonne portrait
-              dédiée à partir de lg, comme avant. */}
+              ces largeurs pour rester moins encombrante visuellement qu'un
+              cadre portrait étroit. Redevient une colonne portrait dédiée à
+              partir de lg. */}
           <FadeIn delay={150} className="order-2 lg:order-1 lg:col-start-1 lg:row-start-1 lg:row-span-2">
             <div className="flex items-center justify-center w-full h-full">
               <div className="relative w-full aspect-[16/9] lg:w-[420px] lg:aspect-[3/4]">
                 <div className="relative h-full w-full overflow-hidden rounded-2xl border-2 border-primary/20 shadow-xl">
-                  <img src="/images/empreinte-intro.webp" alt="Empreinte digitale intro" width="384" height="384" loading="lazy" className="h-full w-full object-cover object-center" style={{ contain: "content" }} />
+                  <img src="/images/empreinte-intro.webp" alt="Empreinte digitale illustrée sur une touche de clavier, symbole de la reconversion de la police scientifique vers le numérique" width="384" height="384" loading="lazy" className="h-full w-full object-cover object-center" style={{ contain: "content" }} />
                 </div>
                 <div className="hidden lg:block absolute -bottom-3 -left-3 h-full w-full rounded-2xl border-2 border-primary/10 -z-10" aria-hidden="true" />
               </div>
