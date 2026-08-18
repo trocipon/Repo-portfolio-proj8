@@ -17,9 +17,9 @@
   --color-secondary: #dbe6f0;
   --color-secondary-foreground: #1e3a5f;
   --color-muted: #f4efe8;
-  --color-muted-foreground: #6b7280;
+  --color-muted-foreground: #4a4a4a;
   --color-accent: #f6efe6;
-  --color-accent-foreground: #0f1724;
+  --color-accent-foreground: #1a1a1a;
   --color-destructive: #ef4444;
   --color-destructive-foreground: #ffffff;
   --color-border: #e6dfd6;
@@ -143,31 +143,6 @@ section[id] {
 .card-interactive:hover {
   box-shadow: 0 6px 24px 0 rgba(0, 0, 0, 0.1);
   transform: translateY(-4px);
-}
-
-/* Cards */
-.bg-card {
-  background-color: var(--card);
-}
-
-.dark .bg-card {
-  background-color: #23272b;
-}
-
-.text-card-foreground {
-  color: var(--card-foreground);
-}
-
-.dark .text-card-foreground {
-  color: #ecf0ea;
-}
-
-.border-border {
-  border-color: var(--border);
-}
-
-.dark .border-border {
-  border-color: #22312a;
 }
 
 /* Optimise les animations */
