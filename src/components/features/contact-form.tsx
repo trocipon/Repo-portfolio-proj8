@@ -156,7 +156,28 @@ export function ContactForm() {
               </span>
             )}
           </div>
-          <p className="text-xs text-muted-foreground text-left italic">En envoyant ce formulaire, vous acceptez que vos données soient utilisées pour vous répondre, conformément aux mentions légales.</p>
+          {/* Les deux mentions légales (consentement + reCAPTCHA) forment un
+              même bloc de lecture : gap réduit entre elles, indépendant du
+              gap-5 du formulaire qui les sépare des champs au-dessus et du
+              bouton en dessous. */}
+          <div className="flex flex-col gap-1">
+            <p className="text-xs text-muted-foreground text-left italic">En envoyant ce formulaire, vous acceptez que vos données soient utilisées pour vous répondre, conformément aux mentions légales.</p>
+            {/* Mention requise par Google en contrepartie du masquage du badge
+                flottant reCAPTCHA (voir globals.css) — le badge visuel par
+                défaut est disproportionné sur mobile, cette mention textuelle
+                le remplace au point d'usage. */}
+            <p className="text-xs text-muted-foreground text-left italic">
+              Ce site est protégé par reCAPTCHA, la{" "}
+              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">
+                politique de confidentialité
+              </a>{" "}
+              et les{" "}
+              <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">
+                conditions d'utilisation
+              </a>{" "}
+              de Google s'appliquent.
+            </p>
+          </div>
           <div className="flex justify-center sm:justify-start">
             <Button type="submit" variant="primary" className="w-fit disabled:opacity-60 disabled:cursor-not-allowed" disabled={loading} aria-busy={loading}>
               {loading ? (

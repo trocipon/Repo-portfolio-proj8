@@ -110,6 +110,18 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+/* ========================= RECAPTCHA ========================= */
+/* Le badge flottant injecté par reCAPTCHA v3 est disproportionné sur petit
+   écran (fixe, en bas à droite, par-dessus le contenu). Google autorise à le
+   masquer à condition d'afficher ailleurs la mention "Ce site est protégé
+   par reCAPTCHA..." avec les liens vers sa politique de confidentialité et
+   ses conditions d'utilisation — ce qu'on fait juste au-dessus du bouton
+   d'envoi du formulaire de contact, et qui est également rappelé dans les
+   mentions légales pour les deux usages (formulaire + téléchargement du CV). */
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
 /* ========================= ANCRES ========================= */
 /* Compense la hauteur du header fixe : les ancres (clic nav, scrollIntoView,
    navigation clavier) doivent amener le début de la section sous le header,
@@ -123,7 +135,7 @@ section[id] {
 /* États hover/pressed pour les boutons CTA (primary/secondary). La couleur
    change déjà au survol (voir button.tsx) ; on ajoute juste une ombre légère
    pour le hover et un léger tassement pour le clic (feedback "pressed"),
-   sans le grossissement précédent qui pouvait paraître gadget. */
+   sans grossissement qui pourrait paraître gadget. */
 .btn-cta:hover {
   box-shadow: 0 2px 8px 0 rgba(30, 58, 95, 0.18);
   cursor: pointer;
