@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { Send } from "../utils/icons";
 import { InputField } from "../ui/input-field";
@@ -23,8 +23,13 @@ interface Errors {
 const errorMessages = {
   required: "Ce champ est requis.",
   emailInvalid: "Format d'email invalide.",
+  nameTooShort: "Le nom doit contenir au moins 2 caractères.",
+  nameInvalid: "Le nom ne peut contenir que des lettres, espaces, tirets ou apostrophes.",
+  subjectTooShort: "Le sujet doit contenir au moins 3 caractères.",
   messageTooShort: "Le message doit contenir au moins 10 caractères.",
 };
+
+const namePattern = /^[a-zA-ZÀ-ÿ\s'-]+$/;
 
 export function ContactForm() {
   const [formState, setFormState] = useState<FormState>({
@@ -37,17 +42,30 @@ export function ContactForm() {
   const [errors, setErrors] = useState<Errors>({});
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const firstErrorRef = useRef<HTMLInputElement | null>(null);
+  const successHeadingRef = useRef<HTMLHeadingElement | null>(null);
   const { executeRecaptcha } = useGoogleReCaptcha();
+
+  useEffect(() => {
+    if (submitted) successHeadingRef.current?.focus();
+  }, [submitted]);
 
   function validate(values: FormState): Errors {
     const newErrors: Errors = {};
-    if (!values.name.trim()) newErrors.name = errorMessages.required;
+    const trimmedName = values.name.trim();
+    if (!trimmedName) newErrors.name = errorMessages.required;
+    else if (trimmedName.length < 2) newErrors.name = errorMessages.nameTooShort;
+    else if (!namePattern.test(trimmedName)) newErrors.name = errorMessages.nameInvalid;
+
     if (!values.email.trim()) newErrors.email = errorMessages.required;
     else if (!/^\S+@\S+\.\S+$/.test(values.email)) newErrors.email = errorMessages.emailInvalid;
-    if (!values.subject.trim()) newErrors.subject = errorMessages.required;
+
+    const trimmedSubject = values.subject.trim();
+    if (!trimmedSubject) newErrors.subject = errorMessages.required;
+    else if (trimmedSubject.length < 3) newErrors.subject = errorMessages.subjectTooShort;
+
     if (!values.message.trim()) newErrors.message = errorMessages.required;
-    else if (values.message.length < 10) newErrors.message = errorMessages.messageTooShort;
+    else if (values.message.trim().length < 10) newErrors.message = errorMessages.messageTooShort;
+
     if (values.honeypot) {
       console.warn("Honeypot triggered: potential spam detected.");
       newErrors.honeypot = "Spam détecté.";
@@ -101,11 +119,13 @@ export function ContactForm() {
   return (
     <div className="lg:col-span-2">
       {submitted ? (
-        <div className="flex flex-col items-center justify-center rounded-xl border border-primary/30 bg-primary/5 p-12 text-center">
+        <div className="flex flex-col items-center justify-center rounded-xl border border-primary/30 bg-primary/5 p-12 text-center" role="status" aria-live="polite">
           <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
             <Send className="h-6 w-6 text-primary" />
           </div>
-          <h3 className="mt-4 text-lg font-semibold text-foreground">Message envoyé !</h3>
+          <h3 ref={successHeadingRef} tabIndex={-1} className="mt-4 text-lg font-semibold text-foreground outline-none">
+            Message envoyé !
+          </h3>
           <p className="mt-2 text-sm text-foreground/80">Merci pour votre message. Je vous répondrai dans les meilleurs délais.</p>
           <button
             onClick={() => {
@@ -118,7 +138,7 @@ export function ContactForm() {
           </button>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="flex flex-col gap-5" aria-live="polite" noValidate>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-5" noValidate>
           <input type="text" name="honeypot" value={formState.honeypot} onChange={handleChange} style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
           <div className="grid gap-5 sm:grid-cols-2">
             <InputField id="name" label="Nom complet" type="text" value={formState.name} onChange={handleChange} error={errors.name} placeholder="Votre nom" />
@@ -136,6 +156,7 @@ export function ContactForm() {
               </span>
             )}
           </div>
+          <p className="text-xs text-muted-foreground text-left italic">En envoyant ce formulaire, vous acceptez que vos données soient utilisées pour vous répondre, conformément aux mentions légales.</p>
           <div className="flex justify-center sm:justify-start">
             <Button type="submit" variant="primary" className="w-fit disabled:opacity-60 disabled:cursor-not-allowed" disabled={loading} aria-busy={loading}>
               {loading ? (
@@ -149,7 +170,6 @@ export function ContactForm() {
               {loading ? "Envoi..." : "Envoyer le message"}
             </Button>
           </div>
-          <p className="mt-2 text-xs text-muted-foreground text-left italic">En envoyant ce formulaire, vous acceptez que vos données soient utilisées pour vous répondre, conformément aux mentions légales.</p>
         </form>
       )}
     </div>
