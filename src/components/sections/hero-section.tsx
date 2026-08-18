@@ -2,6 +2,7 @@ import { ArrowDown, MapPin } from "../utils/icons";
 import { FadeIn } from "@/components/ui/fade-in";
 import { Button } from "../ui/button";
 import { scrollToSection } from "../utils/shared-utils";
+import { SITE_NAME, SITE_TITLE } from "@/config/site";
 
 export function HeroSection() {
   return (
@@ -13,8 +14,8 @@ export function HeroSection() {
               colonne de texte (même colonne/rangée que le bloc description). */}
           <FadeIn delay={100} className="order-1 lg:order-1 lg:col-start-1 lg:row-start-1">
             <div className="flex flex-col items-center justify-center text-center h-full">
-              <h1 className="text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">Thibaud Rocipon</h1>
-              <p className="mt-4 font-heading text-lg font-bold text-primary md:text-xl">Product Designer Junior</p>
+              <h1 className="text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">{SITE_NAME}</h1>
+              <p className="mt-4 font-heading text-lg font-bold text-primary md:text-xl">{SITE_TITLE}</p>
             </div>
           </FadeIn>
 

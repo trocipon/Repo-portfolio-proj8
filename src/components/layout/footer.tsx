@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ArrowUp } from "../utils/icons";
 import LegalModal from "../features/legal-modal";
 import { prefersReducedMotion } from "../utils/shared-utils";
+import { SITE_NAME, SITE_TITLE } from "@/config/site";
 
 export function Footer() {
   const [isLegalModalOpen, setLegalModalOpen] = useState(false);
@@ -12,8 +13,8 @@ export function Footer() {
     <footer className="relative border-t border-border bg-card px-6 py-12" role="contentinfo">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 md:flex-row md:justify-between">
         <div className="text-center md:text-left">
-          <p className="text-sm font-semibold text-foreground">Thibaud Rocipon</p>
-          <p className="mt-1 text-xs text-muted-foreground">Product Designer Junior</p>
+          <p className="text-sm font-semibold text-foreground">{SITE_NAME}</p>
+          <p className="mt-1 text-xs text-muted-foreground">{SITE_TITLE}</p>
         </div>
 
         {/* Legal Modal */}
@@ -22,7 +23,7 @@ export function Footer() {
           <button className="mt-1 text-xs font-bold text-muted-foreground hover:underline cursor-pointer" onClick={() => setLegalModalOpen(true)}>
             Mentions légales
           </button>
-          <p className="text-xs text-muted-foreground">{`© ${currentYear} Thibaud Rocipon. Tous droits réservés.`}</p>
+          <p className="text-xs text-muted-foreground">{`© ${currentYear} ${SITE_NAME}. Tous droits réservés.`}</p>
         </div>
       </div>
 
