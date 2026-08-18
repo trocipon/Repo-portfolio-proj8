@@ -26,7 +26,6 @@ export const iconSlugs: Record<string, string> = {
   Claude: "claude",
   ChatGPT: "openai",
   "GitHub Copilot": "githubcopilot",
-  Mistral: "mistralai",
   Vercel: "vercel",
 };
 

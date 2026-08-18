@@ -1,27 +1,27 @@
 {
   "skills": {
-    "techBadges": [{ "name": "Figma" }, { "name": "Notion" }, { "name": "Canva" }, { "name": "Miro" }, { "name": "V0" }, { "name": "Lovable" }, { "name": "HTML5" }, { "name": "CSS3" }, { "name": "JavaScript" }, { "name": "TypeScript" }, { "name": "React" }, { "name": "Vite" }, { "name": "Sass" }, { "name": "Node.js" }, { "name": "Express" }, { "name": "MongoDB" }, { "name": "Git" }, { "name": "GIMP" }, { "name": "Lighthouse" }, { "name": "Google Search Console" }, { "name": "Google Analytics" }, { "name": "Claude" }, { "name": "ChatGPT" }, { "name": "GitHub Copilot" }, { "name": "Mistral" }, { "name": "Vercel" }],
+    "techBadges": [{ "name": "Figma" }, { "name": "Notion" }, { "name": "Canva" }, { "name": "Miro" }, { "name": "V0" }, { "name": "Lovable" }, { "name": "HTML5" }, { "name": "CSS3" }, { "name": "JavaScript" }, { "name": "TypeScript" }, { "name": "React" }, { "name": "Vite" }, { "name": "Sass" }, { "name": "Node.js" }, { "name": "Express" }, { "name": "MongoDB" }, { "name": "Git" }, { "name": "Lighthouse" }, { "name": "Google Search Console" }, { "name": "Google Analytics" }, { "name": "Claude" }, { "name": "GitHub Copilot" }, { "name": "Vercel" }, { "name": "Figma Make" }],
 
     "services": [
       {
         "title": "UX — Recherche & structuration",
         "description": "Je mène des recherches utilisateurs et je structure la réflexion produit avant de concevoir : personas, customer journey map, service blueprint, wireframes basse fidélité.",
-        "techBadges": ["Miro", "Figma", "Lighthouse"]
+        "techBadges": ["Miro", "Figma", "Lighthouse", "Wave"]
       },
       {
         "title": "UI — Design & prototypage",
-        "description": "Je traduis ces constats en maquettes Figma à haute fidélité, jusqu'au prototypage interactif testable, avec une attention portée à la cohérence visuelle et au design system.",
-        "techBadges": ["Figma", "Canva", "GIMP", "V0", "Lovable"]
+        "description": "Je traduis ces besoins en maquettes Figma à haute fidélité, jusqu'au prototypage interactif testable, avec une attention portée à la cohérence visuelle et au design system.",
+        "techBadges": ["Figma", "Canva", "V0", "Lovable", "Figma Make"]
       },
       {
         "title": "Culture produit & business",
-        "description": "J'analyse les données existantes (Analytics, CRM, retours utilisateurs et client) pour cadrer les problématiques, je benchmark et je priorise les pistes d'amélioration, et je relie mes recommandations à des indicateurs concrets : OKR, projections KPI, impact business, ROI.",
-        "techBadges": ["Google Search Console", "Google Analytics", "Notion", "Claude", "ChatGPT", "Mistral"]
+        "description": "J'analyse les données existantes (Analytics, CRM, retours utilisateurs et client) pour cadrer les problématiques, puis je benchmark et priorise les pistes d'amélioration. Mes recommandations sont reliées à des indicateurs concrets : OKR, projections KPI, impact business, ROI.",
+        "techBadges": ["Google Search Console", "Google Analytics", "Notion"]
       },
       {
         "title": "Culture technique & développement",
-        "description": "Mes bases certifiées en développement web (HTML, CSS, JavaScript, React, API REST) me permettent de collaborer avec les équipes techniques, d'anticiper la faisabilité de mes conceptions et de prototyper rapidement avec des outils comme V0.",
-        "techBadges": ["HTML5", "CSS3", "Sass", "JavaScript", "TypeScript", "React", "Vite", "Node.js", "Express", "MongoDB", "Git", "GitHub Copilot", "Vercel"]
+        "description": "Mes bases certifiées en développement web (HTML, CSS, JavaScript, React, API REST) me permettent de collaborer avec les équipes techniques, d'anticiper la faisabilité de mes conceptions et de prototyper rapidement avec des outils comme Vite.",
+        "techBadges": ["HTML5", "CSS3", "JavaScript", "TypeScript", "React", "Vite", "Node.js", "Express", "MongoDB", "Git", "GitHub Copilot", "Claude", "Vercel"]
       }
     ]
   },
