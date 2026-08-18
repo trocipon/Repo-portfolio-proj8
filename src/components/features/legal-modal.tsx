@@ -1,39 +1,20 @@
 import React from "react";
-import { useModalA11y } from "../utils/use-modal-a11y";
+import { ModalShell } from "../ui/modal-shell";
+import { SITE_NAME, SITE_TITLE } from "@/config/site";
 
 interface LegalModalProps {
   onClose: () => void;
 }
 
 const LegalModal: React.FC<LegalModalProps> = ({ onClose }) => {
-  const dialogRef = useModalA11y(onClose);
-
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center sm:bg-foreground/60 sm:backdrop-blur-sm sm:p-6" onClick={onClose} role="dialog" aria-modal="true" aria-label="Mentions légales">
-      {/* Sur mobile, la modale occupe l'écran entier plutôt que de flotter en
-          carte réduite avec un fond assombri : sur un petit écran, une carte
-          "flottante" prend de toute façon presque toute la place, autant
-          l'assumer comme un vrai écran plein (pas d'arrondi, pas de bordure,
-          pas de backdrop puisqu'il n'y a rien de visible derrière). À partir
-          de sm, on retrouve la carte centrée classique. */}
-      <div ref={dialogRef} className="relative w-full h-full sm:h-auto sm:max-w-5xl max-h-none sm:max-h-[90vh] rounded-none sm:rounded-2xl border-0 sm:border sm:border-border bg-card p-0 shadow-none sm:shadow-2xl flex flex-col overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-        {/* Barre fixe : reste au sommet pendant le défilement du contenu
-            (un bouton de fermeture positionné en absolu à l'intérieur d'un
-            conteneur overflow-y-auto défilerait hors champ avec le reste). */}
-        <div className="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-border bg-card/95 px-4 py-3 backdrop-blur-sm sm:px-6">
-          <p className="truncate text-sm font-semibold text-foreground sm:text-base" aria-hidden="true">
-            Mentions légales
-          </p>
-          <button onClick={onClose} className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground hover:bg-muted cursor-pointer" aria-label="Fermer">
-            <span className="h-4 w-4 flex items-center justify-center">✕</span>
-          </button>
-        </div>
-        <div className="w-full flex flex-col gap-6 p-6 sm:p-10">
+    <ModalShell title="Mentions légales" onClose={onClose}>
+      <div className="w-full flex flex-col gap-6 p-6 sm:p-10">
           <h2 className="text-2xl font-bold text-foreground text-center">Mentions légales</h2>
           <p className="mt-2 text-sm leading-relaxed text-foreground/80 text-justify">
             <strong>Éditeur du site</strong>
             <br />
-            Le site thibaudrocipon.dev est édité par Thibaud Rocipon, Product Designer Junior basé à Bagnères-De-Bigorre (65) - France.
+            Le site thibaudrocipon.dev est édité par {SITE_NAME}, {SITE_TITLE} basé à Bagnères-De-Bigorre (65) - France.
             <br />
             Vous pouvez me contacter via le formulaire de contact.
           </p>
@@ -80,9 +61,8 @@ const LegalModal: React.FC<LegalModalProps> = ({ onClose }) => {
             <br />
             Conformément au RGPD, vous pouvez demander l’accès, la rectification ou la suppression de vos données personnelles via le formulaire de contact.
           </p>
-        </div>
       </div>
-    </div>
+    </ModalShell>
   );
 };
 

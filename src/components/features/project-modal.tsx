@@ -4,32 +4,13 @@ import { TagPill } from "../ui/tag-pill";
 import { FaGithub as Github, FaExternalLinkAlt, FaFileDownload } from "react-icons/fa";
 import Carousel from "./carousel";
 import Collapse from "../ui/collapse";
-import { useModalA11y } from "../utils/use-modal-a11y";
 import { Button } from "../ui/button";
+import { ModalShell } from "../ui/modal-shell";
+import { DescriptionList } from "../ui/description-list";
 
 export function ProjectModal({ project, onClose }: { project: Project; onClose: () => void }) {
-  const dialogRef = useModalA11y(onClose);
-
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center sm:bg-foreground/60 sm:backdrop-blur-sm sm:p-6" onClick={onClose} role="dialog" aria-modal="true" aria-label={`Details du projet ${project.title}`}>
-      {/* Plein écran sur mobile plutôt qu'une carte flottante avec fond
-          assombri : sur petit écran une carte "flottante" occupe de toute
-          façon presque tout l'espace, autant l'assumer comme un vrai écran
-          (pas d'arrondi/bordure/backdrop). Carte centrée classique dès sm. */}
-      <div ref={dialogRef} className="relative w-full h-full sm:h-auto sm:max-w-5xl max-h-none sm:max-h-[90vh] rounded-none sm:rounded-2xl border-0 sm:border sm:border-border bg-card p-0 shadow-none sm:shadow-2xl flex flex-col overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-        {/* Barre fixe : reste au sommet pendant le défilement du contenu
-            (contrairement au bouton de fermeture ex-absolu, qui défilait hors
-            champ avec le reste). Ne reprend que le titre, pas l'accroche
-            complète, pour ne pas rogner l'espace de lecture. */}
-        <div className="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-border bg-card/95 px-4 py-3 backdrop-blur-sm sm:px-6">
-          <p className="truncate text-sm font-semibold text-foreground sm:text-base" aria-hidden="true">
-            {project.title}
-          </p>
-          <button onClick={onClose} className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground hover:bg-muted cursor-pointer" aria-label="Fermer">
-            <span className="h-4 w-4 flex items-center justify-center">✕</span>
-          </button>
-        </div>
-
+    <ModalShell title={project.title} ariaLabel={`Details du projet ${project.title}`} onClose={onClose}>
         {/* Zone d'accroche */}
         <div className="w-full p-6 sm:p-10 text-center">
           <h2 className="text-2xl font-bold text-foreground">{project.title}</h2>
@@ -68,46 +49,16 @@ export function ProjectModal({ project, onClose }: { project: Project; onClose: 
                 <p className="text-sm text-white/90">{project.description.context}</p>
               </Collapse>
               <Collapse title="Objectifs">
-                <ul className="list-disc pl-5">
-                  {Array.isArray(project.description.objectives) ? (
-                    project.description.objectives.map((objective, index) => (
-                      <li key={index} className="text-sm text-white/90">
-                        {objective}
-                      </li>
-                    ))
-                  ) : (
-                    <li className="text-sm text-white/90">{project.description.objectives}</li>
-                  )}
-                </ul>
+                <DescriptionList items={project.description.objectives} />
               </Collapse>
               <Collapse title="Compétences développées">
-                <ul className="list-disc pl-5">
-                  {Array.isArray(project.description.skillsDeveloped) ? (
-                    project.description.skillsDeveloped.map((skill, index) => (
-                      <li key={index} className="text-sm text-white/90">
-                        {skill}
-                      </li>
-                    ))
-                  ) : (
-                    <li className="text-sm text-white/90">{project.description.skillsDeveloped}</li>
-                  )}
-                </ul>
+                <DescriptionList items={project.description.skillsDeveloped} />
               </Collapse>
               <Collapse title="Perspectives d'amélioration">
                 <p className="text-sm text-white/90">{project.description.improvements}</p>
               </Collapse>
               <Collapse title="Résultats">
-                <ul className="list-disc pl-5">
-                  {Array.isArray(project.description.results) ? (
-                    project.description.results.map((result, index) => (
-                      <li key={index} className="text-sm text-white/90">
-                        {result}
-                      </li>
-                    ))
-                  ) : (
-                    <li className="text-sm text-white/90">{project.description.results}</li>
-                  )}
-                </ul>
+                <DescriptionList items={project.description.results} />
               </Collapse>
               <div className="w-full p-6 sm:p-10 border-t border-border">
                 {/* Deux rangées distinctes : les actions (primary/secondary,
@@ -151,7 +102,6 @@ export function ProjectModal({ project, onClose }: { project: Project; onClose: 
               </div>
           </div>
         </div>
-      </div>
-    </div>
+    </ModalShell>
   );
 }
