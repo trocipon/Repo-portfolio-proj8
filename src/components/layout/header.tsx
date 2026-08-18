@@ -86,11 +86,14 @@ export function Header() {
             thème + burger. Le CV reste aussi dans le menu déplié ci-dessous
             en version texte complète, pour ceux qui l'y cherchent. */}
         <div className="flex items-center gap-3 xl:hidden">
-          <button onClick={() => downloadCv()} className="flex h-9 w-9 items-center justify-center rounded-lg border border-primary text-foreground sm:h-8 sm:w-8 cursor-pointer" aria-label="Télécharger mon CV">
+          {/* h-11 w-11 (44px) sur mobile ET tablette : cible tactile minimale
+              recommandée, pas seulement sur mobile — un rétrécissement au
+              breakpoint sm allait à l'encontre de ce principe. */}
+          <button onClick={() => downloadCv()} className="flex h-11 w-11 items-center justify-center rounded-lg border border-primary text-foreground transition-colors hover:bg-primary/10 active:bg-primary/20 cursor-pointer" aria-label="Télécharger mon CV">
             <Download className="h-3.5 w-3.5" />
           </button>
           <ThemeToggle />
-          <button onClick={() => setMobileOpen(!mobileOpen)} className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-foreground font-sans sm:h-8 sm:w-8 cursor-pointer" aria-expanded={mobileOpen} aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}>
+          <button onClick={() => setMobileOpen(!mobileOpen)} className="flex h-11 w-11 items-center justify-center rounded-lg border border-border text-foreground font-sans transition-colors hover:bg-muted cursor-pointer" aria-expanded={mobileOpen} aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}>
             {mobileOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </button>
         </div>
