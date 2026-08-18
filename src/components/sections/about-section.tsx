@@ -1,14 +1,12 @@
 import { FadeIn } from "@/components/ui/fade-in";
+import { SectionHeading } from "@/components/ui/section-heading";
 
 export function AboutSection() {
   return (
     <section id="a-propos" tabIndex={-1} className="px-4 py-8 sm:px-6 md:py-12 lg:py-16" aria-label="À propos de moi">
       <div className="mx-auto max-w-6xl">
         <FadeIn>
-          <div className="mb-4 flex justify-center sm:justify-start">
-            <span className="rounded-full bg-foreground px-3 py-1 text-xs font-bold uppercase tracking-widest text-background">À propos</span>
-          </div>
-          <h2 className="text-balance text-center text-3xl font-bold tracking-tight text-foreground sm:text-left md:text-4xl lg:text-5xl">Qui suis-je ?</h2>
+          <SectionHeading badge="À propos" title="Qui suis-je ?" />
         </FadeIn>
 
         <div className="mt-8 md:mt-12 grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-8 md:gap-12 items-center">

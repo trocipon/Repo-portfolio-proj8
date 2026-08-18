@@ -1,5 +1,6 @@
 import { GraduationCap, Briefcase, ExternalLink } from "../utils/icons";
 import { FadeIn } from "../ui/fade-in";
+import { SectionHeading } from "../ui/section-heading";
 import data from "../../data/data.json";
 import { CareerCard, CareerItem } from "../features/career-card";
 import { Button } from "../ui/button";
@@ -11,10 +12,7 @@ export function CareerSection() {
     <section id="parcours" tabIndex={-1} className="bg-secondary/50 px-4 py-24" aria-label="Mon parcours">
       <div className="mx-auto max-w-6xl">
         <FadeIn>
-          <div className="mb-4 flex justify-center sm:justify-start">
-            <span className="rounded-full bg-foreground px-3 py-1 text-xs font-bold uppercase tracking-widest text-background">Parcours</span>
-          </div>
-          <h2 className="text-balance text-center text-3xl font-bold tracking-tight text-foreground sm:text-left md:text-4xl lg:text-5xl">Mon chemin professionnel</h2>
+          <SectionHeading badge="Parcours" title="Mon chemin professionnel" />
         </FadeIn>
 
         <FadeIn delay={200}>

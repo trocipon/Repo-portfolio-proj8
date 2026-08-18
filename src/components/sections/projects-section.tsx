@@ -1,5 +1,6 @@
 import { useState, Suspense, lazy } from "react";
 import { FadeIn } from "@/components/ui/fade-in";
+import { SectionHeading } from "@/components/ui/section-heading";
 import { Project, projects } from "@/components/utils/project-utils";
 import { ProjectCard } from "../features/project-card";
 import { Button } from "../ui/button";
@@ -32,20 +33,20 @@ export function ProjectsSection() {
     <section id="projets" tabIndex={-1} className="bg-secondary/50 px-4 py-8 sm:px-6 md:py-12 lg:py-16" aria-label="Mes projets">
       <div className="mx-auto max-w-6xl">
         <FadeIn>
-          <div className="mb-4 flex justify-center sm:justify-start">
-            <span className="rounded-full bg-foreground px-3 py-1 text-xs font-bold uppercase tracking-widest text-background">Projets</span>
-          </div>
-          <div className="flex flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
-            <h2 className="text-balance text-center text-3xl font-bold tracking-tight text-foreground sm:text-left md:text-4xl lg:text-5xl">Travaux réalisés</h2>
-            <Button type="button" variant="tertiary" onClick={toggleShowAll}>
-              {showAll ? "Voir moins de projets" : "Voir tous les projets"}
-              {/* Une seule icône qu'on fait pivoter plutôt que deux composants
-                  distincts (ArrowDown/ArrowUp) : des éléments différents ne
-                  peuvent pas se transitionner entre eux en CSS, la rotation
-                  permet un changement fluide. */}
-              <ArrowDown className={`h-3.5 w-3.5 transition-transform duration-300 ${showAll ? "rotate-180" : ""}`} aria-hidden="true" />
-            </Button>
-          </div>
+          <SectionHeading
+            badge="Projets"
+            title="Travaux réalisés"
+            titleAction={
+              <Button type="button" variant="tertiary" onClick={toggleShowAll}>
+                {showAll ? "Voir moins de projets" : "Voir tous les projets"}
+                {/* Une seule icône qu'on fait pivoter plutôt que deux composants
+                    distincts (ArrowDown/ArrowUp) : des éléments différents ne
+                    peuvent pas se transitionner entre eux en CSS, la rotation
+                    permet un changement fluide. */}
+                <ArrowDown className={`h-3.5 w-3.5 transition-transform duration-300 ${showAll ? "rotate-180" : ""}`} aria-hidden="true" />
+              </Button>
+            }
+          />
         </FadeIn>
 
         <div className={`mt-10 transition-opacity duration-200 ${isTransitioning ? "opacity-0" : "opacity-100"}`}>
