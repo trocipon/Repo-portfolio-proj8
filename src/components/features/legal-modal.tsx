@@ -17,9 +17,17 @@ const LegalModal: React.FC<LegalModalProps> = ({ onClose }) => {
           pas de backdrop puisqu'il n'y a rien de visible derrière). À partir
           de sm, on retrouve la carte centrée classique. */}
       <div ref={dialogRef} className="relative w-full h-full sm:h-auto sm:max-w-5xl max-h-none sm:max-h-[90vh] rounded-none sm:rounded-2xl border-0 sm:border sm:border-border bg-card p-0 shadow-none sm:shadow-2xl flex flex-col overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-        <button onClick={onClose} className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-lg bg-muted/70 sm:bg-transparent text-muted-foreground transition-colors hover:text-foreground hover:bg-muted z-10 cursor-pointer" aria-label="Fermer">
-          <span className="h-4 w-4 flex items-center justify-center">✕</span>
-        </button>
+        {/* Barre fixe, même correctif que project-modal.tsx : un bouton de
+            fermeture absolu à l'intérieur d'un conteneur overflow-y-auto
+            défile hors champ avec le reste du contenu. */}
+        <div className="sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-border bg-card/95 px-4 py-3 backdrop-blur-sm sm:px-6">
+          <p className="truncate text-sm font-semibold text-foreground sm:text-base" aria-hidden="true">
+            Mentions légales
+          </p>
+          <button onClick={onClose} className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground hover:bg-muted cursor-pointer" aria-label="Fermer">
+            <span className="h-4 w-4 flex items-center justify-center">✕</span>
+          </button>
+        </div>
         <div className="w-full flex flex-col gap-6 p-6 sm:p-10">
           <h2 className="text-2xl font-bold text-foreground text-center">Mentions légales</h2>
           <p className="mt-2 text-sm leading-relaxed text-foreground/80 text-justify">
@@ -47,13 +55,24 @@ const LegalModal: React.FC<LegalModalProps> = ({ onClose }) => {
             Tout le contenu (textes, images, code, design) m’appartient, sauf indication contraire. Merci de ne pas le reproduire sans autorisation.
           </p>
           <p className="mt-2 text-sm leading-relaxed text-foreground/80 text-justify">
+            <strong>Crédits photo</strong>
+            <br />
+            Certaines photographies proviennent d’Unsplash (licence libre). Mes portraits en studio sont l’œuvre d’Armand Tichané Photographie :{" "}
+            <a href="https://www.armandphoto.fr/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+              armandphoto.fr
+            </a>
+            .
+          </p>
+          <p className="mt-2 text-sm leading-relaxed text-foreground/80 text-justify">
             <strong>Données personnelles et confidentialité</strong>
             <br />
             <ul className="list-disc pl-6">
               <li>Formulaire de contact : vos informations (nom, email, message) servent uniquement à répondre à votre demande. Elles ne sont ni collectées, ni revendues et sont supprimées après traitement.</li>
+              <li>Formspree : l’envoi du formulaire de contact est traité par Formspree (service tiers).</li>
+              <li>Google reCAPTCHA : utilisé pour la protection anti-spam du formulaire et du téléchargement du CV ; il peut déposer ses propres cookies, conformément à la politique de confidentialité de Google.</li>
               <li>Logs techniques : des données de connexion (adresse IP, date et heure) sont conservées par l’hébergeur pour la sécurité et le fonctionnement du site.</li>
               <li>Référencement : Google Search Console est utilisé uniquement pour analyser les performances du site.</li>
-              <li>Cookies : pas de cookies traceurs ; seuls les cookies techniques strictement nécessaires sont présents.</li>
+              <li>Cookies : aucun cookie publicitaire ; seuls les cookies techniques strictement nécessaires et ceux déposés par Google reCAPTCHA sont présents.</li>
             </ul>
           </p>
           <p className="mt-2 text-sm leading-relaxed text-foreground/80 text-justify">
