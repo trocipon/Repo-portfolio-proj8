@@ -1,6 +1,6 @@
 import type { ComponentType } from "react";
 import { techBadgesWithIcons } from "./tech-badges";
-import { Search, People, Blueprint, Journey, Flow, Kpi, Priority, Wireframe, Prototype, Accessibility, Security, TrendingUp, Schema, Kanban, Speed } from "./icons";
+import { Search, People, Blueprint, Journey, Flow, Kpi, Priority, Wireframe, Prototype, Accessibility, Security, TrendingUp, Schema, Kanban, Speed, AuditCheck } from "./icons";
 
 // Concepts méthodo/process qui n'ont pas de logo de marque (donc pas d'entrée
 // Simple Icons) mais qui méritent tout de même un pictogramme pour rester
@@ -24,6 +24,10 @@ export const conceptIcons: Record<string, ComponentType<{ className?: string }>>
   "Optimisation SEO": TrendingUp,
   "Modélisation de données": Schema,
   Kanban: Kanban,
+  // WAVE (webaim.org) n'a pas de logo dans Simple Icons : pictogramme dédié
+  // (plutôt que de réutiliser celui d'Accessibilité, pour ne pas créer deux
+  // badges visuellement identiques avec des libellés différents).
+  Wave: AuditCheck,
 };
 
 export type TagVisual = { kind: "brand"; iconUrl: string } | { kind: "concept"; Icon: ComponentType<{ className?: string }> } | { kind: "none" };

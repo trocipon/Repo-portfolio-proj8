@@ -1,5 +1,5 @@
 import { FaGraduationCap, FaQuoteLeft, FaTasks, FaGithub, FaLinkedin, FaBriefcase, FaDownload, FaMapPin, FaMailBulk, FaArrowUp, FaArrowDown, FaPaperPlane, FaExternalLinkAlt } from "react-icons/fa";
-import { MdMonitor, MdSpeed, MdDesignServices, MdInsights, MdSearch, MdPeople, MdAccountTree, MdTimeline, MdCallSplit, MdBarChart, MdLowPriority, MdGridView, MdWidgets, MdAccessibility, MdSecurity, MdTrendingUp, MdSchema } from "react-icons/md";
+import { MdMonitor, MdSpeed, MdDesignServices, MdInsights, MdSearch, MdPeople, MdAccountTree, MdTimeline, MdCallSplit, MdBarChart, MdLowPriority, MdGridView, MdWidgets, MdAccessibility, MdSecurity, MdTrendingUp, MdSchema, MdFactCheck } from "react-icons/md";
 
 export const GraduationCap = FaGraduationCap;
 export const Quote = FaQuoteLeft;
@@ -32,3 +32,4 @@ export const Accessibility = MdAccessibility;
 export const Security = MdSecurity;
 export const TrendingUp = MdTrendingUp;
 export const Schema = MdSchema;
+export const AuditCheck = MdFactCheck;
