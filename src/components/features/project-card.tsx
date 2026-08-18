@@ -1,7 +1,8 @@
 import React from "react";
 import { Project } from "../utils/project-utils";
 import { Github } from "../utils/icons";
-import { techBadgesWithIcons } from "../utils/techbadges";
+import { getTagVisual } from "../utils/tag-visuals";
+import { TagPill } from "../ui/tag-pill";
 
 interface ProjectCardProps {
   project: Project;
@@ -42,30 +43,16 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) =>
         <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground line-clamp-2">{project.introduction}</p>
 
         {/* Bottom row */}
-        <div className="mt-4 flex items-end justify-between">
-          <div className="flex flex-wrap justify-end gap-1">
-            {techBadgesWithIcons
-              .filter((badge) => project.tags.includes(badge.name))
+        <div className="mt-4 flex items-end justify-between gap-2">
+          <div className="flex flex-1 min-w-0 flex-wrap gap-1">
+            {project.tags
+              .filter((tag) => getTagVisual(tag).kind !== "none")
               .slice(0, 3)
-              .map((badge) => (
-                <span key={badge.name} className="inline-flex items-center gap-1 rounded-full border border-border bg-secondary px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
-                  {badge.iconUrl && (
-                    <img
-                      src={badge.iconUrl}
-                      alt={`${badge.name} icon`}
-                      width="12"
-                      height="12"
-                      className="h-3 w-3"
-                      onError={(e) => {
-                        (e.currentTarget as HTMLImageElement).style.display = "none";
-                      }}
-                    />
-                  )}
-                  {badge.name}
-                </span>
+              .map((tag) => (
+                <TagPill key={tag} name={tag} />
               ))}
           </div>
-          <span className="inline-flex items-center gap-1 rounded-md border border-border bg-secondary px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
+          <span className="inline-flex shrink-0 items-center gap-1 rounded-md border border-border bg-secondary px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
             {project.type === "pédagogique" && (
               <span className="text-sm text-primary" title="Projet pédagogique">
                 🎓

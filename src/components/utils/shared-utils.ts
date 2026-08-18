@@ -20,8 +20,14 @@ export const iconSlugs: Record<string, string> = {
   Notion: "notion",
   Canva: "canva",
   Miro: "miro",
-  Photoshop: "adobephotoshop",
   GIMP: "gimp",
+  "Google Search Console": "googlesearchconsole",
+  "Google Analytics": "googleanalytics",
+  Claude: "claude",
+  ChatGPT: "openai",
+  "GitHub Copilot": "githubcopilot",
+  Mistral: "mistralai",
+  Vercel: "vercel",
 };
 
 export function normalizeKey(s: string): string {
@@ -29,8 +35,6 @@ export function normalizeKey(s: string): string {
 }
 
 export const normalizedIconSlugs: Record<string, string> = Object.fromEntries(Object.entries(iconSlugs).map(([k, v]) => [normalizeKey(k), v]));
-
-export const missingIcons = new Set<string>();
 
 export function getIconUrl(name: string): string | null {
   const key = normalizeKey(name);

@@ -1,5 +1,5 @@
 import React from "react";
-import { techBadgesWithIcons } from "../utils/techbadges";
+import { techBadgesWithIcons } from "../utils/tech-badges";
 
 interface FilterProps {
   options: string[];
@@ -9,7 +9,7 @@ interface FilterProps {
 
 export const Filter: React.FC<FilterProps> = ({ options, activeFilter, onFilterChange }) => {
   return (
-    <div className="flex flex-wrap gap-2 mb-4" role="group" aria-label="Filtrer les projets par technologie">
+    <div className="flex flex-wrap gap-2 mb-4" role="group" aria-label="Filtrer les projets par catégorie">
       {options.map((option) => {
         const badge = techBadgesWithIcons.find((badge) => badge.name === option);
 
