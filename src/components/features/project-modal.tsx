@@ -1,4 +1,4 @@
-import { Project } from "../utils/project-utils";
+import { Project, projectTypeBadgeStyles, projectTypeEmoji } from "../utils/project-utils";
 import { getTagVisual } from "../utils/tag-visuals";
 import { TagPill } from "../ui/tag-pill";
 import { FaGithub as Github, FaExternalLinkAlt, FaFileDownload } from "react-icons/fa";
@@ -25,7 +25,7 @@ export function ProjectModal({ project, onClose }: { project: Project; onClose: 
           <p className="truncate text-sm font-semibold text-foreground sm:text-base" aria-hidden="true">
             {project.title}
           </p>
-          <button onClick={onClose} className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground hover:bg-muted cursor-pointer" aria-label="Fermer">
+          <button onClick={onClose} className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground hover:bg-muted cursor-pointer" aria-label="Fermer">
             <span className="h-4 w-4 flex items-center justify-center">✕</span>
           </button>
         </div>
@@ -34,6 +34,15 @@ export function ProjectModal({ project, onClose }: { project: Project; onClose: 
         <div className="w-full p-6 sm:p-10 text-center">
           <h2 className="text-2xl font-bold text-foreground">{project.title}</h2>
           <p className="text-sm text-muted-foreground mt-2">{project.introduction}</p>
+          {/* Rappel année ici aussi (même pastille que la carte, picto +
+              année seulement, sans le libellé du type) : la modale peut
+              s'ouvrir depuis la page Projets complète (grille filtrable),
+              qui n'affiche pas forcément la carte d'origine sous les yeux
+              au moment de lire le détail. */}
+          <span className={`mt-3 inline-flex items-center gap-1 rounded-md border px-2.5 py-1 text-xs font-medium text-muted-foreground ${projectTypeBadgeStyles[project.type]}`}>
+            <span title={`Projet ${project.type}`}>{projectTypeEmoji[project.type]}</span>
+            {project.year}
+          </span>
           <div className="flex flex-wrap justify-center gap-2 mt-4">
             {project.tags
               .filter((tag) => getTagVisual(tag).kind !== "none")
@@ -45,9 +54,12 @@ export function ProjectModal({ project, onClose }: { project: Project; onClose: 
 
         {/* Contenu principal */}
         <div className="flex flex-col sm:flex-row gap-6 p-6 sm:p-10">
-          {/* Colonne gauche */}
-          <div className="flex-1 sticky top-0 h-fit">
-            <Carousel images={project.images} />
+          {/* Colonne gauche : sticky uniquement à partir de sm (deux colonnes
+              côte à côte). En pile mobile, un sticky top-0 sans conditionner
+              au breakpoint restait accroché en haut pendant le défilement et
+              se superposait aux accordéons Collapse en dessous. */}
+          <div className="flex-1 sm:sticky sm:top-0 sm:h-fit">
+            <Carousel images={project.images} projectTitle={project.title} />
           </div>
 
           {/* Colonne droite */}
@@ -98,12 +110,12 @@ export function ProjectModal({ project, onClose }: { project: Project; onClose: 
                 </ul>
               </Collapse>
               <div className="w-full p-6 sm:p-10 border-t border-border">
-                {/* Deux rangées distinctes plutôt qu'un seul flex-wrap mélangeant
-                    tout : les actions (primary/secondary, gabarit pill) d'un côté,
-                    les documents (tertiary, gabarit lien texte) de l'autre. Sans
-                    ça, le nombre variable de documents par projet (1 à 4+) fait
-                    retomber la ligne de façon imprévisible et mélange deux gabarits
-                    de bouton très différents sur une même rangée centrée. */}
+                {/* Deux rangées distinctes : les actions (primary/secondary,
+                    gabarit pill) d'un côté, les documents (tertiary, gabarit
+                    lien texte) de l'autre. Le nombre variable de documents par
+                    projet (1 à 4+) ferait retomber la ligne de façon
+                    imprévisible si les deux gabarits de bouton se mélangeaient
+                    sur une même rangée centrée. */}
                 {(project.liveDemoUrl || (project.githubUrl && project.githubUrl !== "#") || project.beforeUrl) && (
                   <div className="flex flex-wrap items-center justify-center gap-3">
                     {project.liveDemoUrl && (
